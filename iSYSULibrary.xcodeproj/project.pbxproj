@@ -22,7 +22,6 @@
 		4203CEE919B442C20015180D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4203CEE719B442C20015180D /* InfoPlist.strings */; };
 		4203CEEB19B442C20015180D /* iSYSULibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203CEEA19B442C20015180D /* iSYSULibraryTests.m */; };
 		427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E368F19B44C51006EB106 /* SLLoginViewController.m */; };
-		427E369319B44F6F006EB106 /* UIColor+ApplicationColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E369219B44F6F006EB106 /* UIColor+ApplicationColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +55,7 @@
 		4203CEEA19B442C20015180D /* iSYSULibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSYSULibraryTests.m; sourceTree = "<group>"; };
 		427E368E19B44C51006EB106 /* SLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoginViewController.h; sourceTree = "<group>"; };
 		427E368F19B44C51006EB106 /* SLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoginViewController.m; sourceTree = "<group>"; };
-		427E369119B44F6F006EB106 /* UIColor+ApplicationColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ApplicationColor.h"; sourceTree = "<group>"; };
-		427E369219B44F6F006EB106 /* UIColor+ApplicationColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ApplicationColor.m"; sourceTree = "<group>"; };
+		427E369419B45457006EB106 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,14 +118,13 @@
 				427E368D19B44C40006EB106 /* Model */,
 				427E368C19B44C3A006EB106 /* View */,
 				427E368B19B44C33006EB106 /* Controller */,
+				427E369419B45457006EB106 /* Constants.h */,
 				4203CECB19B442C20015180D /* SLAppDelegate.h */,
 				4203CECC19B442C20015180D /* SLAppDelegate.m */,
 				4203CECE19B442C20015180D /* Main_iPhone.storyboard */,
 				4203CED119B442C20015180D /* Main_iPad.storyboard */,
 				4203CED719B442C20015180D /* Images.xcassets */,
 				4203CEC319B442C20015180D /* Supporting Files */,
-				427E369119B44F6F006EB106 /* UIColor+ApplicationColor.h */,
-				427E369219B44F6F006EB106 /* UIColor+ApplicationColor.m */,
 			);
 			path = iSYSULibrary;
 			sourceTree = "<group>";
@@ -284,7 +281,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4203CEC919B442C20015180D /* main.m in Sources */,
-				427E369319B44F6F006EB106 /* UIColor+ApplicationColor.m in Sources */,
 				427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */,
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,
 			);

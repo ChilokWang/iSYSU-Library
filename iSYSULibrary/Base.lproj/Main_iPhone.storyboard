@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-277" y="17"/>
         </scene>
-        <!--Login View Controller - 登录-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="SLLoginViewController" sceneMemberID="viewController">
@@ -149,7 +149,7 @@
                             <outletCollection property="gestureRecognizers" destination="4Az-PI-aOf" appends="YES" id="wDZ-jx-dz9"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="登录" id="d1h-sy-3sr"/>
+                    <navigationItem key="navigationItem" id="d1h-sy-3sr"/>
                     <connections>
                         <outlet property="loginButton" destination="Xdb-Fn-mvz" id="why-cd-WpS"/>
                         <outlet property="passwordField" destination="g6N-OX-KZO" id="V7a-yy-vJw"/>

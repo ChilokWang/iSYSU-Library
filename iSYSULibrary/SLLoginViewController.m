@@ -7,7 +7,7 @@
 //
 
 #import "SLLoginViewController.h"
-#import "UIColor+ApplicationColor.h"
+#import "Constants.h"
 
 @interface SLLoginViewController ()
 
@@ -45,7 +45,9 @@
     self.loginButton.alpha = 0.0;
     self.usernameField.textColor = [UIColor lightGrayColor];
     self.passwordField.textColor = [UIColor lightGrayColor];
-    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.usernameField.text = [userDefaults objectForKey:kUserName];
+    self.passwordField.text = [userDefaults objectForKey:kPassword];
     [UIView animateWithDuration:0.7 delay:0.0 options:UIViewAnimationOptionCurveEaseIn  animations:^{
         self.usernameField.alpha = 1.0;
         self.passwordField.alpha = 1.0;
@@ -67,7 +69,7 @@
     }
     else {
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            self.loginButton.backgroundColor = [UIColor applicationGreenColor];
+            self.loginButton.backgroundColor = kApplicationGreenColor;
         } completion:nil];
         self.loginButton.enabled = true;
     }
@@ -76,6 +78,10 @@
 - (IBAction)loginButtonClicked:(id)sender
 {
     [self backgroundClicked:nil];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.usernameField.text forKey:kUserName];
+    [userDefaults setObject:self.passwordField.text forKey:kPassword];
+    [userDefaults synchronize];
 }
 
 - (IBAction)backgroundClicked:(id)sender
