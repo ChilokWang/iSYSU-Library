@@ -1,5 +1,5 @@
 //
-//  SLViewController.h
+//  UIColor+ApplicationColor.h
 //  iSYSULibrary
 //
 //  Created by Alaysh on 9/1/14.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLViewController : UIViewController
+@interface UIColor (ApplicationColor)
 
++ (UIColor *)applicationGreenColor;
 @end
