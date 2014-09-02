@@ -66,6 +66,8 @@
         vc = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     else if (indexPath.row == 1)
         vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController2"];
+    else if (indexPath.row == 5)
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"SetupViewController"];
     
     return vc;
 }
