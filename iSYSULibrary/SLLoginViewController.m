@@ -67,7 +67,11 @@
         
     }
     else {
-        [self performSegueWithIdentifier:@"LoginIdentifier" sender:self];
+        [UIView animateWithDuration:0.7 delay:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            self.loginButton.alpha = 0.5;
+        } completion:^(BOOL finished) {
+            [self performSegueWithIdentifier:@"LoginIdentifier" sender:self];
+        }];
     }
 }
 
