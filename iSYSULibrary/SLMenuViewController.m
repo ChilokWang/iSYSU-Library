@@ -65,7 +65,13 @@
     if (indexPath.row == 0)
         vc = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     else if (indexPath.row == 1)
-        vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController2"];
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"LendingViewController"];
+    else if (indexPath.row == 2)
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"ReservationViewController"];
+    else if (indexPath.row == 3)
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RecommendViewController"];
+    else if (indexPath.row == 4)
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"LendngHisViewController"];
     else if (indexPath.row == 5)
         vc = [storyboard instantiateViewControllerWithIdentifier:@"SetupViewController"];
     
