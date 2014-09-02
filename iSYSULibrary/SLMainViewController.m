@@ -9,6 +9,7 @@
 #import "SLMainViewController.h"
 #import "XDKAirMenuController.h"
 #import "SLBookView.h"
+#import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface SLMainViewController ()
@@ -29,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.collectionView.backgroundColor = kApplicationGrayColor;
 }
 
 - (void)didReceiveMemoryWarning
