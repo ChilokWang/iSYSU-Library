@@ -43,8 +43,8 @@
     self.usernameField.alpha = 0.0;
     self.passwordField.alpha = 0.0;
     self.loginButton.alpha = 0.0;
-    self.usernameField.textColor = [UIColor lightGrayColor];
-    self.passwordField.textColor = [UIColor lightGrayColor];
+    self.usernameField.textColor = kApplicationBlackColor;
+    self.passwordField.textColor = kApplicationBlackColor;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.usernameField.text = [userDefaults objectForKey:kUserName];
     self.passwordField.text = [userDefaults objectForKey:kPassword];
@@ -64,12 +64,13 @@
     if ([self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""]) {
         self.loginButton.enabled = false;
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.loginButton.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
+            self.loginButton.titleLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
         } completion:nil];
     }
     else {
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            self.loginButton.backgroundColor = kApplicationGreenColor;
+            self.loginButton.titleLabel.textColor = [UIColor whiteColor];
+//            self.loginButton.backgroundColor = kApplicationGreenColor;
         } completion:nil];
         self.loginButton.enabled = true;
     }
