@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLCollectionViewController.h"
 
-@interface SLMainViewController : UIViewController
+@interface SLMainViewController :SLCollectionViewController
 
 @end

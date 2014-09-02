@@ -483,44 +483,12 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="aJ2-fH-Ygf" kind="relationship" relationship="rootViewController" id="rl0-Qn-KDY"/>
+                        <segue destination="c8i-1e-Mcb" kind="relationship" relationship="rootViewController" id="pXg-cp-vhs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8i-M1-91V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1184" y="-428"/>
-        </scene>
-        <!--Main View Controller - 首页-->
-        <scene sceneID="yUF-CY-AwK">
-            <objects>
-                <viewController id="aJ2-fH-Ygf" customClass="SLMainViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5mY-Dh-lL9"/>
-                        <viewControllerLayoutGuide type="bottom" id="blI-SS-9Jv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qw0-mx-RAw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="首页" id="vWd-Bb-dWt">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="s0V-BL-ODn">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="menuButtonPressed:" destination="aJ2-fH-Ygf" id="NgK-IR-8Yb"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="zr4-7Z-ODE">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="exL-9y-mpP" kind="push" id="pVu-SI-Fnu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="94T-CW-beS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1584" y="-425"/>
         </scene>
         <!--Search View Controller - 搜索-->
         <scene sceneID="9qZ-sn-LDN">
@@ -539,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rev-vq-H9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1984" y="-425"/>
+            <point key="canvasLocation" x="1976" y="-428"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="cLf-Zj-2ld">
@@ -632,9 +600,6 @@
                     <navigationItem key="navigationItem" title="我的借阅" id="naU-ql-lPj">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Gsr-Di-anc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="menuButtonPressed:" destination="aJ2-fH-Ygf" id="FyB-eY-X8S"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -678,9 +643,6 @@
                     <navigationItem key="navigationItem" title="预约信息" id="0Cf-QW-0ie">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="68v-w8-I1T">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="menuButtonPressed:" destination="aJ2-fH-Ygf" id="M2G-hM-87p"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -724,9 +686,6 @@
                     <navigationItem key="navigationItem" title="读者荐购" id="atA-XY-I6p">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="KYT-gB-2D1">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="menuButtonPressed:" destination="aJ2-fH-Ygf" id="vVC-wU-OGV"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -770,15 +729,74 @@
                     <navigationItem key="navigationItem" title="借阅历史" id="TDG-Z1-HtA">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="BY5-c7-YW2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="menuButtonPressed:" destination="aJ2-fH-Ygf" id="Aqv-QP-HO5"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Azu-ah-ubE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1584" y="2303"/>
+        </scene>
+        <!--Main View Controller - 首页-->
+        <scene sceneID="gPL-Fo-bES">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="c8i-1e-Mcb" customClass="SLMainViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="L8T-z2-y5S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="POi-OV-MID">
+                            <size key="itemSize" width="150" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="Neh-ws-XUO">
+                                <rect key="frame" x="0.0" y="64" width="150" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-Oj-7d7">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="8DM-Oj-7d7" firstAttribute="leading" secondItem="Neh-ws-XUO" secondAttribute="leading" id="BKK-er-z0j"/>
+                                    <constraint firstItem="8DM-Oj-7d7" firstAttribute="bottom" secondItem="Neh-ws-XUO" secondAttribute="bottom" id="Gkb-JT-42X"/>
+                                    <constraint firstItem="8DM-Oj-7d7" firstAttribute="top" secondItem="Neh-ws-XUO" secondAttribute="top" id="nKV-Zk-Ubn"/>
+                                    <constraint firstItem="8DM-Oj-7d7" firstAttribute="trailing" secondItem="Neh-ws-XUO" secondAttribute="trailing" id="uyr-Kn-JVG"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="c8i-1e-Mcb" id="IMg-Ep-KIE"/>
+                            <outlet property="delegate" destination="c8i-1e-Mcb" id="Fq0-W5-NQs"/>
+                        </connections>
+                    </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="首页" id="6Na-zX-x5T">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="NmU-rk-pgF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="c8i-1e-Mcb" id="VCF-zV-Gma"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Wr5-13-M2H">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="exL-9y-mpP" kind="push" id="5fS-ch-Sig"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGy-t7-GxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="-428"/>
         </scene>
     </scenes>
     <resources>

@@ -8,6 +8,8 @@
 
 #import "SLMainViewController.h"
 #import "XDKAirMenuController.h"
+#import "SLBookView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SLMainViewController ()
 
@@ -19,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -27,13 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)menuButtonPressed:(id)sender
@@ -45,15 +45,41 @@
     else
         [menu openMenuAnimated];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return 10;
 }
-*/
+
+#define kBookViewTag 1
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *CellIdentifier = @"photoCell";
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    UIImage *thumbnail = [UIImage imageNamed:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:kBookViewTag];
+    imageView.image = thumbnail;
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CGRect frame = cell.frame;
+    frame.origin.y -= collectionView.contentOffset.y;
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", indexPath.row+1]];
+     _bookView = [[SLBookView alloc] initWithFrame:frame];
+    [_bookView setupBookCoverImage:image];
+    [self.view addSubview:_bookView];
+    UIViewController *detailVC = [[UIViewController alloc] init];
+    detailVC.modalTransitionStyle = UIModalTransitionStyleOpenBooks;
+    [self presentViewController:detailVC animated:YES completion:nil];
+}
+
 
 @end

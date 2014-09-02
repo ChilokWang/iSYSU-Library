@@ -27,6 +27,8 @@
 		42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138819B5AE4100D94977 /* SLMainViewController.m */; };
 		42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138B19B5B7AA00D94977 /* SLSearchViewController.m */; };
 		42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138E19B5C69500D94977 /* SLSetupViewController.m */; };
+		42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613DD19B60DF200D94977 /* SLCollectionViewController.m */; };
+		42A613E119B60E1800D94977 /* SLBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613E019B60E1800D94977 /* SLBookView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		42A6138B19B5B7AA00D94977 /* SLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSearchViewController.m; sourceTree = "<group>"; };
 		42A6138D19B5C69500D94977 /* SLSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSetupViewController.h; sourceTree = "<group>"; };
 		42A6138E19B5C69500D94977 /* SLSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSetupViewController.m; sourceTree = "<group>"; };
+		42A613DC19B60DF200D94977 /* SLCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCollectionViewController.h; sourceTree = "<group>"; };
+		42A613DD19B60DF200D94977 /* SLCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCollectionViewController.m; sourceTree = "<group>"; };
+		42A613DF19B60E1800D94977 /* SLBookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookView.h; sourceTree = "<group>"; };
+		42A613E019B60E1800D94977 /* SLBookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookView.m; sourceTree = "<group>"; };
 		8BB61B84CA13457998701D86 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14C6CA71D6B445FA9D2F465 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +195,8 @@
 				42A6138B19B5B7AA00D94977 /* SLSearchViewController.m */,
 				42A6138D19B5C69500D94977 /* SLSetupViewController.h */,
 				42A6138E19B5C69500D94977 /* SLSetupViewController.m */,
+				42A613DC19B60DF200D94977 /* SLCollectionViewController.h */,
+				42A613DD19B60DF200D94977 /* SLCollectionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,6 +204,8 @@
 		427E368C19B44C3A006EB106 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42A613DF19B60E1800D94977 /* SLBookView.h */,
+				42A613E019B60E1800D94977 /* SLBookView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -342,12 +352,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
+				42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */,
 				42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */,
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
 				4203CEC919B442C20015180D /* main.m in Sources */,
 				427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */,
 				42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */,
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,
+				42A613E119B60E1800D94977 /* SLBookView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
