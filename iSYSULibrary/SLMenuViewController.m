@@ -32,7 +32,6 @@
     [super viewDidLoad];
 
     [self.backgroundView setImageToBlur:[UIImage imageNamed:@"background"] blurRadius:kLBBlurredImageDefaultBlurRadius completionBlock:^{
-        NSLog(@"The blurred image has been set");
     }];
     
     self.airMenuController = [XDKAirMenuController sharedMenu];
