@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     [self configureAppearence];
+    [self autoLogin];
     // Do any additional setup after loading the view.
 }
 
@@ -58,6 +59,16 @@
     [self.usernameField addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [self.passwordField addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [self textFieldDidChange];
+}
+
+- (void)autoLogin
+{
+    if ([self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""]) {
+        
+    }
+    else {
+        [self performSegueWithIdentifier:@"LoginIdentifier" sender:self];
+    }
 }
 
 - (void)textFieldDidChange

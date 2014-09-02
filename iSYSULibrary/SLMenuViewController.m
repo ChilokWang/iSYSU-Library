@@ -30,13 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.backgroundView.image = [UIImage imageNamed:@"background"];
+
     [self.backgroundView setImageToBlur:[UIImage imageNamed:@"background"] blurRadius:kLBBlurredImageDefaultBlurRadius completionBlock:^{
         NSLog(@"The blurred image has been set");
     }];
+    
     self.airMenuController = [XDKAirMenuController sharedMenu];
     self.airMenuController.airDelegate = self;
-    //self.airMenuController.isMenuOnRight = TRUE;
     
     [self.view addSubview:self.airMenuController.view];
     [self addChildViewController:self.airMenuController];

@@ -84,7 +84,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pGc-oK-AdT"/>
-                                    <segue destination="MCd-np-yE2" kind="modal" modalTransitionStyle="flipHorizontal" id="XkP-SR-WgA"/>
+                                    <segue destination="MCd-np-yE2" kind="modal" identifier="LoginIdentifier" modalTransitionStyle="crossDissolve" id="XkP-SR-WgA"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-T7-Llr" userLabel="topLine">
@@ -175,6 +175,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="114" y="11"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="LAf-p4-Hdc">
@@ -574,7 +575,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aeS-Cd-6fw" secondAttribute="trailing" id="7Xr-Mp-SkU"/>
                             <constraint firstItem="z6l-Z2-hqC" firstAttribute="leading" secondItem="axR-bF-MoT" secondAttribute="leading" constant="19" id="QAx-qF-kIA"/>
