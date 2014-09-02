@@ -8,8 +8,8 @@
 
 #import "XDKAirMenuController.h"
 
-#define WIDTH_OPENED (35.f)
-#define MIN_SCALE_CONTROLLER (0.5f)
+#define WIDTH_OPENED (80.f)
+#define MIN_SCALE_CONTROLLER (0.7f)
 #define MIN_SCALE_TABLEVIEW (0.8f)
 #define MIN_ALPHA_TABLEVIEW (0.01f)
 #define DELTA_OPENING (65.f)
