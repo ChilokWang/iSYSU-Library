@@ -43,6 +43,7 @@
     self.usernameField.alpha = 0.0;
     self.passwordField.alpha = 0.0;
     self.loginButton.alpha = 0.0;
+    self.loginButton.layer.cornerRadius = 5.0;
     self.usernameField.textColor = kApplicationBlackColor;
     self.passwordField.textColor = kApplicationBlackColor;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -70,7 +71,6 @@
     else {
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             self.loginButton.titleLabel.textColor = [UIColor whiteColor];
-//            self.loginButton.backgroundColor = kApplicationGreenColor;
         } completion:nil];
         self.loginButton.enabled = true;
     }
