@@ -7,9 +7,11 @@
 //
 
 #import "SLMenuViewController.h"
+#import "UIImageView+LBBlurredImage.h"
 
 @interface SLMenuViewController () <XDKAirMenuDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -28,6 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.backgroundView.image = [UIImage imageNamed:@"background"];
+    [self.backgroundView setImageToBlur:[UIImage imageNamed:@"background"] blurRadius:kLBBlurredImageDefaultBlurRadius completionBlock:^{
+        NSLog(@"The blurred image has been set");
+    }];
     self.airMenuController = [XDKAirMenuController sharedMenu];
     self.airMenuController.airDelegate = self;
     //self.airMenuController.isMenuOnRight = TRUE;

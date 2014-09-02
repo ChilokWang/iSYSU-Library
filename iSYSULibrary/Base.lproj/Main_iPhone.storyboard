@@ -205,7 +205,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RVT-2n-zPa">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
@@ -223,7 +223,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0zc-q1-Vlh">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
@@ -241,7 +241,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mlB-YQ-cms">
                                         <rect key="frame" x="0.0" y="132" width="320" height="44"/>
@@ -259,7 +259,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WR9-ib-upx">
                                         <rect key="frame" x="0.0" y="176" width="320" height="44"/>
@@ -277,7 +277,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rz4-zB-Djx">
                                         <rect key="frame" x="0.0" y="220" width="320" height="44"/>
@@ -295,7 +295,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -552,6 +552,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="96H-Tl-2Of" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-Cd-6fw">
                                 <rect key="frame" x="0.0" y="152" width="320" height="264"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,11 +578,18 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aeS-Cd-6fw" secondAttribute="trailing" id="7Xr-Mp-SkU"/>
                             <constraint firstItem="z6l-Z2-hqC" firstAttribute="leading" secondItem="axR-bF-MoT" secondAttribute="leading" constant="19" id="QAx-qF-kIA"/>
+                            <constraint firstItem="fRz-p0-scI" firstAttribute="top" secondItem="96H-Tl-2Of" secondAttribute="bottom" id="UXc-8a-lYM"/>
                             <constraint firstItem="aeS-Cd-6fw" firstAttribute="leading" secondItem="axR-bF-MoT" secondAttribute="leading" id="dH2-qs-ELP"/>
+                            <constraint firstAttribute="trailing" secondItem="96H-Tl-2Of" secondAttribute="trailing" id="dl4-Jm-dnA"/>
+                            <constraint firstItem="96H-Tl-2Of" firstAttribute="leading" secondItem="axR-bF-MoT" secondAttribute="leading" id="i2j-9O-dcW"/>
                             <constraint firstAttribute="centerY" secondItem="aeS-Cd-6fw" secondAttribute="centerY" id="k6w-Cg-Xfy"/>
                             <constraint firstItem="aeS-Cd-6fw" firstAttribute="top" secondItem="z6l-Z2-hqC" secondAttribute="bottom" constant="14" id="lvd-l1-ecl"/>
+                            <constraint firstItem="96H-Tl-2Of" firstAttribute="top" secondItem="axR-bF-MoT" secondAttribute="top" id="w83-lO-FnJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="96H-Tl-2Of" id="hxk-KU-joz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVn-CI-pvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
