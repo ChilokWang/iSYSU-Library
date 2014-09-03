@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.briefLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 0, 0)];
+        self.briefLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, frame.size.width - 60, 0)];
         self.briefLabel.font = [UIFont systemFontOfSize:14.0];
         self.briefLabel.textColor = [UIColor darkGrayColor];
         self.briefLabel.numberOfLines = 0;

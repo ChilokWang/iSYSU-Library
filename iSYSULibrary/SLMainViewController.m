@@ -106,26 +106,26 @@
     detailVC.bookInfo = @[
                           @[@{
                               @"bookCoverImageUrl": [NSString stringWithFormat:@"%d", indexPath.row + 1],
-                              @"bookName":  @"iOS 7",
-                              @"bookId":    @"TN929.53",
-                              @"bookAuthor":  @"刘一道著",
-                              @"bookPress":  @"机械工业出版社",
+                              @"bookName":  @"Objective-C高级编程 : iOS与OS X多线程和内存管理",
+                              @"bookId":    @"978-7-115-31809-1",
+                              @"bookAuthor":  @"(日) Kazuki Sakamoto, Tomohiko Furumoto著 ; 黎华译",
+                              @"bookPress":  @"人民邮电出版社",
                               }],
                           @[@{
-                              @"brief":  @"第一部分　基础篇第1章　开篇综述\n1.1　iOS概述\n1.1.1　iOS介绍\n1.1.2　iOS 6新特性\n1.2　开发环境及开发工具\n1.3　本书中的约定\n1.3.1　案例代码约定\n1.3.2　图示的约定　\n第2章　第一个iOS应用程序\n2.1　创建基于nib的HelloWorld工程"
+                              @"brief":  @"本书在苹果公司公开的源代码基础上，深入剖析了对应用于内存管理的ARC以及应用于多线程开发的Blocks和GCD。内容包括：自动引用计数、Blocks、Grand Central Dispatch等。"
                               }],
                           @[@{
                                           @"bookState":    @"外借本",
                                           @"dueDate":    @"在架上",
-                                          @"branch":     @"南校区中文新书库（1楼）",
-                                          @"rackPosition":       @"TN929.53/245",
+                                          @"branch":     @"南校区中文新书库(1楼)",
+                                          @"rackPosition":       @"TP312C/1987",
                                           @"requests":     @"0",
                                           },
                                       @{
                                           @"bookState":    @"外借本",
-                                          @"dueDate":    @"在架上",
-                                          @"branch":     @"东校区中文新书库（1楼）",
-                                          @"rackPosition":       @"TN929.53/245",
+                                          @"dueDate":    @"20141008",
+                                          @"branch":     @"东校区普通图书(3楼)",
+                                          @"rackPosition":       @"TP312C/1987",
                                           @"requests":     @"1"
                                           }
                                       ]
