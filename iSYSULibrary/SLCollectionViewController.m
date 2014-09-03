@@ -67,7 +67,7 @@
         }
         
         [UIView animateWithDuration:duringTime delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionShowHideTransitionViews animations:^{
-            self.navigationController.navigationBar.alpha = 0.0;
+//            self.navigationController.navigationBar.alpha = 0.0;
             _bookView.transform = CGAffineTransformMakeScale(scaleX,scaleY);
             _bookView.center = self.view.center;
             _bookView.cover.layer.transform = transformblank;
@@ -98,7 +98,7 @@
             duringTime = 0.0f;
         }
         [UIView animateWithDuration:duringTime delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionShowHideTransitionViews animations:^{
-            self.navigationController.navigationBar.alpha = 1.0;
+//            self.navigationController.navigationBar.alpha = 1.0;
             _bookView.center = _bookViewOrignCenter;
             _bookView.transform = CGAffineTransformIdentity;
             _bookView.cover.layer.transform = CATransform3DIdentity;

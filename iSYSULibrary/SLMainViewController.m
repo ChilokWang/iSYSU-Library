@@ -102,11 +102,11 @@
     [self.view addSubview:_bookView];
     SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
     detailVC.modalTransitionStyle = UIModalTransitionStyleOpenBooks;
-    self.navigationItem.leftBarButtonItem = self.backButtonItem;;
-    self.navigationItem.rightBarButtonItem = nil;
+    
     [self presentViewController:detailVC animated:YES completion:^{
         self.title = @"图书详情";
-        
+        self.navigationItem.leftBarButtonItem = self.backButtonItem;;
+        self.navigationItem.rightBarButtonItem = nil;
     }];
 }
 
