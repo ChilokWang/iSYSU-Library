@@ -102,7 +102,34 @@
     [self.view addSubview:_bookView];
     SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
     detailVC.modalTransitionStyle = UIModalTransitionStyleOpenBooks;
-    
+    detailVC.bookCoverImage = image;
+    detailVC.bookInfo = @[
+                          @[@{
+                              @"bookCoverImageUrl": [NSString stringWithFormat:@"%d", indexPath.row + 1],
+                              @"bookName":  @"iOS 7",
+                              @"bookId":    @"TN929.53",
+                              @"bookAuthor":  @"刘一道著",
+                              @"bookPress":  @"机械工业出版社",
+                              }],
+                          @[@{
+                              @"brief":  @"第一部分　基础篇第1章　开篇综述\n1.1　iOS概述\n1.1.1　iOS介绍\n1.1.2　iOS 6新特性\n1.2　开发环境及开发工具\n1.3　本书中的约定\n1.3.1　案例代码约定\n1.3.2　图示的约定　\n第2章　第一个iOS应用程序\n2.1　创建基于nib的HelloWorld工程"
+                              }],
+                          @[@{
+                                          @"bookState":    @"外借本",
+                                          @"dueDate":    @"在架上",
+                                          @"branch":     @"南校区中文新书库（1楼）",
+                                          @"rackPosition":       @"TN929.53/245",
+                                          @"requests":     @"0",
+                                          },
+                                      @{
+                                          @"bookState":    @"外借本",
+                                          @"dueDate":    @"在架上",
+                                          @"branch":     @"东校区中文新书库（1楼）",
+                                          @"rackPosition":       @"TN929.53/245",
+                                          @"requests":     @"1"
+                                          }
+                                      ]
+                          ];
     [self presentViewController:detailVC animated:YES completion:^{
         self.title = @"图书详情";
         self.navigationItem.leftBarButtonItem = self.backButtonItem;;
@@ -122,8 +149,8 @@
 
 - (void)modifyNavBarAlpha:(NSNotification *)aNotification
 {
-    NSDictionary *notiObj = [aNotification object];
-    float alpha = [notiObj[@"alpha"] floatValue];
-    self.navigationController.navigationBar.alpha = alpha;
+//    NSDictionary *notiObj = [aNotification object];
+//    float alpha = [notiObj[@"alpha"] floatValue];
+//    self.navigationController.navigationBar.alpha = alpha;
 }
 @end

@@ -23,6 +23,13 @@
 		4203CEE919B442C20015180D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4203CEE719B442C20015180D /* InfoPlist.strings */; };
 		4203CEEB19B442C20015180D /* iSYSULibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203CEEA19B442C20015180D /* iSYSULibraryTests.m */; };
 		421D9E1219B6B97D00BDCA36 /* SLBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */; };
+		421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1419B7119500BDCA36 /* SLBookBaseCell.m */; };
+		421D9E1819B7127500BDCA36 /* SLBookBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1719B7127500BDCA36 /* SLBookBaseModel.m */; };
+		421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1D19B713CA00BDCA36 /* SLBookCoverCell.m */; };
+		421D9E2419B713F700BDCA36 /* SLBookBriefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E2319B713F700BDCA36 /* SLBookBriefCell.m */; };
+		421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */; };
+		421D9E2919B7156200BDCA36 /* SLBookCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D9E2819B7156200BDCA36 /* SLBookCoverCell.xib */; };
+		421D9E2B19B7263000BDCA36 /* SLBookDistributionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */; };
 		427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E368F19B44C51006EB106 /* SLLoginViewController.m */; };
 		42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138519B5ACD300D94977 /* SLMenuViewController.m */; };
 		42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138819B5AE4100D94977 /* SLMainViewController.m */; };
@@ -63,6 +70,18 @@
 		4203CEEA19B442C20015180D /* iSYSULibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSYSULibraryTests.m; sourceTree = "<group>"; };
 		421D9E1019B6B97D00BDCA36 /* SLBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookDetailViewController.h; sourceTree = "<group>"; };
 		421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookDetailViewController.m; sourceTree = "<group>"; };
+		421D9E1319B7119500BDCA36 /* SLBookBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookBaseCell.h; path = Cell/SLBookBaseCell.h; sourceTree = "<group>"; };
+		421D9E1419B7119500BDCA36 /* SLBookBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookBaseCell.m; path = Cell/SLBookBaseCell.m; sourceTree = "<group>"; };
+		421D9E1619B7127500BDCA36 /* SLBookBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookBaseModel.h; path = Model/SLBookBaseModel.h; sourceTree = "<group>"; };
+		421D9E1719B7127500BDCA36 /* SLBookBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookBaseModel.m; path = Model/SLBookBaseModel.m; sourceTree = "<group>"; };
+		421D9E1C19B713CA00BDCA36 /* SLBookCoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookCoverCell.h; path = Cell/SLBookCoverCell.h; sourceTree = "<group>"; };
+		421D9E1D19B713CA00BDCA36 /* SLBookCoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookCoverCell.m; path = Cell/SLBookCoverCell.m; sourceTree = "<group>"; };
+		421D9E2219B713F700BDCA36 /* SLBookBriefCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookBriefCell.h; path = Cell/SLBookBriefCell.h; sourceTree = "<group>"; };
+		421D9E2319B713F700BDCA36 /* SLBookBriefCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookBriefCell.m; path = Cell/SLBookBriefCell.m; sourceTree = "<group>"; };
+		421D9E2519B7140F00BDCA36 /* SLBookDistributionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookDistributionCell.h; path = Cell/SLBookDistributionCell.h; sourceTree = "<group>"; };
+		421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookDistributionCell.m; path = Cell/SLBookDistributionCell.m; sourceTree = "<group>"; };
+		421D9E2819B7156200BDCA36 /* SLBookCoverCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLBookCoverCell.xib; path = Cell/SLBookCoverCell.xib; sourceTree = "<group>"; };
+		421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLBookDistributionCell.xib; path = Cell/SLBookDistributionCell.xib; sourceTree = "<group>"; };
 		427E368E19B44C51006EB106 /* SLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoginViewController.h; sourceTree = "<group>"; };
 		427E368F19B44C51006EB106 /* SLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoginViewController.m; sourceTree = "<group>"; };
 		427E369419B45457006EB106 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -211,6 +230,16 @@
 			children = (
 				42A613DF19B60E1800D94977 /* SLBookView.h */,
 				42A613E019B60E1800D94977 /* SLBookView.m */,
+				421D9E1319B7119500BDCA36 /* SLBookBaseCell.h */,
+				421D9E1419B7119500BDCA36 /* SLBookBaseCell.m */,
+				421D9E1C19B713CA00BDCA36 /* SLBookCoverCell.h */,
+				421D9E1D19B713CA00BDCA36 /* SLBookCoverCell.m */,
+				421D9E2219B713F700BDCA36 /* SLBookBriefCell.h */,
+				421D9E2319B713F700BDCA36 /* SLBookBriefCell.m */,
+				421D9E2519B7140F00BDCA36 /* SLBookDistributionCell.h */,
+				421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */,
+				421D9E2819B7156200BDCA36 /* SLBookCoverCell.xib */,
+				421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -218,6 +247,8 @@
 		427E368D19B44C40006EB106 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				421D9E1619B7127500BDCA36 /* SLBookBaseModel.h */,
+				421D9E1719B7127500BDCA36 /* SLBookBaseModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -303,6 +334,8 @@
 			files = (
 				4203CED319B442C20015180D /* Main_iPad.storyboard in Resources */,
 				4203CED819B442C20015180D /* Images.xcassets in Resources */,
+				421D9E2919B7156200BDCA36 /* SLBookCoverCell.xib in Resources */,
+				421D9E2B19B7263000BDCA36 /* SLBookDistributionCell.xib in Resources */,
 				4203CED019B442C20015180D /* Main_iPhone.storyboard in Resources */,
 				4203CEC719B442C20015180D /* InfoPlist.strings in Resources */,
 			);
@@ -356,15 +389,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */,
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
 				42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */,
 				42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */,
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
+				421D9E2419B713F700BDCA36 /* SLBookBriefCell.m in Sources */,
 				4203CEC919B442C20015180D /* main.m in Sources */,
 				421D9E1219B6B97D00BDCA36 /* SLBookDetailViewController.m in Sources */,
 				427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */,
 				42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */,
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,
+				421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */,
+				421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */,
+				421D9E1819B7127500BDCA36 /* SLBookBaseModel.m in Sources */,
 				42A613E119B60E1800D94977 /* SLBookView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

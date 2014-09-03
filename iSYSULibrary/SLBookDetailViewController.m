@@ -7,6 +7,7 @@
 //
 
 #import "SLBookDetailViewController.h"
+#import "SLBookBaseCell.h"
 #import "Constants.h"
 
 #define kHeadViewHeight 100
@@ -39,7 +40,9 @@
 - (void)configureTableView
 {
     CGRect frame = [UIScreen mainScreen].bounds;
-    self.tableView = [[UITableView alloc] initWithFrame:frame];
+    frame.size.height -= 64;
+    frame.origin.y += 64;
+    self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -67,20 +70,75 @@
 
 #pragma mark UITableViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.bookInfo.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 20;
+    return [(NSArray *)self.bookInfo[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CellIdentifier"];
+    NSString *cellIdentifier = [self identifierAtIndex:indexPath.section];
+    SLBookBaseCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellIdentifier"];
+        if (indexPath.section == 0) {
+            cell = [SLBookBaseCell TableCellWithInfoTitle:BookCoverInfo];
+        }
+        else if (indexPath.section == 1) {
+            cell = [SLBookBaseCell TableCellWithInfoTitle:BookBriefInfo];
+        }
+        else if (indexPath.section == 2) {
+            cell = [SLBookBaseCell TableCellWithInfoTitle:BookDistributionInfo];
+        }
+        cell.layer.shadowOpacity = 0.15;
+        cell.layer.shadowRadius = 1;
+        cell.layer.shadowOffset = CGSizeMake(1, 1*tan(M_PI*60/180));
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.textLabel.text = @"Cell";
-    
+    [cell configureWithDictionary:[[self.bookInfo objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
     return cell;
+}
+
+- (NSString *)identifierAtIndex: (NSInteger)index {
+    return @[@"BookCover", @"BookBrief", @"BookDistribution"][index];
+}
+
+- (NSString *)headerNameAtIndex: (NSInteger)index {
+    return @[@"图书封面", @"摘要", @"馆藏分布情况"][index];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if ( section == 0 ) {
+        return nil;
+    }
+    UIView *headerView = [[UIView alloc] init];
+    
+    UILabel *headerLabel = [[UILabel alloc] init];
+    headerLabel.frame = CGRectMake(10, -5, 0, 0);
+    headerLabel.font = [UIFont systemFontOfSize:15];
+    headerLabel.text = [self headerNameAtIndex:section];
+    [headerLabel sizeToFit];
+    
+    [headerView addSubview:headerLabel];
+    return headerView;
+}
+
+#pragma mark UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ( section == 0 ) {
+        return 0;
+    } else {
+        return 20;
+    }
 }
 
 #pragma mark UIScrollViewDelegate
