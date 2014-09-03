@@ -24,7 +24,6 @@
 		4203CEEB19B442C20015180D /* iSYSULibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203CEEA19B442C20015180D /* iSYSULibraryTests.m */; };
 		421D9E1219B6B97D00BDCA36 /* SLBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */; };
 		421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1419B7119500BDCA36 /* SLBookBaseCell.m */; };
-		421D9E1819B7127500BDCA36 /* SLBookBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1719B7127500BDCA36 /* SLBookBaseModel.m */; };
 		421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1D19B713CA00BDCA36 /* SLBookCoverCell.m */; };
 		421D9E2419B713F700BDCA36 /* SLBookBriefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E2319B713F700BDCA36 /* SLBookBriefCell.m */; };
 		421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */; };
@@ -72,8 +71,6 @@
 		421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookDetailViewController.m; sourceTree = "<group>"; };
 		421D9E1319B7119500BDCA36 /* SLBookBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookBaseCell.h; path = Cell/SLBookBaseCell.h; sourceTree = "<group>"; };
 		421D9E1419B7119500BDCA36 /* SLBookBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookBaseCell.m; path = Cell/SLBookBaseCell.m; sourceTree = "<group>"; };
-		421D9E1619B7127500BDCA36 /* SLBookBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookBaseModel.h; path = Model/SLBookBaseModel.h; sourceTree = "<group>"; };
-		421D9E1719B7127500BDCA36 /* SLBookBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookBaseModel.m; path = Model/SLBookBaseModel.m; sourceTree = "<group>"; };
 		421D9E1C19B713CA00BDCA36 /* SLBookCoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookCoverCell.h; path = Cell/SLBookCoverCell.h; sourceTree = "<group>"; };
 		421D9E1D19B713CA00BDCA36 /* SLBookCoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookCoverCell.m; path = Cell/SLBookCoverCell.m; sourceTree = "<group>"; };
 		421D9E2219B713F700BDCA36 /* SLBookBriefCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookBriefCell.h; path = Cell/SLBookBriefCell.h; sourceTree = "<group>"; };
@@ -247,8 +244,6 @@
 		427E368D19B44C40006EB106 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				421D9E1619B7127500BDCA36 /* SLBookBaseModel.h */,
-				421D9E1719B7127500BDCA36 /* SLBookBaseModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -402,7 +397,6 @@
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,
 				421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */,
 				421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */,
-				421D9E1819B7127500BDCA36 /* SLBookBaseModel.m in Sources */,
 				42A613E119B60E1800D94977 /* SLBookView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
