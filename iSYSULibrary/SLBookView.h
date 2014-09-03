@@ -11,7 +11,7 @@
 @interface SLBookView : UIView
 
 @property (nonatomic) UIView *cover;
-@property (nonatomic) UIView *content;
+@property (nonatomic) UIViewController *content;
 
 - (void)setupBookCoverImage:(UIImage *)image;
 

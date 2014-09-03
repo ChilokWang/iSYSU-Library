@@ -22,6 +22,7 @@
 		4203CEE119B442C20015180D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4203CEC019B442C20015180D /* UIKit.framework */; };
 		4203CEE919B442C20015180D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4203CEE719B442C20015180D /* InfoPlist.strings */; };
 		4203CEEB19B442C20015180D /* iSYSULibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203CEEA19B442C20015180D /* iSYSULibraryTests.m */; };
+		421D9E1219B6B97D00BDCA36 /* SLBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */; };
 		427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E368F19B44C51006EB106 /* SLLoginViewController.m */; };
 		42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138519B5ACD300D94977 /* SLMenuViewController.m */; };
 		42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138819B5AE4100D94977 /* SLMainViewController.m */; };
@@ -60,6 +61,8 @@
 		4203CEE619B442C20015180D /* iSYSULibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSYSULibraryTests-Info.plist"; sourceTree = "<group>"; };
 		4203CEE819B442C20015180D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4203CEEA19B442C20015180D /* iSYSULibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSYSULibraryTests.m; sourceTree = "<group>"; };
+		421D9E1019B6B97D00BDCA36 /* SLBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookDetailViewController.h; sourceTree = "<group>"; };
+		421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookDetailViewController.m; sourceTree = "<group>"; };
 		427E368E19B44C51006EB106 /* SLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoginViewController.h; sourceTree = "<group>"; };
 		427E368F19B44C51006EB106 /* SLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoginViewController.m; sourceTree = "<group>"; };
 		427E369419B45457006EB106 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				42A6138E19B5C69500D94977 /* SLSetupViewController.m */,
 				42A613DC19B60DF200D94977 /* SLCollectionViewController.h */,
 				42A613DD19B60DF200D94977 /* SLCollectionViewController.m */,
+				421D9E1019B6B97D00BDCA36 /* SLBookDetailViewController.h */,
+				421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */,
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
 				4203CEC919B442C20015180D /* main.m in Sources */,
+				421D9E1219B6B97D00BDCA36 /* SLBookDetailViewController.m in Sources */,
 				427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */,
 				42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */,
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,

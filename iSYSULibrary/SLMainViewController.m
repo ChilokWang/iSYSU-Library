@@ -8,6 +8,7 @@
 
 #import "SLMainViewController.h"
 #import "XDKAirMenuController.h"
+#import "SLBookDetailViewController.h"
 #import "SLBookView.h"
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
@@ -30,7 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.collectionView.backgroundColor = kApplicationGrayColor;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeBookDetailVC) name:kNotificationCloseBookDetailVC object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modifyNavBarAlpha:) name:kNotificationModifyNavBarAlpha object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,10 +82,26 @@
      _bookView = [[SLBookView alloc] initWithFrame:frame];
     [_bookView setupBookCoverImage:image];
     [self.view addSubview:_bookView];
-    UIViewController *detailVC = [[UIViewController alloc] init];
+    SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
     detailVC.modalTransitionStyle = UIModalTransitionStyleOpenBooks;
-    [self presentViewController:detailVC animated:YES completion:nil];
+    [self presentViewController:detailVC animated:YES completion:^{
+        self.title = @"图书详情";
+    }];
 }
 
+- (void)closeBookDetailVC
+{
+    [self dismissViewControllerAnimated:true completion:^{
+        self.title = @"首页";
+        [_bookView removeFromSuperview];
+        _bookView = nil;
+    }];
+}
 
+- (void)modifyNavBarAlpha:(NSNotification *)aNotification
+{
+    NSDictionary *notiObj = [aNotification object];
+    float alpha = [notiObj[@"alpha"] floatValue];
+    self.navigationController.navigationBar.alpha = alpha;
+}
 @end
