@@ -46,6 +46,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.tableHeaderView.hidden = true;
     [self.view addSubview:self.tableView];
 }
 
@@ -59,7 +60,7 @@
     [self.orderButton setTitle:@"预约" forState:UIControlStateNormal];
     [self.orderButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.orderButton setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-//    [self.orderButton addTarget:self action:@selector(pressOrderButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.orderButton addTarget:self action:@selector(orderButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.orderButton];
 }
 
@@ -70,7 +71,8 @@
 
 #pragma mark UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return self.bookInfo.count;
 }
 
@@ -102,20 +104,13 @@
     return cell;
 }
 
-- (NSString *)identifierAtIndex: (NSInteger)index {
-    return @[@"BookCover", @"BookBrief", @"BookDistribution"][index];
-}
-
-- (NSString *)headerNameAtIndex: (NSInteger)index {
-    return @[@"图书封面", @"摘要", @"馆藏分布情况"][index];
-}
+#pragma mark UITableViewDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if ( section == 0 ) {
+    if (section == 0) {
         return nil;
     }
     UIView *headerView = [[UIView alloc] init];
-    
     UILabel *headerLabel = [[UILabel alloc] init];
     headerLabel.frame = CGRectMake(10, -5, 0, 0);
     headerLabel.font = [UIFont systemFontOfSize:15];
@@ -126,19 +121,25 @@
     return headerView;
 }
 
-#pragma mark UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return cell.frame.size.height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if ( section == 0 ) {
+    if (section == 0) {
         return 0;
     } else {
         return 20;
     }
+}
+
+- (NSString *)identifierAtIndex: (NSInteger)index {
+    return @[@"BookCover", @"BookBrief", @"BookDistribution"][index];
+}
+
+- (NSString *)headerNameAtIndex: (NSInteger)index {
+    return @[@"图书封面", @"摘要", @"馆藏分布情况"][index];
 }
 
 #pragma mark UIScrollViewDelegate
@@ -154,6 +155,13 @@
         alpha = scrollView.contentOffset.y / kHeadViewHeight;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationModifyNavBarAlpha object:@{@"alpha": [NSNumber numberWithFloat:alpha]}];
+}
+
+#pragma mark ToDo
+
+- (void)orderButtonPressed
+{
+    NSLog(@"OrderButtonPressed");
 }
 
 @end
