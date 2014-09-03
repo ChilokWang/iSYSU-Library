@@ -788,7 +788,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Wr5-13-M2H">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="exL-9y-mpP" kind="push" id="5fS-ch-Sig"/>
+                                <segue destination="exL-9y-mpP" kind="push" identifier="SearchBook" id="5fS-ch-Sig"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

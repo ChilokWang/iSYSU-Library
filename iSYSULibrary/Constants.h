@@ -19,6 +19,6 @@
 
 #pragma mark - Notification
 
-#define kNotificationCloseBookDetailVC @"shouldCloseBookDetailVC"
 #define kNotificationModifyNavBarAlpha @"shouldModifyNavBarAlpha"
+
 #endif

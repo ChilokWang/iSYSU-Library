@@ -13,6 +13,7 @@
 
 @interface SLBookDetailViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UIButton *orderButton;
 @end
 
@@ -38,8 +39,6 @@
 - (void)configureTableView
 {
     CGRect frame = [UIScreen mainScreen].bounds;
-//    frame.size.height -= 64;
-//    frame.origin.y += 64;
     self.tableView = [[UITableView alloc] initWithFrame:frame];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -57,7 +56,7 @@
     [self.orderButton setTitle:@"预约" forState:UIControlStateNormal];
     [self.orderButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.orderButton setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-    [self.orderButton addTarget:self action:@selector(pressOrderButton:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.orderButton addTarget:self action:@selector(pressOrderButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.orderButton];
 }
 
@@ -99,8 +98,4 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationModifyNavBarAlpha object:@{@"alpha": [NSNumber numberWithFloat:alpha]}];
 }
 
-- (void)pressOrderButton:(id)sender
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCloseBookDetailVC object:nil];
-}
 @end

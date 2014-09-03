@@ -14,7 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface SLMainViewController ()
-
+@property (nonatomic, strong) UIBarButtonItem *backButtonItem;
 @end
 
 @implementation SLMainViewController
@@ -31,15 +31,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self configureNavigationItem];
     self.collectionView.backgroundColor = kApplicationGrayColor;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeBookDetailVC) name:kNotificationCloseBookDetailVC object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modifyNavBarAlpha:) name:kNotificationModifyNavBarAlpha object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)configureNavigationItem
+{
+    if (self.backButtonItem == nil) {
+        self.backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"return"] style:UIBarButtonItemStyleDone target:self action:@selector(closeBookDetailVC)];
+        self.backButtonItem.tintColor = [UIColor whiteColor];
+    }
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStyleDone target:self action:@selector(menuButtonPressed:)];
+    leftButtonItem.tintColor = [UIColor whiteColor];
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchButtonPressed:)];
+    rightButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
 }
 
 - (IBAction)menuButtonPressed:(id)sender
@@ -50,6 +63,11 @@
         [menu closeMenuAnimated];
     else
         [menu openMenuAnimated];
+}
+
+- (void)searchButtonPressed:(id)sender
+{
+    [self performSegueWithIdentifier:@"SearchBook" sender:self];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -84,8 +102,11 @@
     [self.view addSubview:_bookView];
     SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
     detailVC.modalTransitionStyle = UIModalTransitionStyleOpenBooks;
+    self.navigationItem.leftBarButtonItem = self.backButtonItem;;
+    self.navigationItem.rightBarButtonItem = nil;
     [self presentViewController:detailVC animated:YES completion:^{
         self.title = @"图书详情";
+        
     }];
 }
 
@@ -95,6 +116,7 @@
         self.title = @"首页";
         [_bookView removeFromSuperview];
         _bookView = nil;
+        [self configureNavigationItem];
     }];
 }
 
