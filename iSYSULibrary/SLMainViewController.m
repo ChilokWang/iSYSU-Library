@@ -32,9 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureCollectionView];
     [self configureNavigationItem];
-    self.collectionView.backgroundColor = kApplicationGrayColor;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modifyNavBarAlpha:) name:kNotificationModifyNavBarAlpha object:nil];
     self.isOpen = false;
 }
 
@@ -43,10 +42,24 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark Configure Appearence
+
+- (void)configureCollectionView
+{
+    self.collectionView.backgroundColor = kApplicationGrayColor;
+    self.collectionView.alwaysBounceVertical = YES;
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor grayColor];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:refreshControl];
+    self.collectionView.alwaysBounceVertical = YES;
+}
+
 - (void)configureNavigationItem
 {
     if (self.backButtonItem == nil) {
-        self.backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"return"] style:UIBarButtonItemStyleDone target:self action:@selector(closeBookDetailVC)];
+        self.backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"return"] style:UIBarButtonItemStyleDone target:self action:@selector(closeButtonPressed:)];
         self.backButtonItem.tintColor = [UIColor whiteColor];
     }
     UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStyleDone target:self action:@selector(menuButtonPressed:)];
@@ -56,6 +69,8 @@
     self.navigationItem.leftBarButtonItem = leftButtonItem;
     self.navigationItem.rightBarButtonItem = rightButtonItem;
 }
+
+#pragma mark Button Method
 
 - (IBAction)menuButtonPressed:(id)sender
 {
@@ -70,6 +85,30 @@
 - (void)searchButtonPressed:(id)sender
 {
     [self performSegueWithIdentifier:@"SearchBook" sender:self];
+}
+
+- (void)closeButtonPressed:(id)sender
+{
+    if (self.isOpen) {
+        [self dismissViewControllerAnimated:true completion:^{
+            self.title = @"首页";
+            [_bookView removeFromSuperview];
+            _bookView = nil;
+            [self configureNavigationItem];
+            self.isOpen = false;
+        }];
+    }
+    
+}
+
+- (void)refresh
+{
+    
+}
+
+- (void)loadMore
+{
+    
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -143,24 +182,4 @@
     
 }
 
-- (void)closeBookDetailVC
-{
-    if (self.isOpen) {
-        [self dismissViewControllerAnimated:true completion:^{
-            self.title = @"首页";
-            [_bookView removeFromSuperview];
-            _bookView = nil;
-            [self configureNavigationItem];
-            self.isOpen = false;
-        }];
-    }
-    
-}
-
-- (void)modifyNavBarAlpha:(NSNotification *)aNotification
-{
-//    NSDictionary *notiObj = [aNotification object];
-//    float alpha = [notiObj[@"alpha"] floatValue];
-//    self.navigationController.navigationBar.alpha = alpha;
-}
 @end

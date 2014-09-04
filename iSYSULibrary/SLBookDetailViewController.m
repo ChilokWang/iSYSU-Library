@@ -10,9 +10,7 @@
 #import "SLBookBaseCell.h"
 #import "Constants.h"
 
-#define kHeadViewHeight 100
-
-@interface SLBookDetailViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface SLBookDetailViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UIButton *orderButton;
@@ -140,21 +138,6 @@
 
 - (NSString *)headerNameAtIndex: (NSInteger)index {
     return @[@"图书封面", @"摘要", @"馆藏分布情况"][index];
-}
-
-#pragma mark UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGFloat alpha = 0;
-    
-    if (scrollView.contentOffset.y >= kHeadViewHeight) {
-        alpha = 1;
-    }
-    else if (scrollView.contentOffset.y > 0) {
-        alpha = scrollView.contentOffset.y / kHeadViewHeight;
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationModifyNavBarAlpha object:@{@"alpha": [NSNumber numberWithFloat:alpha]}];
 }
 
 #pragma mark ToDo

@@ -17,8 +17,4 @@
 #define kUserName @"username"
 #define kPassword @"password"
 
-#pragma mark - Notification
-
-#define kNotificationModifyNavBarAlpha @"shouldModifyNavBarAlpha"
-
 #endif
