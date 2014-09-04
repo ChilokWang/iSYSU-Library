@@ -1,5 +1,5 @@
 //
-//  SLBookTableViewCell.h
+//  SLBorrowController.h
 //  iSYSULibrary
 //
 //  Created by kiros on 14-9-3.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLBookTableViewCell : UITableViewCell
+@interface SLBorrowController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *borrowList;
 
 @end

@@ -1,18 +1,19 @@
 //
-//  SLAppointViewController.m
+//  SLRecommendController.m
 //  iSYSULibrary
 //
 //  Created by kiros on 14-9-3.
 //  Copyright (c) 2014年 Alaysh. All rights reserved.
 //
 
-#import "SLAppointViewController.h"
+#import "SLRecommendController.h"
+#import "XDKAirMenuController.h"
 
-@interface SLAppointViewController ()
+@interface SLRecommendController ()
 
 @end
 
-@implementation SLAppointViewController
+@implementation SLRecommendController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Navigation action
+- (IBAction)menuButtonPressed:(id)sender
+{
+    XDKAirMenuController *menu = [XDKAirMenuController sharedMenu];
+    
+    if(menu.isMenuOpened)
+        [menu closeMenuAnimated];
+    else
+        [menu openMenuAnimated];
 }
 
 /*

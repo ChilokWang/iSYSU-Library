@@ -1,5 +1,5 @@
 //
-//  SLAppointViewController.h
+//  SLRecommendController.h
 //  iSYSULibrary
 //
 //  Created by kiros on 14-9-3.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLAppointViewController : UIViewController
+@interface SLRecommendController : UIViewController
 
 @end
