@@ -311,6 +311,44 @@
             </objects>
             <point key="canvasLocation" x="856" y="163"/>
         </scene>
+        <!--Borrow History View Controller - 借阅历史-->
+        <scene sceneID="MI4-yq-A6e">
+            <objects>
+                <tableViewController id="TnD-3f-ERi" customClass="SLBorrowHistoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LcO-eL-t1k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xg5-x7-8gz">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xg5-x7-8gz" id="vRq-cC-2BC">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TnD-3f-ERi" id="T9v-0T-a8w"/>
+                            <outlet property="delegate" destination="TnD-3f-ERi" id="Kgx-h5-qWp"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="借阅历史" id="EDZ-Yn-qcV">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="zpy-Rw-J5l">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="TnD-3f-ERi" id="qWk-uu-y4r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PvY-rl-6q0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="2303"/>
+        </scene>
         <!--Setup View Controller - 设置-->
         <scene sceneID="1Cy-cy-0dC">
             <objects>
@@ -764,35 +802,12 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="iB7-6m-Fgq" kind="relationship" relationship="rootViewController" id="nOZ-kG-59K"/>
+                        <segue destination="TnD-3f-ERi" kind="relationship" relationship="rootViewController" id="9f5-CF-Tmb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0L-f1-gXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1189" y="2303"/>
-        </scene>
-        <!--View Controller - 借阅历史-->
-        <scene sceneID="4cg-fU-ENl">
-            <objects>
-                <viewController id="iB7-6m-Fgq" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hx9-MS-G6x"/>
-                        <viewControllerLayoutGuide type="bottom" id="Thu-1f-djM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Asz-Fv-NSw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="借阅历史" id="TDG-Z1-HtA">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="BY5-c7-YW2">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Azu-ah-ubE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1584" y="2303"/>
         </scene>
         <!--Main View Controller - 首页-->
         <scene sceneID="gPL-Fo-bES">
