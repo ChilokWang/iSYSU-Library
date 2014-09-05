@@ -7,6 +7,7 @@
 //
 
 #import "SLSearchViewController.h"
+#import "Constants.h"
 
 @interface SLSearchViewController ()
 
@@ -27,6 +28,9 @@
 {
     [super viewDidLoad];
     [self configureAppearence];
+    [self configureTextField];
+    [self configureSegmentedControl];
+    [self configureSearchButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,15 +43,43 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"return"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(popViewControllerAnimated:)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)configureTextField
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    self.textField.layer.borderColor = kApplicationGrayColor.CGColor;
 }
-*/
+
+- (void)configureSegmentedControl
+{
+    
+}
+
+- (void)configureSearchButton
+{
+    CGRect frame = self.searchButton.frame;
+    self.searchButton.layer.cornerRadius = frame.size.width/2.0;
+    self.searchButton.backgroundColor = kApplicationGreenColor;
+    self.searchButton.tintColor = [UIColor whiteColor];
+}
+
+- (IBAction)searchButtonPressed:(id)sender
+{
+    NSLog(@"SearchButton Pressed");
+}
+
+- (IBAction)segmentedControlPressed:(id)sender {
+    NSLog(@"SegmentedControl Pressed");
+}
+
+- (IBAction)backgroundPressed:(id)sender {
+    [self.textField resignFirstResponder];
+}
+
+#pragma mark - TextFieldDelegate
+
+- (IBAction)textFieldDidEndOnExit:(id)sender {
+    [self.textField resignFirstResponder];
+    [self searchButtonPressed:nil];
+}
 
 @end

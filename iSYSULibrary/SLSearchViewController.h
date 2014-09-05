@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLSearchViewController : UIViewController
+@interface SLSearchViewController : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
 @end
