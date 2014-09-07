@@ -37,6 +37,7 @@
 		42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613DD19B60DF200D94977 /* SLCollectionViewController.m */; };
 		42A613E119B60E1800D94977 /* SLBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613E019B60E1800D94977 /* SLBookView.m */; };
 		42D4F59619B9E87900A150BB /* SLBorrowHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4F59519B9E87900A150BB /* SLBorrowHistoryViewController.m */; };
+		42EA889519BCAFB600C66EB6 /* SLBorHistoryBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA889419BCAFB600C66EB6 /* SLBorHistoryBook.m */; };
 		42F47C4419BB4F2C000010E1 /* SLBookBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F47C4319BB4F2C000010E1 /* SLBookBaseModel.m */; };
 		691B06D319B7F49F00CE92DE /* SLBookInfoTableVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 691B06D219B7F49F00CE92DE /* SLBookInfoTableVIew.m */; };
 		691B06D719B7F60000CE92DE /* SLBookInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 691B06D519B7F60000CE92DE /* SLBookInfoCell.m */; };
@@ -107,6 +108,8 @@
 		42A613E019B60E1800D94977 /* SLBookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookView.m; sourceTree = "<group>"; };
 		42D4F59419B9E87900A150BB /* SLBorrowHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowHistoryViewController.h; sourceTree = "<group>"; };
 		42D4F59519B9E87900A150BB /* SLBorrowHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowHistoryViewController.m; sourceTree = "<group>"; };
+		42EA889319BCAFB600C66EB6 /* SLBorHistoryBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorHistoryBook.h; sourceTree = "<group>"; };
+		42EA889419BCAFB600C66EB6 /* SLBorHistoryBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorHistoryBook.m; sourceTree = "<group>"; };
 		42F47C4219BB4F2C000010E1 /* SLBookBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookBaseModel.h; sourceTree = "<group>"; };
 		42F47C4319BB4F2C000010E1 /* SLBookBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookBaseModel.m; sourceTree = "<group>"; };
 		691B06D119B7F49F00CE92DE /* SLBookInfoTableVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookInfoTableVIew.h; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 			children = (
 				42F47C4219BB4F2C000010E1 /* SLBookBaseModel.h */,
 				42F47C4319BB4F2C000010E1 /* SLBookBaseModel.m */,
+				42EA889319BCAFB600C66EB6 /* SLBorHistoryBook.h */,
+				42EA889419BCAFB600C66EB6 /* SLBorHistoryBook.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				42D4F59619B9E87900A150BB /* SLBorrowHistoryViewController.m in Sources */,
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,
 				695BD28319B769200083CBC1 /* SLBorrowController.m in Sources */,
+				42EA889519BCAFB600C66EB6 /* SLBorHistoryBook.m in Sources */,
 				695BD27419B75CA90083CBC1 /* SLAppointBookInfoCell.m in Sources */,
 				421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */,
 				421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */,
