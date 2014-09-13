@@ -45,6 +45,35 @@
     else
         [menu openMenuAnimated];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            //提醒设置
+            break;
+        case 1:
+            //意见反馈
+            break;
+        case 2:
+            //关于我们
+            break;
+        case 3:
+        {
+            //清除缓存
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+            NSString *docDir=[paths objectAtIndex:0];
+            NSString *path = [docDir stringByAppendingPathComponent:@"Cache"];       NSFileManager *fm = [NSFileManager defaultManager];
+            if([fm fileExistsAtPath:path])
+            {
+                [fm removeItemAtPath:path error:nil];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
 /*
 #pragma mark - Navigation
 
