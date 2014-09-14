@@ -57,6 +57,10 @@
             break;
         case 2:
             //关于我们
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"关于我们" message:@"成员: 黄祺乐、黎海灝、黎坤旻、陈宏彬" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
             break;
         case 3:
         {
@@ -68,6 +72,8 @@
             {
                 [fm removeItemAtPath:path error:nil];
             }
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"清除缓存成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
         }
             break;
         default:
