@@ -1,19 +1,24 @@
 //
-//  SLBorrowController.m
+//  SLBorrowListController.m
 //  iSYSULibrary
 //
-//  Created by kiros on 14-9-3.
+//  Created by kiros on 14-9-11.
 //  Copyright (c) 2014年 Alaysh. All rights reserved.
 //
 
-#import "SLBorrowController.h"
+#import "SLBorrowListController.h"
 #import "XDKAirMenuController.h"
+#import "SLBorrowListTableView.h"
 
-@interface SLBorrowController ()
+@interface SLBorrowListController ()
 
 @end
 
-@implementation SLBorrowController
+@implementation SLBorrowListController
+{
+    NSInteger listCount;
+}
+@synthesize borrowTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    CGRect borrowTableFrame = CGRectMake(0, 64, 320, 500);
+    
+    borrowTable = [[SLBorrowListTableView alloc] initWithFrame:borrowTableFrame];
+    [self.view addSubview:borrowTable];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,15 +57,6 @@
 }
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
