@@ -111,7 +111,7 @@
                                     <constraint firstAttribute="height" constant="1" id="g9n-x1-oRj"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDh-yW-ovY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDh-yW-ovY">
                                 <rect key="frame" x="15" y="200" width="18" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.25490196079999999" green="0.81176470590000005" blue="0.14117647059999999" alpha="1" colorSpace="deviceRGB"/>
@@ -584,10 +584,10 @@
             </objects>
             <point key="canvasLocation" x="1189" y="283"/>
         </scene>
-        <!--Borrow Controller - 我的借阅-->
+        <!--Borrow List Controller - 我的借阅-->
         <scene sceneID="dRY-pH-qpq">
             <objects>
-                <viewController id="rfV-XF-tB5" customClass="SLBorrowController" sceneMemberID="viewController">
+                <viewController id="rfV-XF-tB5" customClass="SLBorrowListController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bNN-6g-LBr"/>
                         <viewControllerLayoutGuide type="bottom" id="osG-QO-6qX"/>
@@ -601,7 +601,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Gsr-Di-anc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="menuButtonPressed:" destination="rfV-XF-tB5" id="DgP-kE-hoJ"/>
+                                <action selector="menuButtonPressed:" destination="rfV-XF-tB5" id="jEo-Ix-SIB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
