@@ -29,6 +29,9 @@
 		421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */; };
 		421D9E2919B7156200BDCA36 /* SLBookCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D9E2819B7156200BDCA36 /* SLBookCoverCell.xib */; };
 		421D9E2B19B7263000BDCA36 /* SLBookDistributionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */; };
+		426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BA19C9B097005F0DE7 /* SLBorrowHistoryViewController.m */; };
+		426223C019C9B0AB005F0DE7 /* SLBookBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BD19C9B0AB005F0DE7 /* SLBookBaseModel.m */; };
+		426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */; };
 		427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E368F19B44C51006EB106 /* SLLoginViewController.m */; };
 		42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138519B5ACD300D94977 /* SLMenuViewController.m */; };
 		42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138819B5AE4100D94977 /* SLMainViewController.m */; };
@@ -86,6 +89,12 @@
 		421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookDistributionCell.m; path = Cell/SLBookDistributionCell.m; sourceTree = "<group>"; };
 		421D9E2819B7156200BDCA36 /* SLBookCoverCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLBookCoverCell.xib; path = Cell/SLBookCoverCell.xib; sourceTree = "<group>"; };
 		421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLBookDistributionCell.xib; path = Cell/SLBookDistributionCell.xib; sourceTree = "<group>"; };
+		426223B919C9B097005F0DE7 /* SLBorrowHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowHistoryViewController.h; sourceTree = "<group>"; };
+		426223BA19C9B097005F0DE7 /* SLBorrowHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowHistoryViewController.m; sourceTree = "<group>"; };
+		426223BC19C9B0AB005F0DE7 /* SLBookBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookBaseModel.h; sourceTree = "<group>"; };
+		426223BD19C9B0AB005F0DE7 /* SLBookBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookBaseModel.m; sourceTree = "<group>"; };
+		426223BE19C9B0AB005F0DE7 /* SLBorHistoryBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorHistoryBook.h; sourceTree = "<group>"; };
+		426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorHistoryBook.m; sourceTree = "<group>"; };
 		427E368E19B44C51006EB106 /* SLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoginViewController.h; sourceTree = "<group>"; };
 		427E368F19B44C51006EB106 /* SLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoginViewController.m; sourceTree = "<group>"; };
 		427E369419B45457006EB106 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -254,6 +263,10 @@
 		427E368D19B44C40006EB106 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				426223BC19C9B0AB005F0DE7 /* SLBookBaseModel.h */,
+				426223BD19C9B0AB005F0DE7 /* SLBookBaseModel.m */,
+				426223BE19C9B0AB005F0DE7 /* SLBorHistoryBook.h */,
+				426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -365,6 +378,8 @@
 		691B06CC19B7F10D00CE92DE /* History */ = {
 			isa = PBXGroup;
 			children = (
+				426223B919C9B097005F0DE7 /* SLBorrowHistoryViewController.h */,
+				426223BA19C9B097005F0DE7 /* SLBorrowHistoryViewController.m */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -539,15 +554,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426223C019C9B0AB005F0DE7 /* SLBookBaseModel.m in Sources */,
 				69B00C0D19C0AE4A00C5611D /* SLBorrowListController.m in Sources */,
 				421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */,
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
+				426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */,
 				693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */,
 				693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */,
 				42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */,
 				699CA89C19C82211001E1651 /* SLBorrowListTableView.m in Sources */,
 				42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */,
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
+				426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */,
 				695BD28619B769340083CBC1 /* SLAppointController.m in Sources */,
 				421D9E2419B713F700BDCA36 /* SLBookBriefCell.m in Sources */,
 				4203CEC919B442C20015180D /* main.m in Sources */,
