@@ -51,7 +51,7 @@
 
 - (void)configureSegmentedControl
 {
-    
+    self.segmentedControl.tintColor = kApplicationGreenColor;
 }
 
 - (void)configureSearchButton

@@ -32,6 +32,8 @@
 		426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BA19C9B097005F0DE7 /* SLBorrowHistoryViewController.m */; };
 		426223C019C9B0AB005F0DE7 /* SLBookBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BD19C9B0AB005F0DE7 /* SLBookBaseModel.m */; };
 		426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */; };
+		426223C419C9B9CC005F0DE7 /* SLNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223C319C9B9CC005F0DE7 /* SLNotificationViewController.m */; };
+		426223C719C9B9DB005F0DE7 /* SLAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223C619C9B9DB005F0DE7 /* SLAdviceViewController.m */; };
 		427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E368F19B44C51006EB106 /* SLLoginViewController.m */; };
 		42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138519B5ACD300D94977 /* SLMenuViewController.m */; };
 		42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138819B5AE4100D94977 /* SLMainViewController.m */; };
@@ -95,6 +97,10 @@
 		426223BD19C9B0AB005F0DE7 /* SLBookBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookBaseModel.m; sourceTree = "<group>"; };
 		426223BE19C9B0AB005F0DE7 /* SLBorHistoryBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorHistoryBook.h; sourceTree = "<group>"; };
 		426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorHistoryBook.m; sourceTree = "<group>"; };
+		426223C219C9B9CC005F0DE7 /* SLNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLNotificationViewController.h; sourceTree = "<group>"; };
+		426223C319C9B9CC005F0DE7 /* SLNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLNotificationViewController.m; sourceTree = "<group>"; };
+		426223C519C9B9DB005F0DE7 /* SLAdviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAdviceViewController.h; sourceTree = "<group>"; };
+		426223C619C9B9DB005F0DE7 /* SLAdviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAdviceViewController.m; sourceTree = "<group>"; };
 		427E368E19B44C51006EB106 /* SLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoginViewController.h; sourceTree = "<group>"; };
 		427E368F19B44C51006EB106 /* SLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoginViewController.m; sourceTree = "<group>"; };
 		427E369419B45457006EB106 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -389,6 +395,10 @@
 			children = (
 				42A6138D19B5C69500D94977 /* SLSetupViewController.h */,
 				42A6138E19B5C69500D94977 /* SLSetupViewController.m */,
+				426223C219C9B9CC005F0DE7 /* SLNotificationViewController.h */,
+				426223C319C9B9CC005F0DE7 /* SLNotificationViewController.m */,
+				426223C519C9B9DB005F0DE7 /* SLAdviceViewController.h */,
+				426223C619C9B9DB005F0DE7 /* SLAdviceViewController.m */,
 			);
 			name = SetUp;
 			sourceTree = "<group>";
@@ -559,7 +569,9 @@
 				421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */,
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
 				426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */,
+				426223C719C9B9DB005F0DE7 /* SLAdviceViewController.m in Sources */,
 				693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */,
+				426223C419C9B9CC005F0DE7 /* SLNotificationViewController.m in Sources */,
 				693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */,
 				42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */,
 				699CA89C19C82211001E1651 /* SLBorrowListTableView.m in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Flb-9r-g1O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Flb-9r-g1O">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -354,6 +354,9 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Sgc-dA-bWK" kind="push" id="soK-Ei-YWk"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="a7j-cA-gY7">
                                         <rect key="frame" x="0.0" y="130" width="320" height="44"/>
@@ -377,6 +380,9 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="90E-vB-H3R" kind="push" id="ffB-jW-gIk"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="21S-5r-wVO">
                                         <rect key="frame" x="0.0" y="174" width="320" height="44"/>
@@ -450,6 +456,66 @@
             </objects>
             <point key="canvasLocation" x="1584" y="2970"/>
         </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="HZ7-2y-5pC">
+            <objects>
+                <viewController id="Sgc-dA-bWK" customClass="SLNotificationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VDa-wE-Zg1"/>
+                        <viewControllerLayoutGuide type="bottom" id="7cs-HT-Gfy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Zk-Fc-yQe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XEG-Qz-FAJ">
+                                <rect key="frame" x="0.0" y="137" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yZB-EB-xqW"/>
+                    <connections>
+                        <outlet property="pickerView" destination="XEG-Qz-FAJ" id="Jsj-Cb-tde"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oc1-8b-scZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2123" y="2582"/>
+        </scene>
+        <!--Advice View Controller-->
+        <scene sceneID="kk3-UG-zym">
+            <objects>
+                <viewController id="90E-vB-H3R" customClass="SLAdviceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fbM-qn-akj"/>
+                        <viewControllerLayoutGuide type="bottom" id="BZL-07-wmI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jA0-Ra-aGL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qn7-lq-xbk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="300"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="65x-2N-FsQ"/>
+                    <connections>
+                        <outlet property="textView" destination="Qn7-lq-xbk" id="5lI-Sm-FPd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chc-ij-bWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2123" y="3234"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="gtv-uB-w2v">
             <objects>
@@ -501,13 +567,64 @@
                     <view key="view" contentMode="scaleToFill" id="RwY-78-32G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8X2-dO-RXg">
+                                <rect key="frame" x="28" y="137" width="265" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qIq-vW-FUE">
+                                <rect key="frame" x="88" y="197" width="145" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="中文文献"/>
+                                    <segment title="英文文献"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3a-w1-Fmc">
+                                <rect key="frame" x="120" y="262" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="搜索">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="38A-TI-mhb" kind="push" identifier="showSearchResult" id="IDK-4U-vun"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="搜索" id="MD2-E3-7Z0"/>
+                    <connections>
+                        <outlet property="searchButton" destination="d3a-w1-Fmc" id="Fk9-mF-HAU"/>
+                        <outlet property="segmentedControl" destination="qIq-vW-FUE" id="RY7-nf-Yod"/>
+                        <outlet property="textField" destination="8X2-dO-RXg" id="wmT-IM-0Av"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rev-vq-H9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1976" y="-428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Z3G-k4-yh5">
+            <objects>
+                <viewController id="38A-TI-mhb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I5D-4g-Qcq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tsz-XP-iRP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lgb-xR-MWc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hFj-bt-TdC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gGW-qH-euL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2435" y="-428"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="cLf-Zj-2ld">
@@ -715,35 +832,48 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="iB7-6m-Fgq" kind="relationship" relationship="rootViewController" id="nOZ-kG-59K"/>
+                        <segue destination="cbn-yb-UFe" kind="relationship" relationship="rootViewController" id="NJU-1y-aRq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0L-f1-gXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1189" y="2303"/>
         </scene>
-        <!--View Controller - 借阅历史-->
-        <scene sceneID="4cg-fU-ENl">
+        <!--Borrow History View Controller - 借阅历史-->
+        <scene sceneID="jBS-G6-aMG">
             <objects>
-                <viewController id="iB7-6m-Fgq" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hx9-MS-G6x"/>
-                        <viewControllerLayoutGuide type="bottom" id="Thu-1f-djM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Asz-Fv-NSw">
+                <tableViewController id="cbn-yb-UFe" customClass="SLBorrowHistoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bbv-XM-bzj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="借阅历史" id="TDG-Z1-HtA">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="BY5-c7-YW2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tjw-F5-DiP">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tjw-F5-DiP" id="SHV-SJ-OER">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cbn-yb-UFe" id="Xx9-uc-fYq"/>
+                            <outlet property="delegate" destination="cbn-yb-UFe" id="9Hg-gk-xsN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="借阅历史" id="21D-xr-MEp">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="rPQ-Ma-GVX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="cbn-yb-UFe" id="83R-nh-gYR"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Azu-ah-ubE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ef1-i9-inY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584" y="2303"/>
+            <point key="canvasLocation" x="1570" y="2303"/>
         </scene>
         <!--Main View Controller - 首页-->
         <scene sceneID="gPL-Fo-bES">
