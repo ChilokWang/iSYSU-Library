@@ -41,6 +41,7 @@
 		42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6138E19B5C69500D94977 /* SLSetupViewController.m */; };
 		42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613DD19B60DF200D94977 /* SLCollectionViewController.m */; };
 		42A613E119B60E1800D94977 /* SLBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613E019B60E1800D94977 /* SLBookView.m */; };
+		42A6727919CAB3B900A4129A /* SLRestfulEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6727819CAB3B900A4129A /* SLRestfulEngine.m */; };
 		693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */; };
 		693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8219B8279000BADF72 /* SLAppointCell.m */; };
 		693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8519B827EE00BADF72 /* SLRecommendCell.m */; };
@@ -116,6 +117,8 @@
 		42A613DD19B60DF200D94977 /* SLCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCollectionViewController.m; sourceTree = "<group>"; };
 		42A613DF19B60E1800D94977 /* SLBookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookView.h; sourceTree = "<group>"; };
 		42A613E019B60E1800D94977 /* SLBookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookView.m; sourceTree = "<group>"; };
+		42A6727719CAB3B900A4129A /* SLRestfulEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRestfulEngine.h; sourceTree = "<group>"; };
+		42A6727819CAB3B900A4129A /* SLRestfulEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRestfulEngine.m; sourceTree = "<group>"; };
 		693A0D7E19B8273F00BADF72 /* SLBorrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowCell.h; sourceTree = "<group>"; };
 		693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowCell.m; sourceTree = "<group>"; };
 		693A0D8119B8279000BADF72 /* SLAppointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppointCell.h; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 		4203CEC219B442C20015180D /* iSYSULibrary */ = {
 			isa = PBXGroup;
 			children = (
+				42A6727619CAB39700A4129A /* RestfulEngine */,
 				427E368D19B44C40006EB106 /* Model */,
 				427E368C19B44C3A006EB106 /* View */,
 				427E368B19B44C33006EB106 /* Controller */,
@@ -275,6 +279,15 @@
 				426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		42A6727619CAB39700A4129A /* RestfulEngine */ = {
+			isa = PBXGroup;
+			children = (
+				42A6727719CAB3B900A4129A /* SLRestfulEngine.h */,
+				42A6727819CAB3B900A4129A /* SLRestfulEngine.m */,
+			);
+			name = RestfulEngine;
 			sourceTree = "<group>";
 		};
 		691B06C119B7F05A00CE92DE /* MainPage */ = {
@@ -588,6 +601,7 @@
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,
 				693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */,
 				421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */,
+				42A6727919CAB3B900A4129A /* SLRestfulEngine.m in Sources */,
 				421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */,
 				42A613E119B60E1800D94977 /* SLBookView.m in Sources */,
 			);
