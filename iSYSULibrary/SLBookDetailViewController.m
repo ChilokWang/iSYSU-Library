@@ -149,7 +149,8 @@
 
 - (void)orderButtonPressed
 {
-    NSLog(@"OrderButtonPressed");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"预约成功" message:@"" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 @end
