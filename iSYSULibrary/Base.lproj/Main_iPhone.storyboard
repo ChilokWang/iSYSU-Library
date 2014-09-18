@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Flb-9r-g1O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Flb-9r-g1O">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -848,7 +848,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BorrowCellIdentifier" rowHeight="66" id="tjw-F5-DiP" customClass="SLBorrowCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCellIdentifier" rowHeight="66" id="tjw-F5-DiP" customClass="SLHistoryCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tjw-F5-DiP" id="SHV-SJ-OER">
@@ -929,10 +929,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bookAuthorLabel" destination="d2M-jY-iCB" id="xio-hN-nPB"/>
-                                    <outlet property="bookNameLabel" destination="TBU-Yy-xCq" id="5Ee-KE-Ahs"/>
-                                    <outlet property="borDateLabel" destination="9h2-rk-uPR" id="hlS-Kv-QlF"/>
-                                    <outlet property="borTimeLabel" destination="A2V-qd-8aT" id="VaI-r7-Tjo"/>
+                                    <outlet property="bookAuthorLabel" destination="d2M-jY-iCB" id="T8g-2Q-NRZ"/>
+                                    <outlet property="bookNameLabel" destination="TBU-Yy-xCq" id="dEo-SB-8AB"/>
+                                    <outlet property="borDateLabel" destination="9h2-rk-uPR" id="3Q4-Y8-Bxb"/>
+                                    <outlet property="borTimeLabel" destination="A2V-qd-8aT" id="SAW-LC-ZNX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
