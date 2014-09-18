@@ -7,6 +7,7 @@
 //
 
 #import "SLBorrowHistoryViewController.h"
+#import "SLBookDetailViewController.h"
 #import "XDKAirMenuController.h"
 
 @interface SLBorrowHistoryViewController ()
@@ -79,7 +80,38 @@
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
+    detailVC.bookInfo = @[
+                          @[@{
+                                @"bookCoverImageUrl": [NSString stringWithFormat:@"%d", 1],
+                                @"bookName":  @"Objective-C高级编程 : iOS与OS X多线程和内存管理",
+                                @"bookId":    @"978-7-115-31809-1",
+                                @"bookAuthor":  @"(日) Kazuki Sakamoto, Tomohiko Furumoto著 ; 黎华译",
+                                @"bookPress":  @"人民邮电出版社",
+                                }],
+                          @[@{
+                                @"brief":  @"本书在苹果公司公开的源代码基础上，深入剖析了对应用于内存管理的ARC以及应用于多线程开发的Blocks和GCD。内容包括：自动引用计数、Blocks、Grand Central Dispatch等。"
+                                }],
+                          @[@{
+                                @"bookState":    @"外借本",
+                                @"dueDate":    @"在架上",
+                                @"branch":     @"南校区中文新书库(1楼)",
+                                @"rackPosition":       @"TP312C/1987",
+                                @"requests":     @"0",
+                                },
+                            @{
+                                @"bookState":    @"外借本",
+                                @"dueDate":    @"20141008",
+                                @"branch":     @"东校区普通图书(3楼)",
+                                @"rackPosition":       @"TP312C/1987",
+                                @"requests":     @"1"
+                                }
+                            ]
+                          ];
+    [self.navigationController pushViewController:detailVC animated:true];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

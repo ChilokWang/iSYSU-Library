@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = kApplicationGrayColor;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self configureTableView];
     [self configureOrderButton];
 }
@@ -38,8 +39,10 @@
 - (void)configureTableView
 {
     CGRect frame = [UIScreen mainScreen].bounds;
-    frame.size.height -= 64;
-    frame.origin.y += 64;
+    if (self.bookCoverImage) {
+        frame.size.height -= 64;
+        frame.origin.y += 64;
+    }
     self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -50,16 +53,18 @@
 
 - (void)configureOrderButton
 {
-    CGRect frame = [UIScreen mainScreen].bounds;
-    self.orderButton = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 100 - 10, frame.size.height - 40 - 10, 100, 40)];
-    self.orderButton.layer.cornerRadius = 8.0;
-    self.orderButton.backgroundColor = kApplicationGreenColor;
-    self.orderButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.orderButton setTitle:@"预约" forState:UIControlStateNormal];
-    [self.orderButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.orderButton setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-    [self.orderButton addTarget:self action:@selector(orderButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.orderButton];
+    if (self.bookCoverImage) {
+        CGRect frame = [UIScreen mainScreen].bounds;
+        self.orderButton = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 100 - 10, frame.size.height - 40 - 10, 100, 40)];
+        self.orderButton.layer.cornerRadius = 8.0;
+        self.orderButton.backgroundColor = kApplicationGreenColor;
+        self.orderButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self.orderButton setTitle:@"预约" forState:UIControlStateNormal];
+        [self.orderButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.orderButton setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
+        [self.orderButton addTarget:self action:@selector(orderButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.orderButton];
+    }
 }
 
 - (void)didReceiveMemoryWarning
