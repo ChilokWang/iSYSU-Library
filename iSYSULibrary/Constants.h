@@ -10,7 +10,7 @@
 #define iSYSULibrary_Constants_h
 
 #define kApplicationBlackColor [UIColor colorWithRed:93/255.0 green:93/255.0 blue:93/255.0 alpha:1]
-#define kApplicationGrayColor [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:1]
+#define kApplicationGrayColor [UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1]
 #define kApplicationGreenColor [UIColor colorWithRed:65/255.0 green:207/255.0 blue:36/255.0 alpha:1]
 //  SLLoginViewController
 

@@ -7,6 +7,7 @@
 //
 
 #import "SLAdviceViewController.h"
+#import "Constants.h"
 
 @interface SLAdviceViewController ()
 
@@ -26,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = kApplicationGrayColor;
+    [self configureNavigationBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,4 +36,17 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)configureNavigationBar
+{
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"return"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(popViewControllerAnimated:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ok"] style:UIBarButtonItemStyleDone target:self action:@selector(okButtonClicked)];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+}
+
+- (void)okButtonClicked
+{
+    
+}
 @end
