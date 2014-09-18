@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLNotificationViewController : UIViewController
+@interface SLNotificationViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 
 @end
