@@ -1,17 +1,14 @@
 PODS:
-  - EGOTableViewPullRefresh (0.1.0)
   - LBBlurredImage (0.2.0)
   - SVProgressHUD (1.0)
   - XDKAirMenu (1.1.0)
 
 DEPENDENCIES:
-  - EGOTableViewPullRefresh
   - LBBlurredImage
   - SVProgressHUD
   - XDKAirMenu
 
 SPEC CHECKSUMS:
-  EGOTableViewPullRefresh: 04bb7d115f660c91a036ebade5e6678c7ef26c59
   LBBlurredImage: 30cc42be977bbcece286d26d2d9c08b8be7f05e8
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
   XDKAirMenu: 73e69ca47e6fc1390385723a413a024e63320596
