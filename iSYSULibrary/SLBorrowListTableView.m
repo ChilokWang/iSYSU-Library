@@ -21,16 +21,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
         self.delegate = self;
         
         dataArr = [[NSMutableArray alloc] init];
         
-        CGRect emptyHintFrame = CGRectMake(0, 0, 320, 100);
+        CGRect emptyHintFrame = CGRectMake(0, 0, 320, 70);
         emptyHint = [[UILabel alloc] initWithFrame:emptyHintFrame];
         [emptyHint setBackgroundColor:[UIColor clearColor]];
         [emptyHint setText:[NSString stringWithFormat:@"借阅为空"]];
+        [emptyHint setTextAlignment:NSTextAlignmentCenter];
+        [emptyHint setFont:[UIFont fontWithName:@"Heiti" size:20.0]];
+        [emptyHint setTextColor:[UIColor grayColor]];
         
         [self addSubview:emptyHint];
     }
