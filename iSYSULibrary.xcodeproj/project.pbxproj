@@ -43,6 +43,8 @@
 		42A613E119B60E1800D94977 /* SLBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613E019B60E1800D94977 /* SLBookView.m */; };
 		42A6727919CAB3B900A4129A /* SLRestfulEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6727819CAB3B900A4129A /* SLRestfulEngine.m */; };
 		42A6727C19CAC0AF00A4129A /* SLHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6727B19CAC0AF00A4129A /* SLHistoryCell.m */; };
+		42CCFD9519CB0A4100B1C4B3 /* EGORefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CCFD9219CB0A4100B1C4B3 /* EGORefreshTableFooterView.m */; };
+		42CCFD9619CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CCFD9419CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m */; };
 		693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */; };
 		693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8219B8279000BADF72 /* SLAppointCell.m */; };
 		693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8519B827EE00BADF72 /* SLRecommendCell.m */; };
@@ -122,6 +124,11 @@
 		42A6727819CAB3B900A4129A /* SLRestfulEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRestfulEngine.m; sourceTree = "<group>"; };
 		42A6727A19CAC0AF00A4129A /* SLHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLHistoryCell.h; sourceTree = "<group>"; };
 		42A6727B19CAC0AF00A4129A /* SLHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLHistoryCell.m; sourceTree = "<group>"; };
+		42CCFD9019CB0A4100B1C4B3 /* EGOCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCommon.h; sourceTree = "<group>"; };
+		42CCFD9119CB0A4100B1C4B3 /* EGORefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableFooterView.h; sourceTree = "<group>"; };
+		42CCFD9219CB0A4100B1C4B3 /* EGORefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableFooterView.m; sourceTree = "<group>"; };
+		42CCFD9319CB0A4100B1C4B3 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		42CCFD9419CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		693A0D7E19B8273F00BADF72 /* SLBorrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowCell.h; sourceTree = "<group>"; };
 		693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowCell.m; sourceTree = "<group>"; };
 		693A0D8119B8279000BADF72 /* SLAppointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppointCell.h; sourceTree = "<group>"; };
@@ -200,6 +207,7 @@
 		4203CEC219B442C20015180D /* iSYSULibrary */ = {
 			isa = PBXGroup;
 			children = (
+				42CCFD8F19CB0A4100B1C4B3 /* EGORefreshView */,
 				42A6727619CAB39700A4129A /* RestfulEngine */,
 				427E368D19B44C40006EB106 /* Model */,
 				427E368C19B44C3A006EB106 /* View */,
@@ -291,6 +299,18 @@
 				42A6727819CAB3B900A4129A /* SLRestfulEngine.m */,
 			);
 			name = RestfulEngine;
+			sourceTree = "<group>";
+		};
+		42CCFD8F19CB0A4100B1C4B3 /* EGORefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				42CCFD9019CB0A4100B1C4B3 /* EGOCommon.h */,
+				42CCFD9119CB0A4100B1C4B3 /* EGORefreshTableFooterView.h */,
+				42CCFD9219CB0A4100B1C4B3 /* EGORefreshTableFooterView.m */,
+				42CCFD9319CB0A4100B1C4B3 /* EGORefreshTableHeaderView.h */,
+				42CCFD9419CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m */,
+			);
+			path = EGORefreshView;
 			sourceTree = "<group>";
 		};
 		691B06C119B7F05A00CE92DE /* MainPage */ = {
@@ -588,11 +608,13 @@
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
 				426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */,
 				426223C719C9B9DB005F0DE7 /* SLAdviceViewController.m in Sources */,
+				42CCFD9519CB0A4100B1C4B3 /* EGORefreshTableFooterView.m in Sources */,
 				693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */,
 				426223C419C9B9CC005F0DE7 /* SLNotificationViewController.m in Sources */,
 				693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */,
 				42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */,
 				699CA89C19C82211001E1651 /* SLBorrowListTableView.m in Sources */,
+				42CCFD9619CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m in Sources */,
 				42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */,
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
 				426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */,
