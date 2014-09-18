@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2FC3A8C6-62AC-4E99-A1B1-6EAE4507717E</string>
+	<string>AB169772-E52F-4F39-8B76-7D76FDAAF4E2</string>
 	<key>IDESourceControlProjectName</key>
 	<string>iSYSULibrary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>65D0ED64-F969-4586-8DA7-78267E1E2837</key>
-		<string>https://github.com/ChilokWang/iSYSU-Library.git</string>
+		<key>D43A04B0-4B3B-48B3-9151-6338AD21EBAA</key>
+		<string>https://github.com/AlayshChen/iSYSU-Library.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iSYSULibrary.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>65D0ED64-F969-4586-8DA7-78267E1E2837</key>
+		<key>D43A04B0-4B3B-48B3-9151-6338AD21EBAA</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ChilokWang/iSYSU-Library.git</string>
+	<string>https://github.com/AlayshChen/iSYSU-Library.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>65D0ED64-F969-4586-8DA7-78267E1E2837</string>
+	<string>D43A04B0-4B3B-48B3-9151-6338AD21EBAA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>65D0ED64-F969-4586-8DA7-78267E1E2837</string>
+			<string>D43A04B0-4B3B-48B3-9151-6338AD21EBAA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iSYSU-Library</string>
 		</dict>
