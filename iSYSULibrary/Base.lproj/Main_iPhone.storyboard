@@ -848,7 +848,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BorrowCellIdentifier" rowHeight="66" id="tjw-F5-DiP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BorrowCellIdentifier" rowHeight="66" id="tjw-F5-DiP" customClass="SLBorrowCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tjw-F5-DiP" id="SHV-SJ-OER">
@@ -928,6 +928,12 @@
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookAuthorLabel" destination="d2M-jY-iCB" id="xio-hN-nPB"/>
+                                    <outlet property="bookNameLabel" destination="TBU-Yy-xCq" id="5Ee-KE-Ahs"/>
+                                    <outlet property="borDateLabel" destination="9h2-rk-uPR" id="hlS-Kv-QlF"/>
+                                    <outlet property="borTimeLabel" destination="A2V-qd-8aT" id="VaI-r7-Tjo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
