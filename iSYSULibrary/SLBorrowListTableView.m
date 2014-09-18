@@ -9,8 +9,6 @@
 #import "SLBorrowListTableView.h"
 #import "SLBorrowCell.h"
 
-#define CELL_HIGHT 100
-
 @implementation SLBorrowListTableView
 {
     UILabel *emptyHint;
@@ -23,7 +21,6 @@
     if (self) {
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
-        self.delegate = self;
         
         dataArr = [[NSMutableArray alloc] init];
         
@@ -61,7 +58,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-        return dataArr.count;
+//        return dataArr.count;
+        return 8;
     else
         return 0;
 }
@@ -78,19 +76,11 @@
         cell = [[SLBorrowCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
 
-#pragma mark - UITableView delegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CELL_HIGHT;
-}
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
 
 @end

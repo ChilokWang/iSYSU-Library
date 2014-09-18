@@ -10,7 +10,7 @@
 
 @class SLBorrowListTableView;
 
-@interface SLBorrowListController : UIViewController
+@interface SLBorrowListController : UIViewController <UITableViewDelegate>
 
 @property (strong, nonatomic) SLBorrowListTableView *borrowTable;
 
