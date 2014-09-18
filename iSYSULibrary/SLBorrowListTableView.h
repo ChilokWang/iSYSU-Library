@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLBorrowListTableView : UITableView <UITableViewDataSource, UITableViewDelegate>
+@interface SLBorrowListTableView : UITableView <UITableViewDataSource>
 
 - (void)setDataArr:(NSMutableArray *)dataArr;
 

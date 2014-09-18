@@ -52,6 +52,8 @@
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
         
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
