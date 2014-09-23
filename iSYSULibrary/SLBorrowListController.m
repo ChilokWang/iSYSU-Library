@@ -20,9 +20,14 @@
 
 @implementation SLBorrowListController
 {
-    NSInteger listCount;
+    CGFloat contentOffsetY;
+    CGFloat newContentOffsetY;
+    CGFloat oldContentOffsetY;
+    CGFloat barHeight;
+    CGRect screenFrame;
 }
-@synthesize borrowTable;
+
+@synthesize borrowTable = _borrowTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,11 +44,22 @@
     
     [self.view setBackgroundColor:kApplicationGrayColor];
     
-    CGRect borrowTableFrame = CGRectMake(0, 64, 320, 500);
+    CGRect f = [[UIScreen mainScreen] bounds];
+    screenFrame = f;
+    CGFloat h = self.navigationController.navigationBar.frame.size.height;
+    barHeight = h;
     
-    borrowTable = [[SLBorrowListTableView alloc] initWithFrame:borrowTableFrame];
-    borrowTable.delegate = self;
-    [self.view addSubview:borrowTable];
+    CGRect borrowTableFrame = CGRectMake(0, 0, screenFrame.size.width, screenFrame.size.height);
+    
+    _borrowTable = [[SLBorrowListTableView alloc] initWithFrame:borrowTableFrame];
+    _borrowTable.delegate = self;
+    [self.view addSubview:_borrowTable];
+    
+    [self initRefreshHeaderView];
+    [self initRefreshFooterView];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,7 +119,76 @@
     
 }
 
+//刷新列表数据后，调整底部刷新空间的位置
+- (void)adjustRefreshViewFrame
+{
+
+}
+
+#pragma mark - refreshFooterView setting
+- (void)initRefreshFooterView
+{
+
+}
+
+- (void)loadOldData
+{
+    NSLog(@"loading old data");
+#warning not finish here
+    _reloading = YES;
+}
+
+- (void)doneLoadOldData
+{
+    NSLog(@"done loading old data");
+    _reloading = NO;
+    
+    
+    [_borrowTable reloadData];    //renew the appearance of the table
+    
+    [self adjustRefreshViewFrame];
+}
+
+#pragma mark - refreshHeaderView setting
+- (void)initRefreshHeaderView
+{
+
+}
+
+- (void)loadNewData
+{
+    NSLog(@"loading new data");
+#warning not finish here
+//    [_borrowTable setDataArr:_dataArray];
+    _reloading = YES;
+}
+
+- (void)doneLoadNewData
+{
+    NSLog(@"done loading new data");
+    [_borrowTable reloadData];
+    _reloading = NO;
+    
+    
+    [self adjustRefreshViewFrame];
+}
 
 
+
+#pragma mark - UIScrollView setting
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+
+}
 
 @end
