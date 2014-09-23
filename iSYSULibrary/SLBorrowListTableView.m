@@ -33,6 +33,7 @@
         [emptyHint setTextColor:[UIColor grayColor]];
         
         [self addSubview:emptyHint];
+        
     }
     return self;
 }
@@ -58,8 +59,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-//        return dataArr.count;
-        return 8;
+        return dataArr.count;
+//        return 8;
     else
         return 0;
 }
