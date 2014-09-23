@@ -29,6 +29,14 @@
 		421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */; };
 		421D9E2919B7156200BDCA36 /* SLBookCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D9E2819B7156200BDCA36 /* SLBookCoverCell.xib */; };
 		421D9E2B19B7263000BDCA36 /* SLBookDistributionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */; };
+		42347C9219D1BE5D00614F50 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42347C8219D1BE5D00614F50 /* MJRefresh.bundle */; };
+		42347C9319D1BE5D00614F50 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42347C8519D1BE5D00614F50 /* MJRefreshBaseView.m */; };
+		42347C9419D1BE5D00614F50 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 42347C8719D1BE5D00614F50 /* MJRefreshConst.m */; };
+		42347C9519D1BE5D00614F50 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42347C8919D1BE5D00614F50 /* MJRefreshFooterView.m */; };
+		42347C9619D1BE5D00614F50 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42347C8B19D1BE5D00614F50 /* MJRefreshHeaderView.m */; };
+		42347C9719D1BE5D00614F50 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 42347C8D19D1BE5D00614F50 /* UIScrollView+MJExtension.m */; };
+		42347C9819D1BE5D00614F50 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 42347C8F19D1BE5D00614F50 /* UIScrollView+MJRefresh.m */; };
+		42347C9919D1BE5D00614F50 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 42347C9119D1BE5D00614F50 /* UIView+MJExtension.m */; };
 		426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BA19C9B097005F0DE7 /* SLBorrowHistoryViewController.m */; };
 		426223C019C9B0AB005F0DE7 /* SLBookBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BD19C9B0AB005F0DE7 /* SLBookBaseModel.m */; };
 		426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */; };
@@ -43,8 +51,6 @@
 		42A613E119B60E1800D94977 /* SLBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A613E019B60E1800D94977 /* SLBookView.m */; };
 		42A6727919CAB3B900A4129A /* SLRestfulEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6727819CAB3B900A4129A /* SLRestfulEngine.m */; };
 		42A6727C19CAC0AF00A4129A /* SLHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6727B19CAC0AF00A4129A /* SLHistoryCell.m */; };
-		42CCFD9519CB0A4100B1C4B3 /* EGORefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CCFD9219CB0A4100B1C4B3 /* EGORefreshTableFooterView.m */; };
-		42CCFD9619CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CCFD9419CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m */; };
 		693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */; };
 		693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8219B8279000BADF72 /* SLAppointCell.m */; };
 		693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8519B827EE00BADF72 /* SLRecommendCell.m */; };
@@ -95,6 +101,22 @@
 		421D9E2619B7140F00BDCA36 /* SLBookDistributionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBookDistributionCell.m; path = Cell/SLBookDistributionCell.m; sourceTree = "<group>"; };
 		421D9E2819B7156200BDCA36 /* SLBookCoverCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLBookCoverCell.xib; path = Cell/SLBookCoverCell.xib; sourceTree = "<group>"; };
 		421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLBookDistributionCell.xib; path = Cell/SLBookDistributionCell.xib; sourceTree = "<group>"; };
+		42347C8219D1BE5D00614F50 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		42347C8319D1BE5D00614F50 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		42347C8419D1BE5D00614F50 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		42347C8519D1BE5D00614F50 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		42347C8619D1BE5D00614F50 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		42347C8719D1BE5D00614F50 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		42347C8819D1BE5D00614F50 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		42347C8919D1BE5D00614F50 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		42347C8A19D1BE5D00614F50 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		42347C8B19D1BE5D00614F50 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		42347C8C19D1BE5D00614F50 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		42347C8D19D1BE5D00614F50 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		42347C8E19D1BE5D00614F50 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		42347C8F19D1BE5D00614F50 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		42347C9019D1BE5D00614F50 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		42347C9119D1BE5D00614F50 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		426223B919C9B097005F0DE7 /* SLBorrowHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowHistoryViewController.h; sourceTree = "<group>"; };
 		426223BA19C9B097005F0DE7 /* SLBorrowHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowHistoryViewController.m; sourceTree = "<group>"; };
 		426223BC19C9B0AB005F0DE7 /* SLBookBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookBaseModel.h; sourceTree = "<group>"; };
@@ -124,11 +146,6 @@
 		42A6727819CAB3B900A4129A /* SLRestfulEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRestfulEngine.m; sourceTree = "<group>"; };
 		42A6727A19CAC0AF00A4129A /* SLHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLHistoryCell.h; sourceTree = "<group>"; };
 		42A6727B19CAC0AF00A4129A /* SLHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLHistoryCell.m; sourceTree = "<group>"; };
-		42CCFD9019CB0A4100B1C4B3 /* EGOCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCommon.h; sourceTree = "<group>"; };
-		42CCFD9119CB0A4100B1C4B3 /* EGORefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableFooterView.h; sourceTree = "<group>"; };
-		42CCFD9219CB0A4100B1C4B3 /* EGORefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableFooterView.m; sourceTree = "<group>"; };
-		42CCFD9319CB0A4100B1C4B3 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
-		42CCFD9419CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		693A0D7E19B8273F00BADF72 /* SLBorrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowCell.h; sourceTree = "<group>"; };
 		693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowCell.m; sourceTree = "<group>"; };
 		693A0D8119B8279000BADF72 /* SLAppointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppointCell.h; sourceTree = "<group>"; };
@@ -207,7 +224,7 @@
 		4203CEC219B442C20015180D /* iSYSULibrary */ = {
 			isa = PBXGroup;
 			children = (
-				42CCFD8F19CB0A4100B1C4B3 /* EGORefreshView */,
+				42347C8119D1BE5D00614F50 /* MJRefresh */,
 				42A6727619CAB39700A4129A /* RestfulEngine */,
 				427E368D19B44C40006EB106 /* Model */,
 				427E368C19B44C3A006EB106 /* View */,
@@ -250,6 +267,29 @@
 				4203CEE719B442C20015180D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42347C8119D1BE5D00614F50 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				42347C8219D1BE5D00614F50 /* MJRefresh.bundle */,
+				42347C8319D1BE5D00614F50 /* MJRefresh.h */,
+				42347C8419D1BE5D00614F50 /* MJRefreshBaseView.h */,
+				42347C8519D1BE5D00614F50 /* MJRefreshBaseView.m */,
+				42347C8619D1BE5D00614F50 /* MJRefreshConst.h */,
+				42347C8719D1BE5D00614F50 /* MJRefreshConst.m */,
+				42347C8819D1BE5D00614F50 /* MJRefreshFooterView.h */,
+				42347C8919D1BE5D00614F50 /* MJRefreshFooterView.m */,
+				42347C8A19D1BE5D00614F50 /* MJRefreshHeaderView.h */,
+				42347C8B19D1BE5D00614F50 /* MJRefreshHeaderView.m */,
+				42347C8C19D1BE5D00614F50 /* UIScrollView+MJExtension.h */,
+				42347C8D19D1BE5D00614F50 /* UIScrollView+MJExtension.m */,
+				42347C8E19D1BE5D00614F50 /* UIScrollView+MJRefresh.h */,
+				42347C8F19D1BE5D00614F50 /* UIScrollView+MJRefresh.m */,
+				42347C9019D1BE5D00614F50 /* UIView+MJExtension.h */,
+				42347C9119D1BE5D00614F50 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
 			sourceTree = "<group>";
 		};
 		427E368B19B44C33006EB106 /* Controller */ = {
@@ -299,18 +339,6 @@
 				42A6727819CAB3B900A4129A /* SLRestfulEngine.m */,
 			);
 			name = RestfulEngine;
-			sourceTree = "<group>";
-		};
-		42CCFD8F19CB0A4100B1C4B3 /* EGORefreshView */ = {
-			isa = PBXGroup;
-			children = (
-				42CCFD9019CB0A4100B1C4B3 /* EGOCommon.h */,
-				42CCFD9119CB0A4100B1C4B3 /* EGORefreshTableFooterView.h */,
-				42CCFD9219CB0A4100B1C4B3 /* EGORefreshTableFooterView.m */,
-				42CCFD9319CB0A4100B1C4B3 /* EGORefreshTableHeaderView.h */,
-				42CCFD9419CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m */,
-			);
-			path = EGORefreshView;
 			sourceTree = "<group>";
 		};
 		691B06C119B7F05A00CE92DE /* MainPage */ = {
@@ -547,6 +575,7 @@
 			files = (
 				4203CED319B442C20015180D /* Main_iPad.storyboard in Resources */,
 				4203CED819B442C20015180D /* Images.xcassets in Resources */,
+				42347C9219D1BE5D00614F50 /* MJRefresh.bundle in Resources */,
 				421D9E2919B7156200BDCA36 /* SLBookCoverCell.xib in Resources */,
 				421D9E2B19B7263000BDCA36 /* SLBookDistributionCell.xib in Resources */,
 				4203CED019B442C20015180D /* Main_iPhone.storyboard in Resources */,
@@ -602,22 +631,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42347C9519D1BE5D00614F50 /* MJRefreshFooterView.m in Sources */,
 				426223C019C9B0AB005F0DE7 /* SLBookBaseModel.m in Sources */,
 				69B00C0D19C0AE4A00C5611D /* SLBorrowListController.m in Sources */,
 				421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */,
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
 				426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */,
 				426223C719C9B9DB005F0DE7 /* SLAdviceViewController.m in Sources */,
-				42CCFD9519CB0A4100B1C4B3 /* EGORefreshTableFooterView.m in Sources */,
 				693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */,
 				426223C419C9B9CC005F0DE7 /* SLNotificationViewController.m in Sources */,
 				693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */,
+				42347C9819D1BE5D00614F50 /* UIScrollView+MJRefresh.m in Sources */,
 				42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */,
 				699CA89C19C82211001E1651 /* SLBorrowListTableView.m in Sources */,
-				42CCFD9619CB0A4100B1C4B3 /* EGORefreshTableHeaderView.m in Sources */,
 				42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */,
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
 				426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */,
+				42347C9419D1BE5D00614F50 /* MJRefreshConst.m in Sources */,
 				695BD28619B769340083CBC1 /* SLAppointController.m in Sources */,
 				421D9E2419B713F700BDCA36 /* SLBookBriefCell.m in Sources */,
 				4203CEC919B442C20015180D /* main.m in Sources */,
@@ -626,10 +656,14 @@
 				695BD28919B769400083CBC1 /* SLRecommendController.m in Sources */,
 				42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */,
 				4203CECD19B442C20015180D /* SLAppDelegate.m in Sources */,
+				42347C9319D1BE5D00614F50 /* MJRefreshBaseView.m in Sources */,
 				693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */,
+				42347C9619D1BE5D00614F50 /* MJRefreshHeaderView.m in Sources */,
 				421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */,
 				42A6727919CAB3B900A4129A /* SLRestfulEngine.m in Sources */,
 				421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */,
+				42347C9919D1BE5D00614F50 /* UIView+MJExtension.m in Sources */,
+				42347C9719D1BE5D00614F50 /* UIScrollView+MJExtension.m in Sources */,
 				42A613E119B60E1800D94977 /* SLBookView.m in Sources */,
 				42A6727C19CAC0AF00A4129A /* SLHistoryCell.m in Sources */,
 			);
