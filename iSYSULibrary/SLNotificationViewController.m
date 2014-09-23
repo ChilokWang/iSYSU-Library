@@ -10,6 +10,8 @@
 
 @interface SLNotificationViewController ()
 
+@property (nonatomic, strong) NSArray *items;
+
 @end
 
 @implementation SLNotificationViewController
@@ -27,6 +29,8 @@
 {
     [super viewDidLoad];
     [self configureNavigationBar];
+    [self configurePickerView];
+    [self configurePickerViewData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,52 +51,38 @@
     self.pickerView.dataSource = self;
 }
 
-#pragma mark UIPickerView DataSource
-// returns the number of 'columns' to display.
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (void)configurePickerViewData
 {
-    return 2;
+    self.items = @[@"不提醒", @"每五天提醒一次", @"每十天提醒一次",@"每二十天提醒一次", @"每个月提醒一次"];
+}
+
+#pragma mark UIPickerView DataSource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 1;
 }
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 3;
+    return self.items.count;
 }
 
-#pragma mark UIPickerVIew Delegate
-
-// returns width of column and height of row for each component.
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    return 44;
+    
+}
+
+- (UIView*)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = [self.items objectAtIndex:row];
+    return label;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    return 320;
-}
-
-// these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
-// for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
-// If you return back a different object, the old one will be released. the view will be centered in the row rect
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return @"Test";
-}
-
-//- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    
-//}
-//// attributed title is favored if both methods are implemented
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-//{
-//    
-//}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    NSLog(@"Select Row %d", row);
+    return 20;
 }
 @end
