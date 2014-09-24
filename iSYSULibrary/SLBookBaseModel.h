@@ -19,5 +19,6 @@
 @property (copy, nonatomic) NSArray *distribution;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
+- (id)initWithCoder:(NSCoder *)aDecoder;
+- (void)encodeWithCoder:(NSCoder *)aCoder;
 @end
