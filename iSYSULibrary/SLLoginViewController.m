@@ -7,6 +7,8 @@
 //
 
 #import "SLLoginViewController.h"
+#import "SVProgressHUD.h"
+#import "SLRestfulEngine.h"
 #import "Constants.h"
 
 @interface SLLoginViewController ()
@@ -67,10 +69,18 @@
         
     }
     else {
+        [SVProgressHUD showWithStatus:@"登录中" maskType:SVProgressHUDMaskTypeBlack];
         [UIView animateWithDuration:0.7 delay:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
             self.loginButton.alpha = 0.5;
         } completion:^(BOOL finished) {
-            [self performSegueWithIdentifier:@"LoginIdentifier" sender:self];
+            [SLRestfulEngine loginWithName:@"12348011" password:@"056759" onSucceed:^(NSDictionary *resultDictionary) {
+                [SVProgressHUD showSuccessWithStatus:@"登陆成功"];
+                [SVProgressHUD dismiss];
+                [self performSegueWithIdentifier:@"LoginIdentifier" sender:self];
+            } onError:^(NSError *engineError) {
+                
+            }];
+            
         }];
     }
 }
