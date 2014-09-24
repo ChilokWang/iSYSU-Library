@@ -10,6 +10,7 @@
 
 @interface SLBookBaseModel : NSObject
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (instancetype)bookWithDictionary:(NSDictionary *)dictionary;
 
 @property (copy, nonatomic) NSString *bookCoverImageUrl;
