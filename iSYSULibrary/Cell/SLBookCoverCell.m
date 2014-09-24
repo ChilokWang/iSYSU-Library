@@ -30,6 +30,7 @@
 
 - (void)configureWithDictionary:(NSDictionary *)dic
 {
+    self.bookNameLabel.text = dic[@"bookName"];
     self.bookCoverImageView.image = [UIImage imageNamed:dic[@"bookCoverImageUrl"]];
     self.bookAuthorLabel.text = dic[@"bookAuthor"];
     self.bookIdLabel.text = dic[@"bookId"];
