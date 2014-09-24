@@ -59,16 +59,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-        return dataArr.count;
-//        return 8;
+//        return dataArr.count;
+        return 8;
     else
         return 0;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger index = indexPath.row;
     //列表使用重用机制
-    NSString *cellIdentifier = [NSString stringWithFormat:@"Cell"];
+    NSString *cellIdentifier = [NSString stringWithFormat:@"BorrowingBookCell"];
     
     SLBorrowCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     

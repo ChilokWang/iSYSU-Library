@@ -17,15 +17,35 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        CGRect nameFrame = self.name.frame;
+        CGRect dlFrame = CGRectMake(nameFrame.origin.x,
+                                    nameFrame.origin.y + nameFrame.size.height + 5,
+                                    nameFrame.size.width, nameFrame.size.height);
+        CGRect plFrame = CGRectMake(dlFrame.origin.x,
+                                    dlFrame.origin.y + dlFrame.size.height + 5,
+                                    dlFrame.size.width, dlFrame.size.height);
+        CGRect stFrame = CGRectMake(self.frame.size.width - 50,
+                                    self.frame.size.height / 2 + 30 / 2, 50, 30);
+        
+        deadline = [[UILabel alloc] initWithFrame:dlFrame];
+        deadline.backgroundColor = [UIColor clearColor];
+        deadline.textColor = [UIColor darkGrayColor];
+        
+        takeBookPlace = [[UILabel alloc] initWithFrame:plFrame];
+        takeBookPlace.backgroundColor = [UIColor clearColor];
+        takeBookPlace.textColor = [UIColor darkGrayColor];
+        
+        status = [[UILabel alloc] initWithFrame:stFrame];
+        status.backgroundColor = [UIColor clearColor];
+        status.textColor = [UIColor grayColor];
+        
+        [self addSubview:deadline];
+        [self addSubview:takeBookPlace];
+        [self addSubview:status];
     }
     return self;
 }
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

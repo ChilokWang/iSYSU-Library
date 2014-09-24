@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLBookCell.h"
 
-@interface SLAppointCell : UITableViewCell
+@interface SLAppointCell : SLBookCell
 @property (strong, nonatomic) UILabel *deadline;        /* 预约有效期 */
 @property (strong, nonatomic) UILabel *takeBookPlace;   /* 取书地点 */
 @property (strong, nonatomic) UILabel *status;          /* 预约状态 */

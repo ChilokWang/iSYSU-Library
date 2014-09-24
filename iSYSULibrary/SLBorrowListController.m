@@ -11,6 +11,7 @@
 #import "SLBorrowListTableView.h"
 #import "SLBookDetailViewController.h"
 #import "Constants.h"
+#import "MJRefresh.h"
 
 #define CELL_HIGHT 100
 
@@ -55,10 +56,36 @@
     _borrowTable.delegate = self;
     [self.view addSubview:_borrowTable];
     
-    [self initRefreshHeaderView];
-    [self initRefreshFooterView];
+    [self setUpRefresh];
+}
+
+//集成刷新控件
+- (void)setUpRefresh
+{
+    [_borrowTable addHeaderWithTarget:self action:@selector(headerRefresh)];
+    [_borrowTable addFooterWithTarget:self action:@selector(footerRefresh)];
     
+    //进入界面即开始刷新
+    [_borrowTable headerBeginRefreshing];
+    //设置刷新控件显示文字
+    _borrowTable.headerPullToRefreshText = @"继续下拉可以刷新！";
+    _borrowTable.headerReleaseToRefreshText = @"松开可以进行刷新！";
+    _borrowTable.headerRefreshingText = @"列表正在刷新，请稍后！";
     
+    _borrowTable.footerPullToRefreshText = @"继续上拉可以刷新！";
+    _borrowTable.footerReleaseToRefreshText = @"松开可以进行刷新！";
+    _borrowTable.footerRefreshingText = @"列表正在加载，请稍后！";
+}
+
+- (void)headerRefresh
+{
+#warning not finish yet
+//    dispatch
+    [_borrowTable headerEndRefreshing];
+}
+
+- (void)footerRefresh
+{
     
 }
 
@@ -119,76 +146,5 @@
     
 }
 
-//刷新列表数据后，调整底部刷新空间的位置
-- (void)adjustRefreshViewFrame
-{
-
-}
-
-#pragma mark - refreshFooterView setting
-- (void)initRefreshFooterView
-{
-
-}
-
-- (void)loadOldData
-{
-    NSLog(@"loading old data");
-#warning not finish here
-    _reloading = YES;
-}
-
-- (void)doneLoadOldData
-{
-    NSLog(@"done loading old data");
-    _reloading = NO;
-    
-    
-    [_borrowTable reloadData];    //renew the appearance of the table
-    
-    [self adjustRefreshViewFrame];
-}
-
-#pragma mark - refreshHeaderView setting
-- (void)initRefreshHeaderView
-{
-
-}
-
-- (void)loadNewData
-{
-    NSLog(@"loading new data");
-#warning not finish here
-//    [_borrowTable setDataArr:_dataArray];
-    _reloading = YES;
-}
-
-- (void)doneLoadNewData
-{
-    NSLog(@"done loading new data");
-    [_borrowTable reloadData];
-    _reloading = NO;
-    
-    
-    [self adjustRefreshViewFrame];
-}
-
-
-
-#pragma mark - UIScrollView setting
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-
-}
 
 @end
