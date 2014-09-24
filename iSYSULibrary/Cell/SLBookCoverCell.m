@@ -5,7 +5,7 @@
 //  Created by Alaysh on 9/3/14.
 //  Copyright (c) 2014 Alaysh. All rights reserved.
 //
-
+#import "AsynImageView.h"
 #import "SLBookCoverCell.h"
 
 @implementation SLBookCoverCell
@@ -31,7 +31,7 @@
 - (void)configureWithDictionary:(NSDictionary *)dic
 {
     self.bookNameLabel.text = dic[@"bookName"];
-    self.bookCoverImageView.image = [UIImage imageNamed:dic[@"bookCoverImageUrl"]];
+    self.bookCoverImageView.imageURL = dic[@"bookCoverImageUrl"];
     self.bookAuthorLabel.text = dic[@"bookAuthor"];
     self.bookIdLabel.text = dic[@"bookId"];
     self.bookAuthorLabel.text = dic[@"bookAuthor"];

@@ -7,9 +7,10 @@
 //
 
 #import "SLBookBaseCell.h"
+@class AsynImageView;
 
 @interface SLBookCoverCell : SLBookBaseCell
-@property (weak, nonatomic) IBOutlet UIImageView *bookCoverImageView;
+@property (weak, nonatomic) IBOutlet AsynImageView *bookCoverImageView;
 @property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookIdLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookAuthorLabel;
