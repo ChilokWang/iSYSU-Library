@@ -8,10 +8,12 @@
 
 #import "SLRestfulEngine.h"
 #import "SLBookBaseModel.h"
+#import "SLBorHistoryBook.h"
 #import <SystemConfiguration/SCNetworkReachability.h>
 
 NSString * const HOST_URL = @"http://172.18.34.228:5000/api/";
 NSString * const NEWBOOK_JSON = @"newBooks.json";
+NSString * const BORLOANHISTORY_JSON = @"borLoanHistory.json";
 
 @implementation SLRestfulEngine
 
@@ -135,9 +137,23 @@ NSString * const NEWBOOK_JSON = @"newBooks.json";
     
 }
 
-+ (void)loadLoanhistoryOnSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
++ (void)loadLoanhistoryOnSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
-    
+    [self httpRequestWithMethod:@"GET" action:BORLOANHISTORY_JSON param:@"" onSucceed:^(NSDictionary *resultDictionary) {
+        NSArray *booksDic = resultDictionary[@"books"];
+        NSMutableArray *books = [NSMutableArray array];
+        for (NSDictionary *dic in booksDic) {
+            SLBorHistoryBook *book = [[SLBorHistoryBook alloc] initWithDictionary:dic];
+            [books addObject:book];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            succeedBlock(books);
+        });
+    } onError:^(NSError *engineError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+        errorBlock(engineError);
+        });
+    }];
 }
 
 @end

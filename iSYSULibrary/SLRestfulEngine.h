@@ -22,6 +22,6 @@ typedef void (^ErrorBlock)(NSError* engineError);
 + (void)loadMyLoanOnSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 + (void)loadBorHoldOnSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 + (void)loadBorRecommendOnSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock;
-+ (void)loadLoanhistoryOnSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock;
++ (void)loadLoanhistoryOnSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 
 @end
