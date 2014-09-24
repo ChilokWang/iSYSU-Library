@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SLBorHistoryBook;
 @interface SLHistoryCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *borDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *borTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookAuthorLabel;
+- (void)configureWithBook:(SLBorHistoryBook *)book;
 @end
