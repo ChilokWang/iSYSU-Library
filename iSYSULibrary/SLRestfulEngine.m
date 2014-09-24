@@ -7,9 +7,11 @@
 //
 
 #import "SLRestfulEngine.h"
+#import "SLBookBaseModel.h"
 #import <SystemConfiguration/SCNetworkReachability.h>
 
-NSString * const HOST_URL = @"";
+NSString * const HOST_URL = @"http://172.18.34.228:5000/api/";
+NSString * const NEWBOOK_JSON = @"newBooks.json";
 
 @implementation SLRestfulEngine
 
@@ -90,9 +92,19 @@ NSString * const HOST_URL = @"";
     
 }
 
-+ (void)loadNewBookWithPage: (int)page onSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
++ (void)loadNewBookWithPage: (int)page onSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
-    
+    [self httpRequestWithMethod:@"GET" action:NEWBOOK_JSON param:@"" onSucceed:^(NSDictionary *resultDictionary) {
+        NSArray *booksDic = resultDictionary[@"books"];
+        NSMutableArray *books = [NSMutableArray array];
+        for (NSDictionary *dic in booksDic) {
+            SLBookBaseModel *book = [[SLBookBaseModel alloc] initWithDictionary:dic];
+            [books addObject:book];
+        }
+        succeedBlock(books);
+    } onError:^(NSError *engineError) {
+        
+    }];
 }
 + (void)loadHotBookWithPage: (int)page onSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
