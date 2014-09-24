@@ -12,6 +12,7 @@
 #import <SystemConfiguration/SCNetworkReachability.h>
 
 NSString * const HOST_URL = @"http://172.18.34.228:5000/api/";
+NSString * const LOGIN_JSON = @"login.json";
 NSString * const NEWBOOK_JSON = @"newBooks.json";
 NSString * const BORLOANHISTORY_JSON = @"borLoanHistory.json";
 
@@ -91,7 +92,16 @@ NSString * const BORLOANHISTORY_JSON = @"borLoanHistory.json";
 
 + (void)loginWithName: (NSString *)username password: (NSString *)password onSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
-    
+    NSString *param = [NSString stringWithFormat:@"username=%@&password=%@", username, password];
+    [self httpRequestWithMethod:@"GET" action:LOGIN_JSON param:param onSucceed:^(NSDictionary *resultDictionary) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            succeedBlock(nil);
+        });
+    } onError:^(NSError *engineError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            errorBlock(engineError);
+        });
+    }];
 }
 
 + (void)loadNewBookWithPage: (int)page onSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock
