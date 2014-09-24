@@ -38,6 +38,5 @@
     self.bookAuthorLabel.text = book.bookAuthor;
     self.borDateLabel.text = book.borDate;
     self.borTimeLabel.text = book.borTime;
-    NSLog(@"bookName:%@ bookAuthor:%@ date:%@ time:%@", book.bookName, book.bookAuthor, book.borDate, book.borTime);
 }
 @end
