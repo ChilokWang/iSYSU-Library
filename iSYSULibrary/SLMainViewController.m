@@ -80,6 +80,7 @@
     rightButtonItem.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftButtonItem;
     self.navigationItem.rightBarButtonItem = rightButtonItem;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 #pragma mark Button Method
