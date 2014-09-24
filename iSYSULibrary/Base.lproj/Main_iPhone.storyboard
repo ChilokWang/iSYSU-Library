@@ -579,10 +579,10 @@
             </objects>
             <point key="canvasLocation" x="1976" y="-428"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Result View Controller-->
         <scene sceneID="Z3G-k4-yh5">
             <objects>
-                <viewController id="38A-TI-mhb" sceneMemberID="viewController">
+                <viewController id="38A-TI-mhb" customClass="SLSearchResultViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I5D-4g-Qcq"/>
                         <viewControllerLayoutGuide type="bottom" id="Tsz-XP-iRP"/>
@@ -590,13 +590,53 @@
                     <view key="view" contentMode="scaleToFill" id="lgb-xR-MWc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eOG-EE-QVM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookSearchCellIdentifier" rowHeight="88" id="3bn-sk-pbN" customClass="SLBookSearchCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3bn-sk-pbN" id="Cxr-hm-fiA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="px2-Mo-Klr" customClass="AsynImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="88"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iOS 6编程实战" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQU-fM-sNX">
+                                                    <rect key="frame" x="91" y="16" width="213" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(美) Rob Napier, Mugunth Kumar著" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdP-Eu-1ew">
+                                                    <rect key="frame" x="91" y="58" width="213" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bookAuthorLabel" destination="gdP-Eu-1ew" id="OtL-8k-NYG"/>
+                                            <outlet property="bookCoverImageVIew" destination="px2-Mo-Klr" id="X96-rn-PYR"/>
+                                            <outlet property="bookNameLabel" destination="HQU-fM-sNX" id="xH3-Fe-osf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hFj-bt-TdC"/>
+                    <connections>
+                        <outlet property="tableView" destination="eOG-EE-QVM" id="IBq-Ck-lbc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGW-qH-euL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2435" y="-428"/>
+            <point key="canvasLocation" x="2435" y="-430"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="cLf-Zj-2ld">
@@ -975,6 +1015,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2" width="200" height="251"/>
         <image name="aboutUs" width="21" height="19"/>
         <image name="advice" width="20" height="20"/>
         <image name="alarm" width="20" height="20"/>
