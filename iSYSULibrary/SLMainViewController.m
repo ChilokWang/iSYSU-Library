@@ -11,6 +11,7 @@
 #import "SLBookDetailViewController.h"
 #import "SLRestfulEngine.h"
 #import "SLBookBaseModel.h"
+#import "AsynImageView.h"
 #import "SLBookView.h"
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
@@ -38,9 +39,11 @@
     [self configureCollectionView];
     [self configureNavigationItem];
     self.isOpen = false;
+    self.books = [NSArray array];
     [SLRestfulEngine loadNewBookWithPage:0 onSucceed:^(NSMutableArray *resultArray) {
         NSLog(@"ready");
         self.books = resultArray;
+        [self.collectionView reloadData];
     } onError:^(NSError *engineError) {
         
     }];
@@ -124,7 +127,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return self.books.count;
 }
 
 #define kBookViewTag 1
@@ -133,9 +136,9 @@
     
     static NSString *CellIdentifier = @"photoCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    UIImage *thumbnail = [UIImage imageNamed:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:kBookViewTag];
-    imageView.image = thumbnail;
+    AsynImageView *imageView = (AsynImageView *)[cell viewWithTag:kBookViewTag];
+    SLBookBaseModel *book = self.books[indexPath.row];
+    imageView.imageURL = book.bookCoverImageUrl;
     return cell;
 }
 
@@ -147,7 +150,8 @@
         UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
         CGRect frame = cell.frame;
         frame.origin.y -= collectionView.contentOffset.y;
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", indexPath.row+1]];
+        AsynImageView *imageView = (AsynImageView *)[cell viewWithTag:kBookViewTag];
+        UIImage *image = imageView.image;
         _bookView = [[SLBookView alloc] initWithFrame:frame];
         [_bookView setupBookCoverImage:image];
         [self.view addSubview:_bookView];
@@ -158,7 +162,7 @@
         detailVC.bookCoverImage = image;
         detailVC.bookInfo = @[
                               @[@{
-                                    @"bookCoverImageUrl": [NSString stringWithFormat:@"%d", indexPath.row + 1],
+                                    @"bookCoverImageUrl": book.bookCoverImageUrl,
                                     @"bookName":  book.bookName,
                                     @"bookId":    book.bookId,
                                     @"bookAuthor":  book.bookAuthor,

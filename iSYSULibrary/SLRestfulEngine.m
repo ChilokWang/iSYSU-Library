@@ -101,9 +101,13 @@ NSString * const NEWBOOK_JSON = @"newBooks.json";
             SLBookBaseModel *book = [[SLBookBaseModel alloc] initWithDictionary:dic];
             [books addObject:book];
         }
-        succeedBlock(books);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            succeedBlock(books);
+        });
     } onError:^(NSError *engineError) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            errorBlock(engineError);
+        });
     }];
 }
 + (void)loadHotBookWithPage: (int)page onSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
