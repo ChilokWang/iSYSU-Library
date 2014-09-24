@@ -9,9 +9,12 @@
 #import "SLBorrowHistoryViewController.h"
 #import "SLBookDetailViewController.h"
 #import "XDKAirMenuController.h"
+#import "SLHistoryCell.h"
+#import "SLBorHistoryBook.h"
+#import "SLRestfulEngine.h"
 
 @interface SLBorrowHistoryViewController ()
-
+@property (nonatomic, strong) NSArray *books;
 @end
 
 @implementation SLBorrowHistoryViewController
@@ -28,12 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.books = [[NSArray alloc] init];
+    [SLRestfulEngine loadLoanhistoryOnSucceed:^(NSMutableArray *resultArray) {
+        self.books = resultArray;
+        [self.tableView reloadData];
+    } onError:^(NSError *engineError) {
+        NSLog(@"Error: %@", engineError);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,107 +62,40 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
+    return self.books.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCellIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    SLHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCellIdentifier" forIndexPath:indexPath];
+    [cell configureWithBook:self.books[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
+    SLBorHistoryBook *book = self.books[indexPath.row];
     detailVC.bookInfo = @[
                           @[@{
-                                @"bookCoverImageUrl": [NSString stringWithFormat:@"%d", 1],
-                                @"bookName":  @"Objective-C高级编程 : iOS与OS X多线程和内存管理",
-                                @"bookId":    @"978-7-115-31809-1",
-                                @"bookAuthor":  @"(日) Kazuki Sakamoto, Tomohiko Furumoto著 ; 黎华译",
-                                @"bookPress":  @"人民邮电出版社",
+                                @"bookCoverImageUrl": book.bookCoverImageUrl,
+                                @"bookName":  book.bookName,
+                                @"bookId":    book.bookId,
+                                @"bookAuthor":  book.bookAuthor,
+                                @"bookPress":  book.bookPress,
                                 }],
                           @[@{
-                                @"brief":  @"本书在苹果公司公开的源代码基础上，深入剖析了对应用于内存管理的ARC以及应用于多线程开发的Blocks和GCD。内容包括：自动引用计数、Blocks、Grand Central Dispatch等。"
+                                @"brief":  book.brief
                                 }],
-                          @[@{
-                                @"bookState":    @"外借本",
-                                @"dueDate":    @"在架上",
-                                @"branch":     @"南校区中文新书库(1楼)",
-                                @"rackPosition":       @"TP312C/1987",
-                                @"requests":     @"0",
-                                },
-                            @{
-                                @"bookState":    @"外借本",
-                                @"dueDate":    @"20141008",
-                                @"branch":     @"东校区普通图书(3楼)",
-                                @"rackPosition":       @"TP312C/1987",
-                                @"requests":     @"1"
-                                }
-                            ]
+                          book.distribution
                           ];
     [self.navigationController pushViewController:detailVC animated:true];
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
