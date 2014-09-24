@@ -10,13 +10,14 @@
 
 @implementation SLBorHistoryBook
 
-+ (instancetype)bookWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    SLBorHistoryBook *book = [super bookWithDictionary:dictionary];
-    book.borDate = dictionary[@"borDate"];
-    book.borTime = dictionary[@"borTime"];
-    
-    return book;
+    self = [super initWithDictionary:dictionary];
+    if (self) {
+        self.borDate = dictionary[@"date"];
+        self.borTime = dictionary[@"time"];
+    }
+    return self;
 }
 
 @end

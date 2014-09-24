@@ -13,4 +13,5 @@
 @property (copy, nonatomic) NSString *borDate;
 @property (copy, nonatomic) NSString *borTime;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end
