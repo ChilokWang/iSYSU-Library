@@ -56,8 +56,8 @@
         NSString *docDir=[paths objectAtIndex:0];
         NSDate *date = [NSDate date];
         NSString *dateStr = [NSString stringWithFormat:@"%@",date];
-        NSString *tmpPath = [docDir stringByAppendingPathComponent:@"AsynImage"];
-        NSString *tmpPath2 = [docDir stringByAppendingPathComponent:[NSString stringWithFormat:@"AsynImage/%@",[dateStr substringToIndex:7]]];
+        NSString *tmpPath = [docDir stringByAppendingPathComponent:@"Cache/AsynImage"];
+        NSString *tmpPath2 = [docDir stringByAppendingPathComponent:[NSString stringWithFormat:@"Cache/AsynImage/%@",[dateStr substringToIndex:7]]];
         NSFileManager *fm = [NSFileManager defaultManager];
         if(![fm fileExistsAtPath:tmpPath2])
         {
@@ -66,24 +66,28 @@
         }
         
         NSArray *lineArray = [self.imageURL componentsSeparatedByString:@"/"];
-        
-        self.fileName = [NSString stringWithFormat:@"%@/%@", tmpPath2, [lineArray objectAtIndex:[lineArray count] - 2]];
-        if(![[NSFileManager defaultManager] fileExistsAtPath:_fileName])
-        {
-            [self loadImage];
-        }
-        else
-        {
-            self.image = [UIImage imageWithContentsOfFile:_fileName];
-            if (!self.image) {
-                self.image = _placeholderImage;
-                [[NSFileManager defaultManager] removeItemAtPath:_fileName error:nil];
+        if (lineArray.count >= 3) {
+            self.fileName = [NSString stringWithFormat:@"%@/%@", tmpPath2, [lineArray objectAtIndex:[lineArray count] - 2]];
+            if(![[NSFileManager defaultManager] fileExistsAtPath:_fileName])
+            {
+                [self loadImage];
             }
+            else
+            {
+                self.image = [UIImage imageWithContentsOfFile:_fileName];
+                if (!self.image) {
+                    self.image = _placeholderImage;
+                    [[NSFileManager defaultManager] removeItemAtPath:_fileName error:nil];
+                }
 
+                [activityIndicator removeFromSuperview];
+                [activityIndicator stopAnimating];
+            }
+        }
+        else {
             [activityIndicator removeFromSuperview];
             [activityIndicator stopAnimating];
         }
-        
     }
 }
 
