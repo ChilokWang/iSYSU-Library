@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLBookCell.h"
 
-@interface SLBorrowCell : UITableViewCell
+@interface SLBorrowCell : SLBookCell
 
-@property (strong, nonatomic) UIImageView *cover;      /* 书的封面 */
-@property (strong, nonatomic) UILabel *name;           /* 书名 */
 @property (strong, nonatomic) UILabel *borrowDate;     /* 借书日期 */
 @property (strong, nonatomic) UILabel *deadline;       /* 归还日期 */
 

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLBookCell.h"
 
-@interface SLRecommendCell : UITableViewCell
+@interface SLRecommendCell : SLBookCell
 @property (strong, nonatomic) UILabel *reason;     /* 荐购理由 */
 @property (strong, nonatomic) UILabel *status;     /* 荐购状态 */
 
