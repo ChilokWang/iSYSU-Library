@@ -22,6 +22,10 @@
 		4203CEE119B442C20015180D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4203CEC019B442C20015180D /* UIKit.framework */; };
 		4203CEE919B442C20015180D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4203CEE719B442C20015180D /* InfoPlist.strings */; };
 		4203CEEB19B442C20015180D /* iSYSULibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203CEEA19B442C20015180D /* iSYSULibraryTests.m */; };
+		420F544819D31677002478F1 /* AsynImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 420F544419D31677002478F1 /* AsynImageView.m */; };
+		420F544919D31677002478F1 /* AppCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 420F544719D31677002478F1 /* AppCache.m */; };
+		420F544C19D316A9002478F1 /* SLBookSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420F544B19D316A9002478F1 /* SLBookSearchCell.m */; };
+		420F544F19D316D9002478F1 /* SLSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420F544E19D316D9002478F1 /* SLSearchResultViewController.m */; };
 		421D9E1219B6B97D00BDCA36 /* SLBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */; };
 		421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1419B7119500BDCA36 /* SLBookBaseCell.m */; };
 		421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D9E1D19B713CA00BDCA36 /* SLBookCoverCell.m */; };
@@ -91,6 +95,14 @@
 		4203CEE619B442C20015180D /* iSYSULibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSYSULibraryTests-Info.plist"; sourceTree = "<group>"; };
 		4203CEE819B442C20015180D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4203CEEA19B442C20015180D /* iSYSULibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSYSULibraryTests.m; sourceTree = "<group>"; };
+		420F544319D31677002478F1 /* AsynImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsynImageView.h; sourceTree = "<group>"; };
+		420F544419D31677002478F1 /* AsynImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynImageView.m; sourceTree = "<group>"; };
+		420F544619D31677002478F1 /* AppCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCache.h; sourceTree = "<group>"; };
+		420F544719D31677002478F1 /* AppCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCache.m; sourceTree = "<group>"; };
+		420F544A19D316A9002478F1 /* SLBookSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookSearchCell.h; sourceTree = "<group>"; };
+		420F544B19D316A9002478F1 /* SLBookSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookSearchCell.m; sourceTree = "<group>"; };
+		420F544D19D316D9002478F1 /* SLSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSearchResultViewController.h; sourceTree = "<group>"; };
+		420F544E19D316D9002478F1 /* SLSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSearchResultViewController.m; sourceTree = "<group>"; };
 		421D9E1019B6B97D00BDCA36 /* SLBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookDetailViewController.h; sourceTree = "<group>"; };
 		421D9E1119B6B97D00BDCA36 /* SLBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookDetailViewController.m; sourceTree = "<group>"; };
 		421D9E1319B7119500BDCA36 /* SLBookBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBookBaseCell.h; path = Cell/SLBookBaseCell.h; sourceTree = "<group>"; };
@@ -230,6 +242,8 @@
 		4203CEC219B442C20015180D /* iSYSULibrary */ = {
 			isa = PBXGroup;
 			children = (
+				420F544219D31677002478F1 /* AsynImageView */,
+				420F544519D31677002478F1 /* Cache */,
 				42347C8119D1BE5D00614F50 /* MJRefresh */,
 				42A6727619CAB39700A4129A /* RestfulEngine */,
 				427E368D19B44C40006EB106 /* Model */,
@@ -273,6 +287,24 @@
 				4203CEE719B442C20015180D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		420F544219D31677002478F1 /* AsynImageView */ = {
+			isa = PBXGroup;
+			children = (
+				420F544319D31677002478F1 /* AsynImageView.h */,
+				420F544419D31677002478F1 /* AsynImageView.m */,
+			);
+			path = AsynImageView;
+			sourceTree = "<group>";
+		};
+		420F544519D31677002478F1 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				420F544619D31677002478F1 /* AppCache.h */,
+				420F544719D31677002478F1 /* AppCache.m */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		42347C8119D1BE5D00614F50 /* MJRefresh */ = {
@@ -352,6 +384,8 @@
 		691B06C119B7F05A00CE92DE /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				420F544A19D316A9002478F1 /* SLBookSearchCell.h */,
+				420F544B19D316A9002478F1 /* SLBookSearchCell.m */,
 				421D9E1319B7119500BDCA36 /* SLBookBaseCell.h */,
 				421D9E1419B7119500BDCA36 /* SLBookBaseCell.m */,
 				421D9E1C19B713CA00BDCA36 /* SLBookCoverCell.h */,
@@ -414,6 +448,8 @@
 		691B06C819B7F0F300CE92DE /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				420F544D19D316D9002478F1 /* SLSearchResultViewController.h */,
+				420F544E19D316D9002478F1 /* SLSearchResultViewController.m */,
 				42A6138A19B5B7AA00D94977 /* SLSearchViewController.h */,
 				42A6138B19B5B7AA00D94977 /* SLSearchViewController.m */,
 				42A6138719B5AE4100D94977 /* SLMainViewController.h */,
@@ -647,6 +683,7 @@
 				421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */,
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
 				426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */,
+				420F544F19D316D9002478F1 /* SLSearchResultViewController.m in Sources */,
 				426223C719C9B9DB005F0DE7 /* SLAdviceViewController.m in Sources */,
 				693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */,
 				426223C419C9B9CC005F0DE7 /* SLNotificationViewController.m in Sources */,
@@ -662,8 +699,10 @@
 				695BD28619B769340083CBC1 /* SLAppointController.m in Sources */,
 				421D9E2419B713F700BDCA36 /* SLBookBriefCell.m in Sources */,
 				69216A9B19D2C31D00C3A113 /* SLBorrowingBook.m in Sources */,
+				420F544C19D316A9002478F1 /* SLBookSearchCell.m in Sources */,
 				4203CEC919B442C20015180D /* main.m in Sources */,
 				421D9E1219B6B97D00BDCA36 /* SLBookDetailViewController.m in Sources */,
+				420F544819D31677002478F1 /* AsynImageView.m in Sources */,
 				427E369019B44C51006EB106 /* SLLoginViewController.m in Sources */,
 				695BD28919B769400083CBC1 /* SLRecommendController.m in Sources */,
 				42A6138919B5AE4100D94977 /* SLMainViewController.m in Sources */,
@@ -677,6 +716,7 @@
 				42347C9919D1BE5D00614F50 /* UIView+MJExtension.m in Sources */,
 				42347C9719D1BE5D00614F50 /* UIScrollView+MJExtension.m in Sources */,
 				42A613E119B60E1800D94977 /* SLBookView.m in Sources */,
+				420F544919D31677002478F1 /* AppCache.m in Sources */,
 				42A6727C19CAC0AF00A4129A /* SLHistoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,13 +10,14 @@
 
 @implementation SLBorrowingBook
 
-+ (instancetype)bookWithDictionary:(NSDictionary *)dictionary
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    SLBorrowingBook *book = [super bookWithDictionary:dictionary];
-    book.borDate = dictionary[@"borDate"];
-    book.retDate = dictionary[@"retDate"];
-    
-    return book;
+    self = [super initWithDictionary:dictionary];
+    if (self) {
+        self.borDate = dictionary[@"borDate"];
+        self.retDate = dictionary[@"retDate"];
+    }
+    return self;
 }
 
 @end
