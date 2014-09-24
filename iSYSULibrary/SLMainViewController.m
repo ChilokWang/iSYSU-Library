@@ -9,11 +9,14 @@
 #import "SLMainViewController.h"
 #import "XDKAirMenuController.h"
 #import "SLBookDetailViewController.h"
+#import "SLRestfulEngine.h"
+#import "SLBookBaseModel.h"
 #import "SLBookView.h"
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface SLMainViewController ()
+@property (nonatomic, strong) NSArray *books;
 @property (nonatomic, strong) UIBarButtonItem *backButtonItem;
 @property (nonatomic, assign) BOOL isOpen;
 @end
@@ -35,6 +38,12 @@
     [self configureCollectionView];
     [self configureNavigationItem];
     self.isOpen = false;
+    [SLRestfulEngine loadNewBookWithPage:0 onSucceed:^(NSMutableArray *resultArray) {
+        NSLog(@"ready");
+        self.books = resultArray;
+    } onError:^(NSError *engineError) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,34 +152,22 @@
         [_bookView setupBookCoverImage:image];
         [self.view addSubview:_bookView];
         SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
+        SLBookBaseModel *book = [self.books objectAtIndex:indexPath.row];
+        NSArray *distrubution = book.distribution;
         detailVC.modalTransitionStyle = UIModalTransitionStyleOpenBooks;
         detailVC.bookCoverImage = image;
         detailVC.bookInfo = @[
                               @[@{
                                     @"bookCoverImageUrl": [NSString stringWithFormat:@"%d", indexPath.row + 1],
-                                    @"bookName":  @"Objective-C高级编程 : iOS与OS X多线程和内存管理",
-                                    @"bookId":    @"978-7-115-31809-1",
-                                    @"bookAuthor":  @"(日) Kazuki Sakamoto, Tomohiko Furumoto著 ; 黎华译",
-                                    @"bookPress":  @"人民邮电出版社",
+                                    @"bookName":  book.bookName,
+                                    @"bookId":    book.bookId,
+                                    @"bookAuthor":  book.bookAuthor,
+                                    @"bookPress":  book.bookPress,
                                     }],
                               @[@{
-                                    @"brief":  @"本书在苹果公司公开的源代码基础上，深入剖析了对应用于内存管理的ARC以及应用于多线程开发的Blocks和GCD。内容包括：自动引用计数、Blocks、Grand Central Dispatch等。"
+                                    @"brief":  book.brief
                                     }],
-                              @[@{
-                                    @"bookState":    @"外借本",
-                                    @"dueDate":    @"在架上",
-                                    @"branch":     @"南校区中文新书库(1楼)",
-                                    @"rackPosition":       @"TP312C/1987",
-                                    @"requests":     @"0",
-                                    },
-                                @{
-                                    @"bookState":    @"外借本",
-                                    @"dueDate":    @"20141008",
-                                    @"branch":     @"东校区普通图书(3楼)",
-                                    @"rackPosition":       @"TP312C/1987",
-                                    @"requests":     @"1"
-                                    }
-                                ]
+                              book.distribution
                               ];
         self.isOpen = true;
         [self presentViewController:detailVC animated:YES completion:^{
