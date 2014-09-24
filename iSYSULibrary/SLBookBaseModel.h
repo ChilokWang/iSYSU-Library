@@ -10,9 +10,6 @@
 
 @interface SLBookBaseModel : NSObject
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-+ (instancetype)bookWithDictionary:(NSDictionary *)dictionary;
-
 @property (copy, nonatomic) NSString *bookCoverImageUrl;
 @property (copy, nonatomic) NSString *bookName;
 @property (copy, nonatomic) NSString *bookId;
@@ -20,5 +17,7 @@
 @property (copy, nonatomic) NSString *bookPress;
 @property (copy, nonatomic) NSString *brief;
 @property (copy, nonatomic) NSArray *distribution;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

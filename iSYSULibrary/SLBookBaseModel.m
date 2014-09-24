@@ -12,32 +12,17 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    SLBookBaseModel *book = [self init];
-    book.bookCoverImageUrl = dictionary[@"bookCoverImageUrl"];
-    book.bookName = dictionary[@"bookName"];
-    book.bookId = dictionary[@"bookId"];
-    book.bookAuthor = dictionary[@"bookAuthor"];
-    book.bookPress = dictionary[@"bookPress"];
-    book.brief = dictionary[@"brief"];
-    book.distribution = dictionary[@"distribution"];
-    
-    return book;
+    self = [super init];
+    if (self) {
+        self.bookCoverImageUrl = dictionary[@"bookCoverImageUrl"];
+        self.bookName = dictionary[@"bookName"];
+        self.bookId = dictionary[@"bookId"];
+        self.bookAuthor = dictionary[@"bookAuthor"];
+        self.bookPress = dictionary[@"bookPress"];
+        self.brief = dictionary[@"brief"];
+        self.distribution = dictionary[@"distribution"];
+    }
+    return self;
 }
-
-+ (instancetype)bookWithDictionary:(NSDictionary *)dictionary
-{
-    NSLog(@"%@", dictionary);
-    SLBookBaseModel *book = [self init];
-    book.bookCoverImageUrl = dictionary[@"bookCoverImageUrl"];
-    book.bookName = dictionary[@"bookName"];
-    book.bookId = dictionary[@"bookId"];
-    book.bookAuthor = dictionary[@"bookAuthor"];
-    book.bookPress = dictionary[@"bookPress"];
-    book.brief = dictionary[@"brief"];
-    book.distribution = dictionary[@"distribution"];
-    
-    return book;
-}
-
 
 @end
