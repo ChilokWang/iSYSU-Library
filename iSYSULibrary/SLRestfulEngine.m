@@ -11,10 +11,11 @@
 #import "SLBorHistoryBook.h"
 #import <SystemConfiguration/SCNetworkReachability.h>
 
-NSString * const HOST_URL = @"http://172.18.34.228:5000/api/";
+NSString * const HOST_URL = @"http://sysulibrary.sinaapp.com/api/";
 NSString * const LOGIN_JSON = @"login.json";
 NSString * const NEWBOOK_JSON = @"newBooks.json";
 NSString * const BORLOANHISTORY_JSON = @"borLoanHistory.json";
+NSString * const SEARCHBOOK_JSON = @"findBook.json";
 
 @implementation SLRestfulEngine
 
@@ -122,14 +123,29 @@ NSString * const BORLOANHISTORY_JSON = @"borLoanHistory.json";
         });
     }];
 }
-+ (void)loadHotBookWithPage: (int)page onSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
++ (void)loadHotBookWithPage: (int)page onSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
 
 }
 
-+ (void)searchBookWithKeyword: (NSString *)keyword type:(int)type page:(int)page onSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
++ (void)searchBookWithKeyword: (NSString *)keyword type:(int)type page:(int)page onSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
-    
+    NSString *param = [NSString stringWithFormat:@"page=%d&kw=%@&type=%d", page, keyword, type];
+    [self httpRequestWithMethod:@"GET" action:SEARCHBOOK_JSON param:param onSucceed:^(NSDictionary *resultDictionary) {
+        NSArray *booksDic = resultDictionary[@"books"];
+        NSMutableArray *books = [NSMutableArray array];
+        for (NSDictionary *dic in booksDic) {
+            SLBookBaseModel *book = [[SLBookBaseModel alloc] initWithDictionary:dic];
+            [books addObject:book];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            succeedBlock(books);
+        });
+    } onError:^(NSError *engineError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            errorBlock(engineError);
+        });
+    }];
 }
 
 + (void)loadMyLoanOnSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
