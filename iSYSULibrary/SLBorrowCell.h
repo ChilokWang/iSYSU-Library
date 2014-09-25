@@ -11,7 +11,6 @@
 
 @interface SLBorrowCell : SLBookCell
 
-@property (strong, nonatomic) UILabel *borrowDate;     /* 借书日期 */
 @property (strong, nonatomic) UILabel *deadline;       /* 归还日期 */
 
 @end

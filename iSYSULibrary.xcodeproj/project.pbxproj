@@ -62,6 +62,9 @@
 		693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8519B827EE00BADF72 /* SLRecommendCell.m */; };
 		695BD28619B769340083CBC1 /* SLAppointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695BD28519B769340083CBC1 /* SLAppointController.m */; };
 		695BD28919B769400083CBC1 /* SLRecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695BD28819B769400083CBC1 /* SLRecommendController.m */; };
+		699BCB9D19D41CD400860508 /* SLRecommendBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 699BCB9C19D41CD400860508 /* SLRecommendBook.m */; };
+		699BCBA019D41CE900860508 /* SLAppointBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 699BCB9F19D41CE900860508 /* SLAppointBook.m */; };
+		699BCBA319D4791900860508 /* SLRecommendDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 699BCBA219D4791900860508 /* SLRecommendDetailController.m */; };
 		699CA89C19C82211001E1651 /* SLBorrowListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 699CA89B19C82211001E1651 /* SLBorrowListTableView.m */; };
 		69B00C0D19C0AE4A00C5611D /* SLBorrowListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B00C0C19C0AE4A00C5611D /* SLBorrowListController.m */; };
 /* End PBXBuildFile section */
@@ -174,6 +177,12 @@
 		695BD28519B769340083CBC1 /* SLAppointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppointController.m; sourceTree = "<group>"; };
 		695BD28719B769400083CBC1 /* SLRecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRecommendController.h; sourceTree = "<group>"; };
 		695BD28819B769400083CBC1 /* SLRecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRecommendController.m; sourceTree = "<group>"; };
+		699BCB9B19D41CD400860508 /* SLRecommendBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRecommendBook.h; sourceTree = "<group>"; };
+		699BCB9C19D41CD400860508 /* SLRecommendBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRecommendBook.m; sourceTree = "<group>"; };
+		699BCB9E19D41CE900860508 /* SLAppointBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppointBook.h; sourceTree = "<group>"; };
+		699BCB9F19D41CE900860508 /* SLAppointBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppointBook.m; sourceTree = "<group>"; };
+		699BCBA119D4791900860508 /* SLRecommendDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRecommendDetailController.h; sourceTree = "<group>"; };
+		699BCBA219D4791900860508 /* SLRecommendDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRecommendDetailController.m; sourceTree = "<group>"; };
 		699CA89A19C82211001E1651 /* SLBorrowListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowListTableView.h; sourceTree = "<group>"; };
 		699CA89B19C82211001E1651 /* SLBorrowListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowListTableView.m; sourceTree = "<group>"; };
 		69B00C0B19C0AE4A00C5611D /* SLBorrowListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowListController.h; sourceTree = "<group>"; };
@@ -368,6 +377,10 @@
 				426223BF19C9B0AB005F0DE7 /* SLBorHistoryBook.m */,
 				69216A9919D2C31D00C3A113 /* SLBorrowingBook.h */,
 				69216A9A19D2C31D00C3A113 /* SLBorrowingBook.m */,
+				699BCB9B19D41CD400860508 /* SLRecommendBook.h */,
+				699BCB9C19D41CD400860508 /* SLRecommendBook.m */,
+				699BCB9E19D41CE900860508 /* SLAppointBook.h */,
+				699BCB9F19D41CE900860508 /* SLAppointBook.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -487,6 +500,8 @@
 			children = (
 				695BD28719B769400083CBC1 /* SLRecommendController.h */,
 				695BD28819B769400083CBC1 /* SLRecommendController.m */,
+				699BCBA119D4791900860508 /* SLRecommendDetailController.h */,
+				699BCBA219D4791900860508 /* SLRecommendDetailController.m */,
 			);
 			name = Recommend;
 			sourceTree = "<group>";
@@ -679,11 +694,13 @@
 			files = (
 				42347C9519D1BE5D00614F50 /* MJRefreshFooterView.m in Sources */,
 				426223C019C9B0AB005F0DE7 /* SLBookBaseModel.m in Sources */,
+				699BCB9D19D41CD400860508 /* SLRecommendBook.m in Sources */,
 				69B00C0D19C0AE4A00C5611D /* SLBorrowListController.m in Sources */,
 				421D9E2719B7140F00BDCA36 /* SLBookDistributionCell.m in Sources */,
 				42A6138619B5ACD300D94977 /* SLMenuViewController.m in Sources */,
 				426223C119C9B0AB005F0DE7 /* SLBorHistoryBook.m in Sources */,
 				420F544F19D316D9002478F1 /* SLSearchResultViewController.m in Sources */,
+				699BCBA319D4791900860508 /* SLRecommendDetailController.m in Sources */,
 				426223C719C9B9DB005F0DE7 /* SLAdviceViewController.m in Sources */,
 				693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */,
 				426223C419C9B9CC005F0DE7 /* SLNotificationViewController.m in Sources */,
@@ -696,6 +713,7 @@
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
 				426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */,
 				42347C9419D1BE5D00614F50 /* MJRefreshConst.m in Sources */,
+				699BCBA019D41CE900860508 /* SLAppointBook.m in Sources */,
 				695BD28619B769340083CBC1 /* SLAppointController.m in Sources */,
 				421D9E2419B713F700BDCA36 /* SLBookBriefCell.m in Sources */,
 				69216A9B19D2C31D00C3A113 /* SLBorrowingBook.m in Sources */,
