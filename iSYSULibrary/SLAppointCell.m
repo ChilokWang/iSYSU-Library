@@ -24,20 +24,23 @@
         CGRect plFrame = CGRectMake(dlFrame.origin.x,
                                     dlFrame.origin.y + dlFrame.size.height + 5,
                                     dlFrame.size.width, dlFrame.size.height);
-        CGRect stFrame = CGRectMake(self.frame.size.width - 50,
-                                    self.frame.size.height / 2 + 30 / 2, 50, 30);
-        
+        CGRect stFrame = CGRectMake(self.frame.size.width - 60,
+                                    self.frame.size.height / 2 + 30 / 2, 50, 20);
+
         deadline = [[UILabel alloc] initWithFrame:dlFrame];
         deadline.backgroundColor = [UIColor clearColor];
         deadline.textColor = [UIColor darkGrayColor];
+        deadline.text = @"xxxx";
         
         takeBookPlace = [[UILabel alloc] initWithFrame:plFrame];
         takeBookPlace.backgroundColor = [UIColor clearColor];
         takeBookPlace.textColor = [UIColor darkGrayColor];
+        takeBookPlace.text = @"xxx";
         
         status = [[UILabel alloc] initWithFrame:stFrame];
         status.backgroundColor = [UIColor clearColor];
         status.textColor = [UIColor grayColor];
+        status.text = @"xxx";
         
         [self addSubview:deadline];
         [self addSubview:takeBookPlace];

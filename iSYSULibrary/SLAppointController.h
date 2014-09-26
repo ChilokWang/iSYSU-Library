@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLAppointController : UIViewController
+@class SLAppointTableView;
+
+@interface SLAppointController : UIViewController <UITableViewDelegate>
+
+@property (strong, nonatomic) SLAppointTableView *appointTable;
 
 @end
