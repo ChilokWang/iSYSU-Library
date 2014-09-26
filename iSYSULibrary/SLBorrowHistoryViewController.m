@@ -12,6 +12,7 @@
 #import "SLHistoryCell.h"
 #import "SLBorHistoryBook.h"
 #import "SLRestfulEngine.h"
+#import "AppCache.h"
 
 @interface SLBorrowHistoryViewController ()
 @property (nonatomic, strong) NSArray *books;
@@ -31,8 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.books = [[NSArray alloc] init];
+    self.books = [AppCache getCachedHistoryBooks];
+    if (self.books == nil) {
+        self.books = [[NSArray alloc] init];
+    }
     [SLRestfulEngine loadLoanhistoryOnSucceed:^(NSMutableArray *resultArray) {
+        [AppCache cacheHistoryBooks:resultArray];
         self.books = resultArray;
         [self.tableView reloadData];
     } onError:^(NSError *engineError) {

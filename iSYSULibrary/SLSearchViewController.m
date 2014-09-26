@@ -65,11 +65,11 @@
 
 - (IBAction)searchButtonPressed:(id)sender
 {
-    NSLog(@"SearchButton Pressed");
+//    NSLog(@"SearchButton Pressed");
 }
 
 - (IBAction)segmentedControlPressed:(id)sender {
-    NSLog(@"SegmentedControl Pressed");
+//    NSLog(@"SegmentedControl Pressed");
 }
 
 - (IBAction)backgroundPressed:(id)sender {
@@ -88,6 +88,5 @@
     SLSearchResultViewController *vc = [segue destinationViewController];
     vc.keyword = self.textField.text;
     vc.type = self.segmentedControl.selectedSegmentIndex;
-    NSLog(@"Show Result");
 }
 @end

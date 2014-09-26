@@ -8,6 +8,7 @@
 
 #import "SLSetupViewController.h"
 #import "XDKAirMenuController.h"
+#import "AppCache.h"
 
 @interface SLSetupViewController ()
 
@@ -64,13 +65,7 @@
         case 3:
         {
             //清除缓存
-            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-            NSString *docDir=[paths objectAtIndex:0];
-            NSString *path = [docDir stringByAppendingPathComponent:@"Cache"];       NSFileManager *fm = [NSFileManager defaultManager];
-            if([fm fileExistsAtPath:path])
-            {
-                [fm removeItemAtPath:path error:nil];
-            }
+            [AppCache clearCache];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"清除缓存成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alertView show];
         }

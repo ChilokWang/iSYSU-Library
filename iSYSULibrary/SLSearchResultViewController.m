@@ -24,7 +24,7 @@
     [self configureTableView];
     self.books = [NSArray array];
     [SVProgressHUD showWithStatus:@"搜索中" maskType:SVProgressHUDMaskTypeBlack];
-    NSLog(@"%@ %d", self.keyword, self.type);
+//    NSLog(@"%@ %d", self.keyword, self.type);
     [SLRestfulEngine searchBookWithKeyword:self.keyword type:self.type page:1 onSucceed:^(NSMutableArray *resultArray) {
         [SVProgressHUD dismiss];
         self.books = resultArray;

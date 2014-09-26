@@ -13,7 +13,9 @@
 #import "SLBookBaseModel.h"
 #import "AsynImageView.h"
 #import "SLBookView.h"
+#import "AppCache.h"
 #import "Constants.h"
+#import "SVProgressHUD.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface SLMainViewController ()
@@ -39,9 +41,12 @@
     [self configureCollectionView];
     [self configureNavigationItem];
     self.isOpen = false;
-    self.books = [NSArray array];
+    self.books = [AppCache getCachedNewBooks];
+    if (self.books == nil) {
+        self.books = [NSArray array];
+    }
     [SLRestfulEngine loadNewBookWithPage:0 onSucceed:^(NSMutableArray *resultArray) {
-        NSLog(@"ready");
+        [AppCache cacheNewBooks:resultArray];
         self.books = resultArray;
         [self.collectionView reloadData];
     } onError:^(NSError *engineError) {
