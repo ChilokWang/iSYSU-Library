@@ -14,7 +14,7 @@
 #import "MJRefresh.h"
 #import "SLRestfulEngine.h"
 
-#define CELL_HIGHT 100
+#define CELL_HEIGHT 100
 
 @interface SLBorrowListController ()
 
@@ -22,9 +22,6 @@
 
 @implementation SLBorrowListController
 {
-    CGFloat contentOffsetY;
-    CGFloat newContentOffsetY;
-    CGFloat oldContentOffsetY;
     CGFloat barHeight;
     CGRect screenFrame;
 }
@@ -59,10 +56,14 @@
     
     [self setUpRefresh];
     
+}
+
+- (void)loadData
+{
     [SLRestfulEngine loadMyLoanOnSucceed:^(NSMutableArray *resultArray) {
+        
         [_borrowTable setDataArr:resultArray];
-        //进入界面即开始刷新
-        [_borrowTable headerBeginRefreshing];
+        
     } onError:^(NSError *engineError) {
         NSLog(@"Load my loan on error:%@", engineError);
     }];
@@ -73,7 +74,8 @@
 {
     [_borrowTable addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_borrowTable addFooterWithTarget:self action:@selector(footerRefresh)];
-    
+    //进入界面即开始刷新
+    [_borrowTable headerBeginRefreshing];
     //设置刷新控件显示文字
     _borrowTable.headerPullToRefreshText = @"继续下拉可以刷新！";
     _borrowTable.headerReleaseToRefreshText = @"松开可以进行刷新！";
@@ -86,6 +88,7 @@
 
 - (void)headerRefresh
 {
+    [self loadData];
     [_borrowTable reloadData];
     [_borrowTable headerEndRefreshing];
 }
@@ -115,7 +118,7 @@
 #pragma mark - UITableView delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CELL_HIGHT;
+    return CELL_HEIGHT;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
