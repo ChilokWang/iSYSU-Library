@@ -12,7 +12,6 @@
 @implementation SLRecommendTableView
 {
     UILabel *emptyHint;
-    NSMutableArray *dataArr;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -23,7 +22,7 @@
         self.separatorColor = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
         
-        dataArr = [[NSMutableArray alloc] init];
+        self.dataArray = [[NSMutableArray alloc] init];
         
         CGRect emptyHintFrame = CGRectMake(0, 0, 320, 70);
         emptyHint = [[UILabel alloc] initWithFrame:emptyHintFrame];
@@ -38,10 +37,10 @@
     return self;
 }
 
-- (void)setDataArr:(NSMutableArray *)dataArray
+- (void)setDataArr:(NSMutableArray *)dataArr
 {
-    self.dataArr = dataArray;
-    NSLog(@"dataArr.count:%ld", dataArray.count);
+    self.dataArray = dataArr;
+    NSLog(@"dataArr.count:%ld", dataArr.count);
     if(dataArr.count == 0)
     {
         [emptyHint setHidden:YES];
@@ -60,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-        return dataArr.count;
+        return self.dataArray.count;
 //        return 8;
     else
         return 0;

@@ -10,6 +10,8 @@
 
 @interface SLRecommendTableView : UITableView <UITableViewDataSource>
 
+@property (strong, nonatomic) NSMutableArray *dataArray;
+
 - (void)setDataArr:(NSMutableArray *)dataArr;
 
 @end
