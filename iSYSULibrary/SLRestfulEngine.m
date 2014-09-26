@@ -21,7 +21,7 @@ NSString * const BORLOANHISTORY_JSON = @"borLoanHistory.json";
 NSString * const BORLOAN_JSON = @"borLoan.json";
 NSString * const BORHOLD_JSON = @"borHold.json";
 NSString * const BORRECOMMEND_JSON = @"borRecommend.json";
-
+NSString * const SEARCHBOOK_JSON = @"findBook.json";
 @implementation SLRestfulEngine
 
 + (BOOL)isConnectedToNetwork
@@ -133,9 +133,24 @@ NSString * const BORRECOMMEND_JSON = @"borRecommend.json";
 
 }
 
-+ (void)searchBookWithKeyword: (NSString *)keyword type:(int)type page:(int)page onSucceed:(SucceedBlock)succeedBlock onError:(ErrorBlock)errorBlock
++ (void)searchBookWithKeyword: (NSString *)keyword type:(int)type page:(int)page onSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
-    
+    NSString *param = [NSString stringWithFormat:@"kw=%@&type=%d", keyword, type];
+    [self httpRequestWithMethod:@"GET" action:SEARCHBOOK_JSON param:param onSucceed:^(NSDictionary *resultDictionary) {
+        NSArray *booksDic = resultDictionary[@"books"];
+        NSMutableArray *books = [[NSMutableArray alloc] init];
+        for (NSDictionary * dic in booksDic) {
+            SLBookBaseModel *book = [[SLBookBaseModel alloc] initWithDictionary:dic];
+            [books addObject:book];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            succeedBlock(books);
+        });
+    } onError:^(NSError *engineError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            errorBlock(engineError);
+        });
+    }];
 }
 
 + (void)loadMyLoanOnSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock

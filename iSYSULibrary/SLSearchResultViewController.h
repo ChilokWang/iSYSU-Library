@@ -10,5 +10,6 @@
 
 @interface SLSearchResultViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, nonatomic) NSString *keyword;
+@property (assign, nonatomic) int type;
 @end

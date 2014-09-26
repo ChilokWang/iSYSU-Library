@@ -7,6 +7,7 @@
 //
 
 #import "SLSearchViewController.h"
+#import "SLSearchResultViewController.h"
 #import "Constants.h"
 
 @interface SLSearchViewController ()
@@ -82,4 +83,11 @@
     [self searchButtonPressed:nil];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SLSearchResultViewController *vc = [segue destinationViewController];
+    vc.keyword = self.textField.text;
+    vc.type = self.segmentedControl.selectedSegmentIndex;
+    NSLog(@"Show Result");
+}
 @end
