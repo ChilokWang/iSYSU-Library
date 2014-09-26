@@ -67,7 +67,9 @@
     self.collectionView.alwaysBounceVertical = YES;
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     refreshControl.tintColor = [UIColor grayColor];
+    refreshControl.tag = 2;
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
@@ -121,7 +123,18 @@
 
 - (void)refresh
 {
-    
+    UIRefreshControl *refreshControl = (UIRefreshControl *)[self.collectionView viewWithTag:2];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中"];
+    [SLRestfulEngine loadNewBookWithPage:0 onSucceed:^(NSMutableArray *resultArray) {
+        [AppCache cacheNewBooks:resultArray];
+        self.books = resultArray;
+        [refreshControl endRefreshing];
+        refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+        [self.collectionView reloadData];
+    } onError:^(NSError *engineError) {
+        [refreshControl endRefreshing];
+        refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    }];
 }
 
 - (void)loadMore

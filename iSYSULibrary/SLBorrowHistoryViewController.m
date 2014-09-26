@@ -32,6 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    
     self.books = [AppCache getCachedHistoryBooks];
     if (self.books == nil) {
         self.books = [[NSArray alloc] init];
@@ -51,6 +55,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)refresh
+{
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中"];
+    [SLRestfulEngine loadLoanhistoryOnSucceed:^(NSMutableArray *resultArray) {
+        [AppCache cacheHistoryBooks:resultArray];
+        self.books = resultArray;
+        [self.refreshControl endRefreshing];
+        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+        [self.tableView reloadData];
+    } onError:^(NSError *engineError) {
+        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+        [self.tableView reloadData];
+        NSLog(@"Error: %@", engineError);
+    }];
+}
 #pragma mark Button Method
 
 - (IBAction)menuButtonPressed:(id)sender
