@@ -22,7 +22,7 @@
         self.separatorColor = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
         
-        self.dataArray = [[NSMutableArray alloc] init];
+        self.dataArray = [[NSArray alloc] init];
         
         CGRect emptyHintFrame = CGRectMake(0, 0, 320, 70);
         emptyHint = [[UILabel alloc] initWithFrame:emptyHintFrame];
@@ -37,18 +37,23 @@
     return self;
 }
 
-- (void)setDataArr:(NSMutableArray *)dataArr
+- (void)setDataArr:(NSArray *)dataArr
 {
     self.dataArray = dataArr;
     NSLog(@"dataArr.count:%ld", dataArr.count);
     if(dataArr.count == 0)
     {
-        [emptyHint setHidden:YES];
+        [emptyHint setHidden:NO];
     }else
     {
-        [emptyHint setHidden:NO];
+        [emptyHint setHidden:YES];
     }
 }
+
+//- (void)setEmptyHintHidden:(BOOL)is
+//{
+//    [emptyHint setHidden:is];
+//}
 
 #pragma mark - UITableView data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

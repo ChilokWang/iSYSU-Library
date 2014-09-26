@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "SLRestfulEngine.h"
 #import "SLAppointBook.h"
+#import "AppCache.h"
 
 #define CELL_HEIGHT 100
 
@@ -57,6 +58,9 @@
     [self.view addSubview:_appointTable];
     
     [self setUpRefresh];
+    
+    [_appointTable setDataArr:[AppCache getCachedAppointBooks]];
+
     //进入界面即开始刷新
     [_appointTable headerBeginRefreshing];
 }
@@ -65,34 +69,36 @@
 - (void)setUpRefresh
 {
     [_appointTable addHeaderWithTarget:self action:@selector(headerRefresh)];
-    [_appointTable addFooterWithTarget:self action:@selector(footerRefresh)];
+//    [_appointTable addFooterWithTarget:self action:@selector(footerRefresh)];
     //设置刷新控件显示文字
     _appointTable.headerPullToRefreshText = @"继续下拉可以刷新！";
     _appointTable.headerReleaseToRefreshText = @"松开可以进行刷新！";
     _appointTable.headerRefreshingText = @"列表正在刷新，请稍后！";
     
-    _appointTable.footerPullToRefreshText = @"继续上拉可以刷新！";
-    _appointTable.footerReleaseToRefreshText = @"松开可以进行刷新！";
-    _appointTable.footerRefreshingText = @"列表正在加载，请稍后！";
+//    _appointTable.footerPullToRefreshText = @"继续上拉可以刷新！";
+//    _appointTable.footerReleaseToRefreshText = @"松开可以进行刷新！";
+//    _appointTable.footerRefreshingText = @"列表正在加载，请稍后！";
 }
 
 - (void)headerRefresh
 {
     [SLRestfulEngine loadBorHoldOnSucceed:^(NSMutableArray *resultArray) {
-        
+        [AppCache cacheAppointBooks:resultArray];
         [_appointTable setDataArr:resultArray];
         [_appointTable reloadData];
+        [_appointTable headerEndRefreshing];
     } onError:^(NSError *engineError) {
         NSLog(@"Load hold error:%@", engineError);
+        [_appointTable headerEndRefreshing];
     }];
     
-    [_appointTable headerEndRefreshing];
-}
-
-- (void)footerRefresh
-{
     
 }
+
+//- (void)footerRefresh
+//{
+//    
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -132,7 +138,13 @@
                           @[@{
                                 @"brief":  book.brief
                                 }],
-                          book.distribution
+                          book.distribution,
+                          @[@{
+                                @"validDate": book.validDate,
+                                @"meetDate": book.meetDate,
+                                @"requestStatus": book.reqStatus,
+                                @"requestNum": book.reqNum
+                                }]
                           ];
     [self.navigationController pushViewController:detailVC animated:true];
     

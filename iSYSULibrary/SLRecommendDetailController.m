@@ -119,26 +119,26 @@
 
 - (void)configureViewsWithDictionary:(NSDictionary *)dic
 {
-//    bookName.text = dic[@"bookName"];
-//    bookId.text = dic[@"bookId"];
-//    bookAuthor.text = dic[@"bookAuthor"];
-//    bookPress.text = dic[@"bookPress"];
-//    recDate.text = dic[@"recommendDate"];
-//    proDate.text = dic[@"processingDate"];
-//    proStatus.text = dic[@"processingStatus"];
-//    status.text = dic[@"status"];
-//    recReason.text = dic[@"recommendReason"];
+    bookName.text = dic[@"bookName"];
+    bookId.text = dic[@"bookId"];
+    bookAuthor.text = dic[@"bookAuthor"];
+    bookPress.text = dic[@"bookPress"];
+    recDate.text = dic[@"recommendDate"];
+    proDate.text = dic[@"processingDate"];
+    proStatus.text = dic[@"processingStatus"];
+    status.text = dic[@"status"];
+    recReason.text = dic[@"recommendReason"];
     
     
-    bookName.text = @"bookName";
-    bookId.text = @"bookId";
-    bookAuthor.text = @"bookAuthor";
-    bookPress.text = @"bookPress";
-    recDate.text = @"recommendDate";
-    proDate.text = @"processingDate";
-    proStatus.text = @"processingStatus";
-    status.text = @"status";
-    recReason.text = @"你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里无法";
+//    bookName.text = @"bookName";
+//    bookId.text = @"bookId";
+//    bookAuthor.text = @"bookAuthor";
+//    bookPress.text = @"bookPress";
+//    recDate.text = @"recommendDate";
+//    proDate.text = @"processingDate";
+//    proStatus.text = @"processingStatus";
+//    status.text = @"status";
+//    recReason.text = @"你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里无法";
 
     [self adjustFrameForViews];
 }

@@ -10,6 +10,7 @@
 #import "SLBookCoverCell.h"
 #import "SLBookBriefCell.h"
 #import "SLBookDistributionCell.h"
+#import "SLBookAppointCell.h"
 
 @implementation SLBookBaseCell
 
@@ -42,6 +43,8 @@
         case BookDistributionInfo:
             return [SLBookDistributionCell new];
             break;
+        case BookAppointInfo:
+            return [SLBookAppointCell new];
         default:
             break;
     }

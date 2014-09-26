@@ -55,4 +55,34 @@
 {
     return [AppCache getCachedItemsWithPath:@"historyBooks"];
 }
+
++ (void)cacheMyLoanBooks:(NSArray *)books
+{
+    [AppCache cacheItems:books toPath:@"myLoanBooks"];
+}
+
++ (NSArray *)getCachedMyLoanBooks
+{
+    return [AppCache getCachedItemsWithPath:@"myLoanBooks"];
+}
+
++ (void)cacheAppointBooks:(NSArray *)books
+{
+    [AppCache cacheItems:books toPath:@"appointBooks"];
+}
+
++ (NSArray *)getCachedAppointBooks
+{
+    return [AppCache getCachedItemsWithPath:@"appointBooks"];
+}
+
++ (void)cacheRecommendBooks:(NSArray *)books
+{
+    [AppCache cacheItems:books toPath:@"recommendBooks"];
+}
+
++ (NSArray *)getCachedRecommendBooks
+{
+    return [AppCache getCachedItemsWithPath:@"recommendBooks"];
+}
 @end
