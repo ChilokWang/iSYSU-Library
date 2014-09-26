@@ -57,6 +57,8 @@
 		42A6727C19CAC0AF00A4129A /* SLHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A6727B19CAC0AF00A4129A /* SLHistoryCell.m */; };
 		69216A9B19D2C31D00C3A113 /* SLBorrowingBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 69216A9A19D2C31D00C3A113 /* SLBorrowingBook.m */; };
 		69216AA119D2C89700C3A113 /* SLBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69216AA019D2C89700C3A113 /* SLBookCell.m */; };
+		692B0B9719D4E9E000B8EEF0 /* SLAppointTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692B0B9619D4E9E000B8EEF0 /* SLAppointTableView.m */; };
+		692B0B9A19D4F10A00B8EEF0 /* SLRecommendTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692B0B9919D4F10A00B8EEF0 /* SLRecommendTableView.m */; };
 		693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */; };
 		693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8219B8279000BADF72 /* SLAppointCell.m */; };
 		693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8519B827EE00BADF72 /* SLRecommendCell.m */; };
@@ -167,6 +169,10 @@
 		69216A9A19D2C31D00C3A113 /* SLBorrowingBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowingBook.m; sourceTree = "<group>"; };
 		69216A9F19D2C89700C3A113 /* SLBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookCell.h; sourceTree = "<group>"; };
 		69216AA019D2C89700C3A113 /* SLBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookCell.m; sourceTree = "<group>"; };
+		692B0B9519D4E9E000B8EEF0 /* SLAppointTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppointTableView.h; sourceTree = "<group>"; };
+		692B0B9619D4E9E000B8EEF0 /* SLAppointTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppointTableView.m; sourceTree = "<group>"; };
+		692B0B9819D4F10A00B8EEF0 /* SLRecommendTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRecommendTableView.h; sourceTree = "<group>"; };
+		692B0B9919D4F10A00B8EEF0 /* SLRecommendTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRecommendTableView.m; sourceTree = "<group>"; };
 		693A0D7E19B8273F00BADF72 /* SLBorrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowCell.h; sourceTree = "<group>"; };
 		693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowCell.m; sourceTree = "<group>"; };
 		693A0D8119B8279000BADF72 /* SLAppointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppointCell.h; sourceTree = "<group>"; };
@@ -491,6 +497,8 @@
 			children = (
 				695BD28419B769340083CBC1 /* SLAppointController.h */,
 				695BD28519B769340083CBC1 /* SLAppointController.m */,
+				692B0B9519D4E9E000B8EEF0 /* SLAppointTableView.h */,
+				692B0B9619D4E9E000B8EEF0 /* SLAppointTableView.m */,
 			);
 			name = Appoint;
 			sourceTree = "<group>";
@@ -502,6 +510,8 @@
 				695BD28819B769400083CBC1 /* SLRecommendController.m */,
 				699BCBA119D4791900860508 /* SLRecommendDetailController.h */,
 				699BCBA219D4791900860508 /* SLRecommendDetailController.m */,
+				692B0B9819D4F10A00B8EEF0 /* SLRecommendTableView.h */,
+				692B0B9919D4F10A00B8EEF0 /* SLRecommendTableView.m */,
 			);
 			name = Recommend;
 			sourceTree = "<group>";
@@ -704,6 +714,7 @@
 				426223C719C9B9DB005F0DE7 /* SLAdviceViewController.m in Sources */,
 				693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */,
 				426223C419C9B9CC005F0DE7 /* SLNotificationViewController.m in Sources */,
+				692B0B9719D4E9E000B8EEF0 /* SLAppointTableView.m in Sources */,
 				693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */,
 				42347C9819D1BE5D00614F50 /* UIScrollView+MJRefresh.m in Sources */,
 				42A613DE19B60DF200D94977 /* SLCollectionViewController.m in Sources */,
@@ -728,6 +739,7 @@
 				42347C9319D1BE5D00614F50 /* MJRefreshBaseView.m in Sources */,
 				693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */,
 				42347C9619D1BE5D00614F50 /* MJRefreshHeaderView.m in Sources */,
+				692B0B9A19D4F10A00B8EEF0 /* SLRecommendTableView.m in Sources */,
 				421D9E1519B7119500BDCA36 /* SLBookBaseCell.m in Sources */,
 				42A6727919CAB3B900A4129A /* SLRestfulEngine.m in Sources */,
 				421D9E1E19B713CA00BDCA36 /* SLBookCoverCell.m in Sources */,

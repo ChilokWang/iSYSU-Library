@@ -1,5 +1,5 @@
 //
-//  SLRecommendDetailController.h
+//  SLRecommendTableView.h
 //  iSYSULibrary
 //
 //  Created by kiros on 14-9-26.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLRecommendDetailController : UIViewController
+@interface SLRecommendTableView : UITableView <UITableViewDataSource>
+
+- (void)setDataArr:(NSMutableArray *)dataArr;
 
 @end

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLRecommendController : UIViewController
+@class SLRecommendTableView;
+
+@interface SLRecommendController : UIViewController <UITableViewDelegate>
+
+@property (strong, nonatomic) SLRecommendTableView *recommendTable;
 
 @end
