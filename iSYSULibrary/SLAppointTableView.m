@@ -12,7 +12,6 @@
 @implementation SLAppointTableView
 {
     UILabel *emptyHint;
-    NSMutableArray *dataArr;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -23,12 +22,12 @@
         self.separatorColor = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
         
-        dataArr = [[NSMutableArray alloc] init];
+        self.dataArray = [[NSMutableArray alloc] init];
         
         CGRect emptyHintFrame = CGRectMake(0, 0, 320, 70);
         emptyHint = [[UILabel alloc] initWithFrame:emptyHintFrame];
         [emptyHint setBackgroundColor:[UIColor clearColor]];
-        [emptyHint setText:[NSString stringWithFormat:@"借阅为空"]];
+        [emptyHint setText:[NSString stringWithFormat:@"预约为空"]];
         [emptyHint setTextAlignment:NSTextAlignmentCenter];
         [emptyHint setFont:[UIFont fontWithName:@"Heiti" size:20.0]];
         [emptyHint setTextColor:[UIColor grayColor]];
@@ -38,10 +37,10 @@
     return self;
 }
 
-- (void)setDataArr:(NSMutableArray *)dataArray
+- (void)setDataArr:(NSMutableArray *)dataArr
 {
-    self.dataArr = dataArray;
-    NSLog(@"dataArr.count:%ld", dataArray.count);
+    self.dataArray = dataArr;
+    NSLog(@"dataArr.count:%ld", dataArr.count);
     if(dataArr.count == 0)
     {
         [emptyHint setHidden:YES];
@@ -60,8 +59,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-//      return dataArr.count;
-        return 8;
+      return self.dataArray.count;
+//        return 8;
     else
         return 0;
 }
@@ -81,6 +80,7 @@
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
+    [cell configureWithData:self.dataArray[index]];
     return cell;
 }
 

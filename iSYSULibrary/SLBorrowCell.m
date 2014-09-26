@@ -7,9 +7,11 @@
 //
 
 #import "SLBorrowCell.h"
+#import "SLBorrowingBook.h"
+#import "AsynImageView.h"
 
 @implementation SLBorrowCell
-@synthesize deadline;
+@synthesize retDate;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -20,12 +22,12 @@
                                     nameFrame.origin.y + nameFrame.size.height + 5,
                                     nameFrame.size.width, nameFrame.size.height);
         
-        deadline = [[UILabel alloc] initWithFrame:dlFrame];
-        deadline.backgroundColor = [UIColor clearColor];
-        deadline.text = [NSString stringWithFormat:@"XyearXmonthXday"];
-        deadline.textColor = [UIColor darkGrayColor];
+        retDate = [[UILabel alloc] initWithFrame:dlFrame];
+        retDate.backgroundColor = [UIColor clearColor];
+        retDate.text = [NSString stringWithFormat:@"XyearXmonthXday"];
+        retDate.textColor = [UIColor darkGrayColor];
 
-        [self addSubview:deadline];
+        [self addSubview:retDate];
     }
     return self;
 }
@@ -35,6 +37,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)configureWithData:(SLBorrowingBook *)data
+{
+    [super configureWithData:data];
+    self.retDate.text = [NSString stringWithFormat:@"归还日期：%@", data.retDate];
 }
 
 @end

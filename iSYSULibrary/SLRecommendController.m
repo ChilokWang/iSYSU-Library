@@ -152,7 +152,7 @@
 //                                }
 //                            ]
 //                          ];
-//    [self.navigationController pushViewController:detailVC animated:true];
+    [self.navigationController pushViewController:detailVC animated:true];
     
 }
 

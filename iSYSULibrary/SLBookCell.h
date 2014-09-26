@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class SLBookBaseModel;
+@class AsynImageView;
+
 @interface SLBookCell : UITableViewCell
 
-@property (strong, nonatomic) UIImageView *cover;      /* 书的封面 */
+@property (strong, nonatomic) AsynImageView *bookCover;      /* 书的封面 */
 @property (strong, nonatomic) UILabel *name;           /* 书名 */
+
+- (void)configureWithData:(SLBookBaseModel *)data;
 
 @end

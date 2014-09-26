@@ -28,7 +28,7 @@
         CGRect emptyHintFrame = CGRectMake(0, 0, 320, 70);
         emptyHint = [[UILabel alloc] initWithFrame:emptyHintFrame];
         [emptyHint setBackgroundColor:[UIColor clearColor]];
-        [emptyHint setText:[NSString stringWithFormat:@"借阅为空"]];
+        [emptyHint setText:[NSString stringWithFormat:@"你目前没有荐购"]];
         [emptyHint setTextAlignment:NSTextAlignmentCenter];
         [emptyHint setFont:[UIFont fontWithName:@"Heiti" size:20.0]];
         [emptyHint setTextColor:[UIColor grayColor]];
@@ -60,8 +60,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-        //      return dataArr.count;
-        return 8;
+        return dataArr.count;
+//        return 8;
     else
         return 0;
 }

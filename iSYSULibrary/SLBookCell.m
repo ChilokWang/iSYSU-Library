@@ -7,9 +7,11 @@
 //
 
 #import "SLBookCell.h"
+#import "SLBookBaseModel.h"
+#import "AsynImageView.h"
 
 @implementation SLBookCell
-@synthesize cover;
+@synthesize bookCover;
 @synthesize name;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -20,14 +22,14 @@
         CGRect nameFrame = CGRectMake(coverFrame.origin.x + coverFrame.size.width + 10,
                                       10, 200, 20);
         
-        cover = [[UIImageView alloc] initWithFrame:coverFrame];
-        cover.backgroundColor = [UIColor blackColor];
+        bookCover = [[AsynImageView alloc] initWithFrame:coverFrame];
+        bookCover.backgroundColor = [UIColor blackColor];
         
         name = [[UILabel alloc] initWithFrame:nameFrame];
         name.backgroundColor = [UIColor clearColor];
         name.text = [NSString stringWithFormat:@"ios开发指南"];
         
-        [self addSubview:cover];
+        [self addSubview:bookCover];
         [self addSubview:name];
         
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
@@ -43,6 +45,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)configureWithData:(SLBookBaseModel *)data
+{
+    self.bookCover.imageURL = data.bookCoverImageUrl;
+    self.name.text = [NSString stringWithFormat:@"%@", data.bookName];
 }
 
 @end

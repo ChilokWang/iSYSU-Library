@@ -10,6 +10,8 @@
 
 @interface SLAppointTableView : UITableView <UITableViewDataSource>
 
+@property (strong, nonatomic) NSMutableArray *dataArray;
+
 - (void)setDataArr:(NSMutableArray *)dataArr;
 
 @end
