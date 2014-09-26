@@ -7,8 +7,8 @@
 //
 
 #import "SLBorrowingBook.h"
-NSString * const kBorDate = @"date";
-NSString * const kRetDate = @"retDate";
+
+NSString * const kRetDate = @"date";
 
 @implementation SLBorrowingBook
 
@@ -16,7 +16,6 @@ NSString * const kRetDate = @"retDate";
 {
     self = [super initWithDictionary:dictionary];
     if (self) {
-        self.borDate = dictionary[kBorDate];
         self.retDate = dictionary[kRetDate];
     }
     return self;

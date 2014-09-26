@@ -2,11 +2,16 @@
 //  SLRecommendBook.m
 //  iSYSULibrary
 //
-//  Created by kiros on 14-9-25.
+//  Created by kiros on 14-9-26.
 //  Copyright (c) 2014年 Alaysh. All rights reserved.
 //
 
 #import "SLRecommendBook.h"
+
+NSString * const kName = @"bookName";
+NSString * const kId = @"bookId";
+NSString * const kAuthor = @"bookAuthor";
+NSString * const kPress = @"bookPress";
 NSString * const kRecDate = @"recommendDate";
 NSString * const kReason = @"recommendReason";
 NSString * const kProDate = @"processingDate";
@@ -17,8 +22,13 @@ NSString * const kStatus = @"status";
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    self = [super initWithDictionary:dictionary];
+    self = [super init];
     if (self) {
+        
+        self.bookName = dictionary[kName];
+        self.bookId = dictionary[kId];
+        self.bookPress = dictionary[kPress];
+        self.bookAuthor = dictionary[kAuthor];
         self.recDate = dictionary[kRecDate];
         self.reason = dictionary[kReason];
         self.proDate = dictionary[kProDate];

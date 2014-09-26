@@ -12,7 +12,6 @@
 @implementation SLBorrowListTableView
 {
     UILabel *emptyHint;
-    NSMutableArray *dataArr;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -22,7 +21,7 @@
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
         
-        dataArr = [[NSMutableArray alloc] init];
+        self.dataArray = [[NSMutableArray alloc] init];
         
         CGRect emptyHintFrame = CGRectMake(0, 0, 320, 70);
         emptyHint = [[UILabel alloc] initWithFrame:emptyHintFrame];
@@ -38,16 +37,16 @@
     return self;
 }
 
-- (void)setDataArr:(NSMutableArray *)dataArray
+- (void)setDataArr:(NSMutableArray *)dataArr
 {
-    self.dataArr = dataArray;
-    NSLog(@"dataArr.count:%ld", dataArray.count);
+    self.dataArray = dataArr;
+    NSLog(@"dataArr.count:%ld", self.dataArray.count);
     if(dataArr.count == 0)
     {
-        [emptyHint setHidden:YES];
+        [emptyHint setHidden:NO];
     }else
     {
-        [emptyHint setHidden:NO];
+        [emptyHint setHidden:YES];
     }
 }
 
@@ -60,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-        return dataArr.count;
+        return self.dataArray.count;
 //        return 8;
     else
         return 0;
@@ -80,7 +79,7 @@
     }
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
+    [cell configureWithData:self.dataArray[index]];
     return cell;
 }
 
