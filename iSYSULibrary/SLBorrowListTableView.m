@@ -41,6 +41,7 @@
 - (void)setDataArr:(NSMutableArray *)dataArray
 {
     self.dataArr = dataArray;
+    NSLog(@"dataArr.count:%ld", dataArray.count);
     if(dataArr.count == 0)
     {
         [emptyHint setHidden:YES];
@@ -59,8 +60,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-//        return dataArr.count;
-        return 8;
+        return dataArr.count;
+//        return 8;
     else
         return 0;
 }
