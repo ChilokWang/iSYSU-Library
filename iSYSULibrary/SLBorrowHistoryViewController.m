@@ -40,10 +40,13 @@
     if (self.books == nil) {
         self.books = [[NSArray alloc] init];
     }
+    [self.tableView reloadData];
     [SLRestfulEngine loadLoanhistoryOnSucceed:^(NSMutableArray *resultArray) {
-        [AppCache cacheHistoryBooks:resultArray];
-        self.books = resultArray;
-        [self.tableView reloadData];
+        if (resultArray != nil) {
+            [AppCache cacheHistoryBooks:resultArray];
+            self.books = resultArray;
+            [self.tableView reloadData];
+        }
     } onError:^(NSError *engineError) {
         NSLog(@"Error: %@", engineError);
     }];
@@ -59,8 +62,10 @@
 {
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中"];
     [SLRestfulEngine loadLoanhistoryOnSucceed:^(NSMutableArray *resultArray) {
-        [AppCache cacheHistoryBooks:resultArray];
-        self.books = resultArray;
+        if (resultArray != nil) {
+            [AppCache cacheHistoryBooks:resultArray];
+            self.books = resultArray;
+        }
         [self.refreshControl endRefreshing];
         self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
         [self.tableView reloadData];
