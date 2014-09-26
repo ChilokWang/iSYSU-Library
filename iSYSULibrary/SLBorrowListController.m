@@ -13,6 +13,7 @@
 #import "Constants.h"
 #import "MJRefresh.h"
 #import "SLRestfulEngine.h"
+#import "SLBorrowingBook.h"
 
 #define CELL_HEIGHT 100
 
@@ -55,18 +56,8 @@
     [self.view addSubview:_borrowTable];
     
     [self setUpRefresh];
-    
-}
-
-- (void)loadData
-{
-    [SLRestfulEngine loadMyLoanOnSucceed:^(NSMutableArray *resultArray) {
-        
-        [_borrowTable setDataArr:resultArray];
-        
-    } onError:^(NSError *engineError) {
-        NSLog(@"Load my loan on error:%@", engineError);
-    }];
+    //进入界面即开始刷新
+    [_borrowTable headerBeginRefreshing];
 }
 
 //集成刷新控件
@@ -74,8 +65,7 @@
 {
     [_borrowTable addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_borrowTable addFooterWithTarget:self action:@selector(footerRefresh)];
-    //进入界面即开始刷新
-    [_borrowTable headerBeginRefreshing];
+    
     //设置刷新控件显示文字
     _borrowTable.headerPullToRefreshText = @"继续下拉可以刷新！";
     _borrowTable.headerReleaseToRefreshText = @"松开可以进行刷新！";
@@ -88,8 +78,15 @@
 
 - (void)headerRefresh
 {
-    [self loadData];
-    [_borrowTable reloadData];
+    [SLRestfulEngine loadMyLoanOnSucceed:^(NSMutableArray *resultArray) {
+        
+        [_borrowTable setDataArr:resultArray];
+        [_borrowTable reloadData];
+        
+    } onError:^(NSError *engineError) {
+        NSLog(@"Load my loan on error:%@", engineError);
+    }];
+
     [_borrowTable headerEndRefreshing];
 }
 
@@ -124,32 +121,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SLBookDetailViewController *detailVC = [[SLBookDetailViewController alloc] init];
+    SLBorrowingBook *book = _borrowTable.dataArray[indexPath.row];
     detailVC.bookInfo = @[
                           @[@{
-                                @"bookCoverImageUrl": [NSString stringWithFormat:@"%d", 1],
-                                @"bookName":  @"Objective-C高级编程 : iOS与OS X多线程和内存管理",
-                                @"bookId":    @"978-7-115-31809-1",
-                                @"bookAuthor":  @"(日) Kazuki Sakamoto, Tomohiko Furumoto著 ; 黎华译",
-                                @"bookPress":  @"人民邮电出版社",
+                                @"bookCoverImageUrl": book.bookCoverImageUrl,
+                                @"bookName":  book.bookName,
+                                @"bookId":    book.bookId,
+                                @"bookAuthor":  book.bookAuthor,
+                                @"bookPress":  book.bookPress,
                                 }],
                           @[@{
-                                @"brief":  @"本书在苹果公司公开的源代码基础上，深入剖析了对应用于内存管理的ARC以及应用于多线程开发的Blocks和GCD。内容包括：自动引用计数、Blocks、Grand Central Dispatch等。"
+                                @"brief":  book.brief
                                 }],
-                          @[@{
-                                @"bookState":    @"外借本",
-                                @"dueDate":    @"在架上",
-                                @"branch":     @"南校区中文新书库(1楼)",
-                                @"rackPosition":       @"TP312C/1987",
-                                @"requests":     @"0",
-                                },
-                            @{
-                                @"bookState":    @"外借本",
-                                @"dueDate":    @"20141008",
-                                @"branch":     @"东校区普通图书(3楼)",
-                                @"rackPosition":       @"TP312C/1987",
-                                @"requests":     @"1"
-                                }
-                            ]
+                          book.distribution
                           ];
     [self.navigationController pushViewController:detailVC animated:true];
     

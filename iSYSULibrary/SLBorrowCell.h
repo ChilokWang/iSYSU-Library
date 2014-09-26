@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SLBookCell.h"
 
+@class SLBorrowingBook;
+
 @interface SLBorrowCell : SLBookCell
 
-@property (strong, nonatomic) UILabel *deadline;       /* 归还日期 */
+@property (strong, nonatomic) UILabel *retDate;       /* 归还日期 */
 
 @end

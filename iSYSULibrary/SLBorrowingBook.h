@@ -10,7 +10,6 @@
 
 @interface SLBorrowingBook : SLBookBaseModel
 
-@property (copy, nonatomic) NSString *borDate;
 @property (copy, nonatomic) NSString *retDate;
 
 @end
