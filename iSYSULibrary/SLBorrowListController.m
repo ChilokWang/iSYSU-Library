@@ -12,6 +12,7 @@
 #import "SLBookDetailViewController.h"
 #import "Constants.h"
 #import "MJRefresh.h"
+#import "SLRestfulEngine.h"
 
 #define CELL_HIGHT 100
 
@@ -57,6 +58,14 @@
     [self.view addSubview:_borrowTable];
     
     [self setUpRefresh];
+    
+    [SLRestfulEngine loadMyLoanOnSucceed:^(NSMutableArray *resultArray) {
+        [_borrowTable setDataArr:resultArray];
+        //进入界面即开始刷新
+        [_borrowTable headerBeginRefreshing];
+    } onError:^(NSError *engineError) {
+        NSLog(@"Load my loan on error:%@", engineError);
+    }];
 }
 
 //集成刷新控件
@@ -65,8 +74,6 @@
     [_borrowTable addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_borrowTable addFooterWithTarget:self action:@selector(footerRefresh)];
     
-    //进入界面即开始刷新
-    [_borrowTable headerBeginRefreshing];
     //设置刷新控件显示文字
     _borrowTable.headerPullToRefreshText = @"继续下拉可以刷新！";
     _borrowTable.headerReleaseToRefreshText = @"松开可以进行刷新！";
@@ -79,8 +86,7 @@
 
 - (void)headerRefresh
 {
-#warning not finish yet
-//    dispatch
+    [_borrowTable reloadData];
     [_borrowTable headerEndRefreshing];
 }
 

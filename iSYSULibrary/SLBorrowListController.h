@@ -11,11 +11,6 @@
 @class SLBorrowListTableView;
 
 @interface SLBorrowListController : UIViewController <UITableViewDelegate>
-{
-    NSInteger listCount;
-    BOOL _reloading;
-    NSArray *_dataArray;
-}
 
 @property (strong, nonatomic) SLBorrowListTableView *borrowTable;
 
