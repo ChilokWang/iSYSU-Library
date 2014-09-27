@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSUInteger, InfoTitle) {
     BookCoverInfo,
     BookBriefInfo,
-    BookDistributionInfo
+    BookDistributionInfo,
+    BookAppointInfo
 };
 
 @interface SLBookBaseCell : UITableViewCell

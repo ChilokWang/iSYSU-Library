@@ -61,6 +61,8 @@
 		692B0B9A19D4F10A00B8EEF0 /* SLRecommendTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692B0B9919D4F10A00B8EEF0 /* SLRecommendTableView.m */; };
 		692B0B9D19D5191F00B8EEF0 /* SLRecommendBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 692B0B9C19D5191F00B8EEF0 /* SLRecommendBook.m */; };
 		692B0BAA19D53B4B00B8EEF0 /* SLRecDetailLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 692B0BA919D53B4B00B8EEF0 /* SLRecDetailLabel.m */; };
+		692B0BBD19D5BA5C00B8EEF0 /* SLBookAppointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692B0BBB19D5BA5C00B8EEF0 /* SLBookAppointCell.m */; };
+		692B0BBE19D5BA5C00B8EEF0 /* SLBookAppointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B0BBC19D5BA5C00B8EEF0 /* SLBookAppointCell.xib */; };
 		693A0D8019B8273F00BADF72 /* SLBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */; };
 		693A0D8319B8279000BADF72 /* SLAppointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8219B8279000BADF72 /* SLAppointCell.m */; };
 		693A0D8619B827EE00BADF72 /* SLRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0D8519B827EE00BADF72 /* SLRecommendCell.m */; };
@@ -178,6 +180,9 @@
 		692B0B9C19D5191F00B8EEF0 /* SLRecommendBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRecommendBook.m; sourceTree = "<group>"; };
 		692B0BA819D53B4B00B8EEF0 /* SLRecDetailLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRecDetailLabel.h; sourceTree = "<group>"; };
 		692B0BA919D53B4B00B8EEF0 /* SLRecDetailLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRecDetailLabel.m; sourceTree = "<group>"; };
+		692B0BBA19D5BA5C00B8EEF0 /* SLBookAppointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBookAppointCell.h; sourceTree = "<group>"; };
+		692B0BBB19D5BA5C00B8EEF0 /* SLBookAppointCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBookAppointCell.m; sourceTree = "<group>"; };
+		692B0BBC19D5BA5C00B8EEF0 /* SLBookAppointCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBookAppointCell.xib; sourceTree = "<group>"; };
 		693A0D7E19B8273F00BADF72 /* SLBorrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBorrowCell.h; sourceTree = "<group>"; };
 		693A0D7F19B8273F00BADF72 /* SLBorrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBorrowCell.m; sourceTree = "<group>"; };
 		693A0D8119B8279000BADF72 /* SLAppointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppointCell.h; sourceTree = "<group>"; };
@@ -420,6 +425,9 @@
 				421D9E2A19B7263000BDCA36 /* SLBookDistributionCell.xib */,
 				42A613DF19B60E1800D94977 /* SLBookView.h */,
 				42A613E019B60E1800D94977 /* SLBookView.m */,
+				692B0BBA19D5BA5C00B8EEF0 /* SLBookAppointCell.h */,
+				692B0BBB19D5BA5C00B8EEF0 /* SLBookAppointCell.m */,
+				692B0BBC19D5BA5C00B8EEF0 /* SLBookAppointCell.xib */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -652,6 +660,7 @@
 				4203CED319B442C20015180D /* Main_iPad.storyboard in Resources */,
 				4203CED819B442C20015180D /* Images.xcassets in Resources */,
 				42347C9219D1BE5D00614F50 /* MJRefresh.bundle in Resources */,
+				692B0BBE19D5BA5C00B8EEF0 /* SLBookAppointCell.xib in Resources */,
 				421D9E2919B7156200BDCA36 /* SLBookCoverCell.xib in Resources */,
 				421D9E2B19B7263000BDCA36 /* SLBookDistributionCell.xib in Resources */,
 				4203CED019B442C20015180D /* Main_iPhone.storyboard in Resources */,
@@ -726,6 +735,7 @@
 				69216AA119D2C89700C3A113 /* SLBookCell.m in Sources */,
 				699CA89C19C82211001E1651 /* SLBorrowListTableView.m in Sources */,
 				42A6138F19B5C69500D94977 /* SLSetupViewController.m in Sources */,
+				692B0BBD19D5BA5C00B8EEF0 /* SLBookAppointCell.m in Sources */,
 				42A6138C19B5B7AA00D94977 /* SLSearchViewController.m in Sources */,
 				426223BB19C9B097005F0DE7 /* SLBorrowHistoryViewController.m in Sources */,
 				42347C9419D1BE5D00614F50 /* MJRefreshConst.m in Sources */,

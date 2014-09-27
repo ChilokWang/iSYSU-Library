@@ -19,18 +19,20 @@
     if (self) {
         CGRect nameFrame = self.name.frame;
         CGRect dlFrame = CGRectMake(nameFrame.origin.x,
-                                    nameFrame.origin.y + nameFrame.size.height + 5,
-                                    nameFrame.size.width, nameFrame.size.height);
+                                    nameFrame.origin.y + nameFrame.size.height,
+                                    nameFrame.size.width, nameFrame.size.height*2);
         CGRect plFrame = CGRectMake(dlFrame.origin.x,
                                     dlFrame.origin.y + dlFrame.size.height + 5,
                                     dlFrame.size.width, dlFrame.size.height);
-        CGRect stFrame = CGRectMake(self.frame.size.width - 60,
+        CGRect stFrame = CGRectMake(self.frame.size.width - 70,
                                     self.frame.size.height / 2 + 30 / 2, 50, 20);
-
+        
         validDate = [[UILabel alloc] initWithFrame:dlFrame];
         validDate.backgroundColor = [UIColor clearColor];
         validDate.textColor = [UIColor darkGrayColor];
+        validDate.font = [UIFont systemFontOfSize:14.0];
         validDate.text = @"xxxx";
+        validDate.numberOfLines = 0;
         
 //        takeBookPlace = [[UILabel alloc] initWithFrame:plFrame];
 //        takeBookPlace.backgroundColor = [UIColor clearColor];
@@ -40,6 +42,7 @@
         status = [[UILabel alloc] initWithFrame:stFrame];
         status.backgroundColor = [UIColor clearColor];
         status.textColor = [UIColor grayColor];
+        status.font = [UIFont systemFontOfSize:12.0];
         status.text = @"xxx";
         
         [self addSubview:validDate];
@@ -60,7 +63,7 @@
 - (void)configureWithData:(SLAppointBook *)data
 {
     [super configureWithData:data];
-    self.validDate.text = [NSString stringWithFormat:@"%@", data.validDate];
+    self.validDate.text = [NSString stringWithFormat:@"有效预约期:\n%@", data.validDate];
     self.status.text = [NSString stringWithFormat:@"%@", data.reqStatus];
 }
 

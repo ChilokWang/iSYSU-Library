@@ -7,4 +7,10 @@
 + (NSArray *)getCachedNewBooks;
 + (void)cacheHistoryBooks:(NSArray *)books;
 + (NSArray *)getCachedHistoryBooks;
++ (void)cacheMyLoanBooks:(NSArray *)books;
++ (NSArray *)getCachedMyLoanBooks;
++ (void)cacheAppointBooks:(NSArray *)books;
++ (NSArray *)getCachedAppointBooks;
++ (void)cacheRecommendBooks:(NSArray *)books;
++ (NSArray *)getCachedRecommendBooks;
 @end

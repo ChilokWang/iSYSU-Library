@@ -14,6 +14,7 @@
 #import "MJRefresh.h"
 #import "SLRestfulEngine.h"
 #import "SLBorrowingBook.h"
+#import "AppCache.h"
 
 #define CELL_HEIGHT 100
 
@@ -56,6 +57,8 @@
     [self.view addSubview:_borrowTable];
     
     [self setUpRefresh];
+    
+    [_borrowTable setDataArr:[AppCache getCachedMyLoanBooks]];
     //进入界面即开始刷新
     [_borrowTable headerBeginRefreshing];
 }
@@ -64,36 +67,37 @@
 - (void)setUpRefresh
 {
     [_borrowTable addHeaderWithTarget:self action:@selector(headerRefresh)];
-    [_borrowTable addFooterWithTarget:self action:@selector(footerRefresh)];
+//    [_borrowTable addFooterWithTarget:self action:@selector(footerRefresh)];
     
     //设置刷新控件显示文字
     _borrowTable.headerPullToRefreshText = @"继续下拉可以刷新！";
     _borrowTable.headerReleaseToRefreshText = @"松开可以进行刷新！";
     _borrowTable.headerRefreshingText = @"列表正在刷新，请稍后！";
     
-    _borrowTable.footerPullToRefreshText = @"继续上拉可以刷新！";
-    _borrowTable.footerReleaseToRefreshText = @"松开可以进行刷新！";
-    _borrowTable.footerRefreshingText = @"列表正在加载，请稍后！";
+//    _borrowTable.footerPullToRefreshText = @"继续上拉可以刷新！";
+//    _borrowTable.footerReleaseToRefreshText = @"松开可以进行刷新！";
+//    _borrowTable.footerRefreshingText = @"列表正在加载，请稍后！";
 }
 
 - (void)headerRefresh
 {
     [SLRestfulEngine loadMyLoanOnSucceed:^(NSMutableArray *resultArray) {
-        
+        [AppCache cacheMyLoanBooks:resultArray];
         [_borrowTable setDataArr:resultArray];
         [_borrowTable reloadData];
-        
+        [_borrowTable headerEndRefreshing];
     } onError:^(NSError *engineError) {
         NSLog(@"Load my loan on error:%@", engineError);
+        [_borrowTable headerEndRefreshing];
     }];
 
-    [_borrowTable headerEndRefreshing];
-}
-
-- (void)footerRefresh
-{
     
 }
+
+//- (void)footerRefresh
+//{
+//    
+//}
 
 - (void)didReceiveMemoryWarning
 {

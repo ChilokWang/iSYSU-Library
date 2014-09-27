@@ -98,13 +98,16 @@
         else if (indexPath.section == 2) {
             cell = [SLBookBaseCell TableCellWithInfoTitle:BookDistributionInfo];
         }
+        else if (indexPath.section == 3) {
+            cell = [SLBookBaseCell TableCellWithInfoTitle:BookAppointInfo];
+        }
         cell.layer.shadowOpacity = 0.15;
         cell.layer.shadowRadius = 1;
         cell.layer.shadowOffset = CGSizeMake(1, 1*tan(M_PI*60/180));
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     [cell configureWithDictionary:[[self.bookInfo objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-    return cell;
+    return cell;    
 }
 
 #pragma mark UITableViewDelegate
@@ -138,11 +141,11 @@
 }
 
 - (NSString *)identifierAtIndex: (NSInteger)index {
-    return @[@"BookCover", @"BookBrief", @"BookDistribution"][index];
+    return @[@"BookCover", @"BookBrief", @"BookDistribution", @"BookAppoint"][index];
 }
 
 - (NSString *)headerNameAtIndex: (NSInteger)index {
-    return @[@"图书封面", @"摘要", @"馆藏分布情况"][index];
+    return @[@"图书封面", @"摘要", @"馆藏分布情况", @"预约情况"][index];
 }
 
 #pragma mark ToDo
