@@ -8,6 +8,7 @@
 
 #import "SLRecommendBook.h"
 
+NSString * const kCoverImageUrl = @"bookCoverImageUrl";
 NSString * const kName = @"bookName";
 NSString * const kId = @"bookId";
 NSString * const kAuthor = @"bookAuthor";
@@ -36,5 +37,36 @@ NSString * const kStatus = @"status";
         self.status = dictionary[kStatus];
     }
     return self;
+}
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    
+    self.bookName = [aDecoder decodeObjectForKey:kName];
+    self.bookId = [aDecoder decodeObjectForKey:kId];
+    self.bookAuthor = [aDecoder decodeObjectForKey:kAuthor];
+    self.bookPress = [aDecoder decodeObjectForKey:kPress];
+    self.recDate = [aDecoder decodeObjectForKey:kRecDate];
+    self.reason = [aDecoder decodeObjectForKey:kReason];
+    self.proDate = [aDecoder decodeObjectForKey:kProDate];
+    self.proStatus = [aDecoder decodeObjectForKey:kProStatus];
+    self.status = [aDecoder decodeObjectForKey:kStatus];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.bookName forKey:kName];
+    [aCoder encodeObject:self.bookId forKey:kId];
+    [aCoder encodeObject:self.bookAuthor forKey:kAuthor];
+    [aCoder encodeObject:self.bookPress forKey:kPress];
+    [aCoder encodeObject:self.recDate forKey:kRecDate];
+    [aCoder encodeObject:self.reason forKey:kReason];
+    [aCoder encodeObject:self.proDate forKey:kProDate];
+    [aCoder encodeObject:self.proStatus forKey:kProStatus];
+    [aCoder encodeObject:self.status forKey:kStatus];
 }
 @end

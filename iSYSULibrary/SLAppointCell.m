@@ -21,9 +21,9 @@
         CGRect dlFrame = CGRectMake(nameFrame.origin.x,
                                     nameFrame.origin.y + nameFrame.size.height,
                                     nameFrame.size.width, nameFrame.size.height*2);
-        CGRect plFrame = CGRectMake(dlFrame.origin.x,
-                                    dlFrame.origin.y + dlFrame.size.height + 5,
-                                    dlFrame.size.width, dlFrame.size.height);
+//        CGRect plFrame = CGRectMake(dlFrame.origin.x,
+//                                    dlFrame.origin.y + dlFrame.size.height + 5,
+//                                    dlFrame.size.width, dlFrame.size.height);
         CGRect stFrame = CGRectMake(self.frame.size.width - 70,
                                     self.frame.size.height / 2 + 30 / 2, 50, 20);
         

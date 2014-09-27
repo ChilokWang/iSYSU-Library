@@ -31,6 +31,7 @@
         [emptyHint setTextAlignment:NSTextAlignmentCenter];
         [emptyHint setFont:[UIFont fontWithName:@"Heiti" size:20.0]];
         [emptyHint setTextColor:[UIColor grayColor]];
+        emptyHint.numberOfLines = 0;
         
         [self addSubview:emptyHint];
     }
@@ -43,11 +44,17 @@
     NSLog(@"dataArr.count:%ld", dataArr.count);
     if(dataArr.count == 0)
     {
+        emptyHint.text = @"你目前没有荐购";
         [emptyHint setHidden:NO];
     }else
     {
         [emptyHint setHidden:YES];
     }
+}
+
+- (void)setEmptyHintText:(NSString *)text
+{
+    emptyHint.text = text;
 }
 
 //- (void)setEmptyHintHidden:(BOOL)is
@@ -84,6 +91,7 @@
     }
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [cell configureWithData:self.dataArray[index]];
     
     return cell;
 }

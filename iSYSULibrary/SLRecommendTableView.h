@@ -14,5 +14,7 @@
 
 - (void)setDataArr:(NSArray *)dataArr;
 
+- (void)setEmptyHintText:(NSString *)text;
+
 //- (void)setEmptyHintHidden:(BOOL)is;
 @end

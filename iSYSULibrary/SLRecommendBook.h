@@ -10,6 +10,7 @@
 
 @interface SLRecommendBook : NSObject
 
+@property (copy, nonatomic) NSString *bookCoverImageUrl;
 @property (copy, nonatomic) NSString *bookName;
 @property (copy, nonatomic) NSString *bookId;
 @property (copy, nonatomic) NSString *bookPress;
@@ -21,5 +22,6 @@
 @property (copy, nonatomic) NSString *status;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
+- (id)initWithCoder:(NSCoder *)aDecoder;
+- (void)encodeWithCoder:(NSCoder *)aCoder;
 @end

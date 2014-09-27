@@ -14,7 +14,7 @@
 #import "SLRecommendBook.h"
 #import "SLAppointBook.h"
 
-NSString * const HOST_URL = @"http://sysulibrary.sinaapp.com/api/";
+NSString * const HOST_URL = @"http://172.18.34.228:5000/api/";
 NSString * const LOGIN_JSON = @"login.json";
 NSString * const NEWBOOK_JSON = @"newBooks.json";
 NSString * const BORLOANHISTORY_JSON = @"borLoanHistory.json";

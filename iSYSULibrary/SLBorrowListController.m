@@ -45,6 +45,17 @@
     
     [self.view setBackgroundColor:kApplicationGrayColor];
     
+    [self configureTableView];
+    
+    [self setUpRefresh];
+    
+    [_borrowTable setDataArr:[AppCache getCachedMyLoanBooks]];
+    //进入界面即开始刷新
+    [_borrowTable headerBeginRefreshing];
+}
+
+- (void)configureTableView
+{
     CGRect f = [[UIScreen mainScreen] bounds];
     screenFrame = f;
     CGFloat h = self.navigationController.navigationBar.frame.size.height;
@@ -55,12 +66,6 @@
     _borrowTable = [[SLBorrowListTableView alloc] initWithFrame:borrowTableFrame];
     _borrowTable.delegate = self;
     [self.view addSubview:_borrowTable];
-    
-    [self setUpRefresh];
-    
-    [_borrowTable setDataArr:[AppCache getCachedMyLoanBooks]];
-    //进入界面即开始刷新
-    [_borrowTable headerBeginRefreshing];
 }
 
 //集成刷新控件
@@ -88,6 +93,7 @@
         [_borrowTable headerEndRefreshing];
     } onError:^(NSError *engineError) {
         NSLog(@"Load my loan on error:%@", engineError);
+        [_borrowTable setEmptyHintText:@"抱歉!服务器出错啦!\n请稍后再刷新界面。"];
         [_borrowTable headerEndRefreshing];
     }];
 

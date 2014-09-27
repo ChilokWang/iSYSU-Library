@@ -24,6 +24,8 @@
 @property (strong, nonatomic) SLRecDetailLabel *proStatus;
 @property (strong, nonatomic) SLRecDetailLabel *status;
 
+@property (strong, nonatomic) NSDictionary *bookDic;
+
 - (void)configureViewsWithDictionary:(NSDictionary *)dic;
 
 @end

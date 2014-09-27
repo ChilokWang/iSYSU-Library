@@ -31,6 +31,8 @@
 @synthesize proDate;
 @synthesize status;
 
+@synthesize bookDic;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,7 +44,7 @@
     
     [self initBackgroundView];
     
-    [self configureViewsWithDictionary:nil];
+    [self configureViewsWithDictionary:self.bookDic];
 }
 
 - (void)initScrollView
@@ -119,26 +121,20 @@
 
 - (void)configureViewsWithDictionary:(NSDictionary *)dic
 {
-    bookName.text = dic[@"bookName"];
-    bookId.text = dic[@"bookId"];
-    bookAuthor.text = dic[@"bookAuthor"];
-    bookPress.text = dic[@"bookPress"];
-    recDate.text = dic[@"recommendDate"];
-    proDate.text = dic[@"processingDate"];
-    proStatus.text = dic[@"processingStatus"];
-    status.text = dic[@"status"];
-    recReason.text = dic[@"recommendReason"];
+    NSLog(@"%@", dic[@"bookName"]);
+    bookName.text = [NSString stringWithFormat: @"书名: %@", dic[@"bookName"]];
+    bookId.text = [NSString  stringWithFormat: @"Id: %@", dic[@"bookId"]];
+    bookAuthor.text = [NSString stringWithFormat: @"作者: %@", dic[@"bookAuthor"]];
+    bookPress.text = [NSString stringWithFormat: @"出版社: %@", dic[@"bookPress"]];
+    recDate.text = [NSString stringWithFormat: @"荐购日期: %@", dic[@"recommendDate"]];
+    proDate.text = [NSString stringWithFormat: @"处理日期: %@", dic[@"processingDate"]];
+    proStatus.text = [NSString stringWithFormat:@"处理状态: %@", dic[@"processingStatus"]];
+    recReason.text = [NSString stringWithFormat:@"推荐理由: %@", dic[@"recommendReason"]];
     
-    
-//    bookName.text = @"bookName";
-//    bookId.text = @"bookId";
-//    bookAuthor.text = @"bookAuthor";
-//    bookPress.text = @"bookPress";
-//    recDate.text = @"recommendDate";
-//    proDate.text = @"processingDate";
-//    proStatus.text = @"processingStatus";
-//    status.text = @"status";
-//    recReason.text = @"你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里你覅我暗房里无法";
+    if([dic[@"status"] intValue] == 0)
+        status.text = @"订购状态: 已订购";
+    else if([dic[@"status"] intValue] == 1)
+        status.text = @"订购状态: 未订购";
 
     [self adjustFrameForViews];
 }

@@ -45,6 +45,18 @@
     
     [self.view setBackgroundColor:kApplicationGrayColor];
     
+    [self configureTableView];
+    
+    [self setUpRefresh];
+    
+    [_appointTable setDataArr:[AppCache getCachedAppointBooks]];
+
+    //进入界面即开始刷新
+    [_appointTable headerBeginRefreshing];
+}
+
+- (void)configureTableView
+{
     CGRect f = [[UIScreen mainScreen] bounds];
     screenFrame = f;
     CGFloat h = self.navigationController.navigationBar.frame.size.height;
@@ -56,13 +68,6 @@
     _appointTable.delegate = self;
     _appointTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_appointTable];
-    
-    [self setUpRefresh];
-    
-    [_appointTable setDataArr:[AppCache getCachedAppointBooks]];
-
-    //进入界面即开始刷新
-    [_appointTable headerBeginRefreshing];
 }
 
 //集成刷新控件
@@ -89,6 +94,7 @@
         [_appointTable headerEndRefreshing];
     } onError:^(NSError *engineError) {
         NSLog(@"Load hold error:%@", engineError);
+        [_appointTable setEmptyHintText:@"抱歉!服务器出错啦!\n请稍后再刷新界面。"];
         [_appointTable headerEndRefreshing];
     }];
     

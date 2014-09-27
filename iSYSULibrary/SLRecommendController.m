@@ -45,6 +45,17 @@
     
     [self.view setBackgroundColor:kApplicationGrayColor];
     
+    [self configureTableView];
+    
+    [self setUpRefresh];
+    
+    [_recommendTable setDataArr:[AppCache getCachedRecommendBooks]];
+    
+    [_recommendTable headerBeginRefreshing];
+}
+
+- (void)configureTableView
+{
     CGRect f = [[UIScreen mainScreen] bounds];
     screenFrame = f;
     CGFloat h = self.navigationController.navigationBar.frame.size.height;
@@ -54,14 +65,8 @@
     
     _recommendTable = [[SLRecommendTableView alloc] initWithFrame:recommendTableFrame];
     _recommendTable.delegate = self;
-    _recommendTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _recommendTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [self.view addSubview:_recommendTable];
-    
-    [self setUpRefresh];
-    
-    [_recommendTable setDataArr:[AppCache getCachedRecommendBooks]];
-    
-    [_recommendTable headerBeginRefreshing];
 }
 
 //集成刷新控件
@@ -89,6 +94,7 @@
         [_recommendTable headerEndRefreshing];
     } onError:^(NSError *engineError) {
         NSLog(@"Load hold error:%@", engineError);
+        [_recommendTable setEmptyHintText:@"抱歉!服务器出错啦!\n请稍后再刷新界面。"];
         [_recommendTable headerEndRefreshing];
     }];
 }
@@ -125,17 +131,20 @@
 {
     SLRecommendDetailController *detailVC = [[SLRecommendDetailController alloc] init];
     SLRecommendBook *book = _recommendTable.dataArray[indexPath.row];
-    [detailVC configureViewsWithDictionary:@{
-                                             @"bookName": book.bookName,
-                                             @"bookId": book.bookId,
-                                             @"bookAuthor": book.bookAuthor,
-                                             @"bookPress": book.bookPress,
-                                             @"recommendDate": book.recDate,
-                                             @"recommendReason": book.reason,
-                                             @"processingDate": book.proDate,
-                                             @"processingStatus": book.proStatus,
-                                             @"status": book.status
-                                             }];
+    NSLog(@"%@, %@", book.bookName, book.bookId);
+    NSDictionary *dic = @{
+                          @"bookName": book.bookName,
+                          @"bookId": book.bookId,
+                          @"bookAuthor": book.bookAuthor,
+                          @"bookPress": book.bookPress,
+                          @"recommendDate": book.recDate,
+                          @"recommendReason": book.reason,
+                          @"processingDate": book.proDate,
+                          @"processingStatus": book.proStatus,
+                          @"status": book.status
+                          };
+    detailVC.bookDic = dic;
+
     [self.navigationController pushViewController:detailVC animated:true];
     
 }
